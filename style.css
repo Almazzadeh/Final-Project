@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+a:hover {
+  color: #08c;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+}
+
+.welcome {
+  padding: 5px 0;
+  background: #f8f8f8;
+}
+.welcome .navbar-item {
+  padding: 0 10px;
+  position: relative;
+}
+.welcome .navbar-item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  top: 25%;
+  width: 1px;
+  height: 50%;
+  background: #dadada;
+}
+.welcome .socialmedia * {
+  margin: 0 3px;
+}
+
+.header {
+  padding: 50px 0;
+}
+.header .input-group {
+  position: relative;
+}
+.header .input-group .input-group-btn:first-child > .btn {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin-right: -2px;
+  outline: none;
+}
+.header .input-group .form-control:not(:first-child):not(:last-child) {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.header .input-group .btn-default:last-child {
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 13px;
+  z-index: 99999;
+  outline: none;
+}
+.header .shoppingbag {
+  position: relative;
+  cursor: pointer;
+}
+.header .shoppingbag:hover .mycard {
+  display: block;
+}
+.header .shoppingbag .bagcircle {
+  display: inline-block;
+  background: #e6e6e6;
+  height: 46px;
+  width: 46px;
+  border-radius: 100%;
+  position: relative;
+}
+.header .shoppingbag .bagcircle .fa-shopping-bag {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header .shoppingbag .bagcircle span {
+  position: absolute;
+  border-radius: 100%;
+  right: -5px;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #08c;
+  color: white;
+}
+.header .shoppingbag .bagcontent {
+  display: inline-block;
+  margin-left: 10px;
+}
+.header .shoppingbag .bagcontent h4 {
+  margin-bottom: 5px;
+}
+.header .shoppingbag .bagcontent h5 {
+  margin-top: 0;
+}
+.header .shoppingbag .mycard {
+  display: none;
+  position: absolute;
+  min-height: 265px;
+  min-width: 246px;
+  top: 50px;
+  left: 0;
+  z-index: 9999;
+  padding: 15px;
+  box-shadow: 2px 2px 10px #e6e6e6;
+}
+.header .shoppingbag .mycard .col-md-4,
+.header .shoppingbag .mycard .col-md-8 {
+  height: 60px;
+  margin-bottom: 25px;
+}
+.header .shoppingbag .mycard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header .shoppingbag .mycard .col-md-8 p:last-child {
+  font-weight: 600;
+}
+.header .shoppingbag .mycard .btn {
+  display: block;
+  margin: 0 15px;
+  border-radius: 50px;
+  background: #08c;
+}
+
+/*# sourceMappingURL=style.css.map */
