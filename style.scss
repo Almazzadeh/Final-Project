@@ -1,12 +1,49 @@
 $mainColor: #08c;
+$DarkBlue: #0077b2;
 $mainPadding: 50px 0;
 $mainGray: #e6e6e6;
+
+%dropmenu{
+    display: none;    
+    position: absolute;
+    background: white;
+    box-shadow: 1px 1px $mainGray;
+    width: 100%;
+}
+
+%megamenu{
+    display: none;
+    background: white;
+    padding-top: 25px;
+    position: absolute;
+    width: 1140px;
+    height: 500px;
+    overflow: auto;
+}
+
+%halfborder{
+    padding: 0 10px;
+    position: relative;
+
+    &::after{
+        content : "";
+        position: absolute;
+        right    : 0;
+        z-index: 100;
+        top  : 25%;
+        width  : 1px;
+        height   : 50%;
+        background: rgb(218, 218, 218); 
+    }
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;      
 }
+
 a{
     text-decoration: none !important;
     color: black;
@@ -28,19 +65,7 @@ p{
     background: rgb(248, 248, 248);
 
     .navbar-item{
-        padding: 0 10px;
-        position: relative;
-
-        &::after{
-            content : "";
-            position: absolute;
-            right    : 0;
-            z-index: 100;
-            top  : 25%;
-            width  : 1px;
-            height   : 50%;
-            background: rgb(218, 218, 218); 
-        }
+        @extend %halfborder;
     }
 
     .socialmedia{
@@ -51,9 +76,9 @@ p{
 }
 // WELCOME PART END HERE
 
-// HEADER START HERE
+// ***** HEADER START HERE
 .header{
-    padding: $mainPadding;
+    padding-top: 50px;
 
     .input-group{
         position: relative;
@@ -96,7 +121,8 @@ p{
             border-radius: 100%;
             position: relative;
 
-            .fa-shopping-bag{
+            .fa-shopping-bag,
+            .fa-opencart{
                 display: block;
                 position: absolute;
                 top: 50%;
@@ -129,6 +155,7 @@ p{
         }
 
         .mycard{
+            background: white;
             display: none;
             position: absolute;
             min-height: 265px;
@@ -163,4 +190,186 @@ p{
             }
         }
     }
+    // BRAND, SEARCH, MY CARD END HERE
+    // ****BLUE SECTION START HERE
+    .bluesection{
+        margin-top: 30px;
+        background: $mainColor;
+        font-size: 18px;
+
+        .navbarwrapper .navbar-nav{
+            width: 100%;
+        }
+
+        .navbar-item.blueHover{
+            position: relative;
+
+            & > a{
+                color: white;
+                display: block;
+                padding: 13px;
+                background-image: linear-gradient(to left, transparent, transparent 50%, $DarkBlue 50%, $DarkBlue);            
+                background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+    
+                &:hover:not(.withouthover){
+                   background-position: 0 0;
+                }
+            }
+
+            &:first-child > a{
+                padding-right: 70px;
+            }
+
+            &:last-child{
+                font-size: 15px;
+            }
+
+            .ourcategoriesdrop{
+                @extend %dropmenu;
+
+                li{
+                    padding: 12px;
+
+                    a{
+                        display: block;
+                        font-size: 13px;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+        }
+
+        .submenuHover{
+            position: relative;
+
+            // *****HOME CONTENT
+            .homemegadropdown{
+                @extend %megamenu;
+                left: -225px;                
+    
+                .col-md-2{
+                    position: relative;
+                    height: 200px;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    cursor: pointer;
+
+                    img{
+                        height: 77%;
+                        width: 100%;
+                        border: 1px solid $mainGray;
+                        object-fit: cover;
+                    }
+
+                    &:hover{
+                        img{
+                            box-shadow: 3px 3px $mainColor;
+                        }
+                        h4{
+                            color: $mainColor;
+                        }
+                    }
+                    
+                }
+            }
+            // *****HOME CONTENT END
+            // *****MEGA MENU CONTENT
+            .megamenudropdown{
+                @extend %megamenu;
+                height: 450px;
+                left: -400px;
+
+                .navbar-item{
+                    @extend %halfborder;
+                    font-size: 16px;
+                }
+
+                .allelectronics{
+                   padding-left: 10px;
+                   font-size: 16px;
+                   text-decoration: underline !important;
+                   color: gray;
+                }
+
+                .col-md-3{
+                    .electronics{
+                        padding-left: 10px;
+                    }
+                    li{
+                        font-size: 16px;
+                        padding: 5px 0;
+
+                        a{
+                            color: gray;
+                        }
+
+                        &.listheader{
+                            font-size: 18px;
+                            padding-bottom: 15px;
+                            a{color: black}
+                        }
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            // ******MEGA MENU END
+        }
+
+        .submenu{
+            position: relative;
+
+            ul{
+                @extend %dropmenu;
+
+                li{
+                    background-image: linear-gradient(to left, transparent, transparent 50%, $DarkBlue 50%, $DarkBlue);            
+                    background-position: 100% 0;
+                    background-size: 200% 100%;
+                    transition: all .10s ease-in;
+        
+                    &:hover:not(.withouthover){
+                       background-position: 0 0;
+
+                       & > a{
+                           color: white;
+                           display: block;                           
+                       }
+                    }
+                }
+
+                &.ourcategoriessubmenucontent{
+                    top: 0;
+                    right: -100%;
+                }
+
+                &.levelcontent{
+                    right: -100%;
+                    top: 10%;
+                    padding: 3px;
+                }
+
+                &.pagesblogsubmenucontent{
+                    width: 250px;
+
+                    li{
+                        padding: 6px 0;
+
+                        a{
+                            margin-left: 15px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+// ****** HEADER END HERE

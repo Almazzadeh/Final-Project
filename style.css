@@ -1,7 +1,41 @@
+.header .bluesection .navbar-item.blueHover .ourcategoriesdrop, .header .bluesection .submenu ul {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 1px 1px #e6e6e6;
+  width: 100%;
+}
+
+.header .bluesection .submenuHover .homemegadropdown, .header .bluesection .submenuHover .megamenudropdown {
+  display: none;
+  background: white;
+  padding-top: 25px;
+  position: absolute;
+  width: 1140px;
+  height: 500px;
+  overflow: auto;
+}
+
+.welcome .navbar-item, .header .bluesection .submenuHover .megamenudropdown .navbar-item {
+  padding: 0 10px;
+  position: relative;
+}
+.welcome .navbar-item::after, .header .bluesection .submenuHover .megamenudropdown .navbar-item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  top: 25%;
+  width: 1px;
+  height: 50%;
+  background: #dadada;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -24,26 +58,12 @@ p {
   padding: 5px 0;
   background: #f8f8f8;
 }
-.welcome .navbar-item {
-  padding: 0 10px;
-  position: relative;
-}
-.welcome .navbar-item::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  z-index: 100;
-  top: 25%;
-  width: 1px;
-  height: 50%;
-  background: #dadada;
-}
 .welcome .socialmedia * {
   margin: 0 3px;
 }
 
 .header {
-  padding: 50px 0;
+  padding-top: 50px;
 }
 .header .input-group {
   position: relative;
@@ -81,7 +101,8 @@ p {
   border-radius: 100%;
   position: relative;
 }
-.header .shoppingbag .bagcircle .fa-shopping-bag {
+.header .shoppingbag .bagcircle .fa-shopping-bag,
+.header .shoppingbag .bagcircle .fa-opencart {
   display: block;
   position: absolute;
   top: 50%;
@@ -110,6 +131,7 @@ p {
   margin-top: 0;
 }
 .header .shoppingbag .mycard {
+  background: white;
   display: none;
   position: absolute;
   min-height: 265px;
@@ -138,6 +160,138 @@ p {
   margin: 0 15px;
   border-radius: 50px;
   background: #08c;
+}
+.header .bluesection {
+  margin-top: 30px;
+  background: #08c;
+  font-size: 18px;
+}
+.header .bluesection .navbarwrapper .navbar-nav {
+  width: 100%;
+}
+.header .bluesection .navbar-item.blueHover {
+  position: relative;
+}
+.header .bluesection .navbar-item.blueHover > a {
+  color: white;
+  display: block;
+  padding: 13px;
+  background-image: linear-gradient(to left, transparent, transparent 50%, #0077b2 50%, #0077b2);
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all .25s ease-in;
+}
+.header .bluesection .navbar-item.blueHover > a:hover:not(.withouthover) {
+  background-position: 0 0;
+}
+.header .bluesection .navbar-item.blueHover:first-child > a {
+  padding-right: 70px;
+}
+.header .bluesection .navbar-item.blueHover:last-child {
+  font-size: 15px;
+}
+.header .bluesection .navbar-item.blueHover .ourcategoriesdrop li {
+  padding: 12px;
+}
+.header .bluesection .navbar-item.blueHover .ourcategoriesdrop li a {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+.header .bluesection .submenuHover {
+  position: relative;
+}
+.header .bluesection .submenuHover .homemegadropdown {
+  left: -225px;
+}
+.header .bluesection .submenuHover .homemegadropdown .col-md-2 {
+  position: relative;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.header .bluesection .submenuHover .homemegadropdown .col-md-2 img {
+  height: 77%;
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  object-fit: cover;
+}
+.header .bluesection .submenuHover .homemegadropdown .col-md-2:hover img {
+  box-shadow: 3px 3px #08c;
+}
+.header .bluesection .submenuHover .homemegadropdown .col-md-2:hover h4 {
+  color: #08c;
+}
+.header .bluesection .submenuHover .megamenudropdown {
+  height: 450px;
+  left: -400px;
+}
+.header .bluesection .submenuHover .megamenudropdown .navbar-item {
+  font-size: 16px;
+}
+.header .bluesection .submenuHover .megamenudropdown .allelectronics {
+  padding-left: 10px;
+  font-size: 16px;
+  text-decoration: underline !important;
+  color: gray;
+}
+.header .bluesection .submenuHover .megamenudropdown .col-md-3 .electronics {
+  padding-left: 10px;
+}
+.header .bluesection .submenuHover .megamenudropdown .col-md-3 li {
+  font-size: 16px;
+  padding: 5px 0;
+}
+.header .bluesection .submenuHover .megamenudropdown .col-md-3 li a {
+  color: gray;
+}
+.header .bluesection .submenuHover .megamenudropdown .col-md-3 li.listheader {
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+.header .bluesection .submenuHover .megamenudropdown .col-md-3 li.listheader a {
+  color: black;
+}
+.header .bluesection .submenuHover .megamenudropdown .col-md-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header .bluesection .submenu {
+  position: relative;
+}
+.header .bluesection .submenu ul li {
+  background-image: linear-gradient(to left, transparent, transparent 50%, #0077b2 50%, #0077b2);
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all .10s ease-in;
+}
+.header .bluesection .submenu ul li:hover:not(.withouthover) {
+  background-position: 0 0;
+}
+.header .bluesection .submenu ul li:hover:not(.withouthover) > a {
+  color: white;
+  display: block;
+}
+.header .bluesection .submenu ul.ourcategoriessubmenucontent {
+  top: 0;
+  right: -100%;
+}
+.header .bluesection .submenu ul.levelcontent {
+  right: -100%;
+  top: 10%;
+  padding: 3px;
+}
+.header .bluesection .submenu ul.pagesblogsubmenucontent {
+  width: 250px;
+}
+.header .bluesection .submenu ul.pagesblogsubmenucontent li {
+  padding: 6px 0;
+}
+.header .bluesection .submenu ul.pagesblogsubmenucontent li a {
+  margin-left: 15px;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
