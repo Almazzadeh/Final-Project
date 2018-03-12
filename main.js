@@ -1,9 +1,11 @@
 $(function(){
     $("li.submenu").mouseenter(function(){
-        $(this).find("ul").first().slideDown(300)
+        $(this).find("ul").first().slideDown(300);
+        // $(this).find('[data-fa-i2svg]').first().toggleClass('fa-caret-right').toggleCLass('fa-caret-down')
     })
     $("li.submenu").mouseleave(function(){
-        $(this).find("ul").slideUp(300)
+        $(this).find("ul").slideUp(300);
+        // $(this).find('[data-fa-i2svg]').first().toggleClass('fa-caret-right').toggleCLass('fa-caret-down')
     })
 
     $("li.ourcategories").click(function(){

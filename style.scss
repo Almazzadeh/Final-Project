@@ -37,6 +37,13 @@ $mainGray: #e6e6e6;
     }
 }
 
+%center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -57,6 +64,11 @@ ul{
 }
 p{
     margin: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 // WELCOME PART START HERE
@@ -124,10 +136,7 @@ p{
             .fa-shopping-bag,
             .fa-opencart{
                 display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                @extend %center;
             }
             span{
                 position: absolute;
@@ -171,11 +180,7 @@ p{
                 height: 60px;
                 margin-bottom: 25px;
             }
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+
             .col-md-8{
                 p:last-child{
                     font-weight: 600;
@@ -199,6 +204,10 @@ p{
 
         .navbarwrapper .navbar-nav{
             width: 100%;
+        }
+
+        .zindex{
+            z-index: 100;
         }
 
         .navbar-item.blueHover{
@@ -259,9 +268,7 @@ p{
 
                     img{
                         height: 77%;
-                        width: 100%;
                         border: 1px solid $mainGray;
-                        object-fit: cover;
                     }
 
                     &:hover{
@@ -311,12 +318,6 @@ p{
                             padding-bottom: 15px;
                             a{color: black}
                         }
-                    }
-
-                    img{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
                     }
                 }
             }
@@ -373,3 +374,116 @@ p{
     }
 }
 // ****** HEADER END HERE
+// ****** ANIMATION AND WEEKLY SALE START HERE
+.animation{
+    .col-md-8,
+    .col-md-4{
+        height: 500px;
+        padding: 0;
+    }
+
+    .col-md-8{
+        background: red;
+
+        .item{
+            position: relative;
+            // height: 100%;
+
+            .carousel-caption{
+                text-align: left;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 5%;
+
+                h2, h3{
+                    color: darken($mainGray, 16%);
+                }
+
+                h1{
+                    color: $mainColor;
+                }
+
+                span{
+                    color: black;
+                    font-size: 28px
+                }
+
+                .btn{
+                    background: darken($mainGray, 16%);
+                    margin-top: 15px;
+                    border-radius: 30px;
+
+                    &:hover{
+                        color: white;
+                    }
+                }
+
+            }
+        }
+
+        .carousel-control.right,
+        .carousel-control.left{
+            background-image: none;
+        }
+
+        .carousel-control{
+            width: 5%;
+        }
+    }
+
+    .col-md-4{
+        .row{
+            position: relative;
+            height: 50%;
+
+            .firstrowtext{
+                @extend %center;
+                width: 100%;
+                padding-left: 20px;
+
+                h2,h3{
+                    margin-top: 0;
+                }
+
+                h2{
+                    font-weight: 600;
+                    color: $mainColor;
+                }
+
+                h3:first-child{
+                    color: gray;
+                }
+
+                h3:last-child{
+                    font-weight: 600;
+                }
+            }
+
+            .secondrowtext{
+                @extend %center;
+
+                h2{
+                    font-weight: 600;
+                    span{
+                        color: white;
+                    }
+                }
+
+                h4{
+                    font-size: 20px;
+                    text-align: center;
+                    color: lighten($mainColor, 40%)
+                }
+
+                a{
+                    display: block;
+                    width: 80%;
+                    margin: 0 auto;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+// ****** ANIMATION AND WEEKLY SALE START HERE
