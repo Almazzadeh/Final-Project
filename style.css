@@ -300,43 +300,8 @@ img {
   height: 500px;
   padding: 0;
 }
-.animation .col-md-8 {
-  background: red;
-}
-.animation .col-md-8 .item {
-  position: relative;
-}
-.animation .col-md-8 .item .carousel-caption {
-  text-align: left;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 5%;
-}
-.animation .col-md-8 .item .carousel-caption h2, .animation .col-md-8 .item .carousel-caption h3 {
-  color: #bdbdbd;
-}
-.animation .col-md-8 .item .carousel-caption h1 {
-  color: #08c;
-}
-.animation .col-md-8 .item .carousel-caption span {
+.animation .col-md-8 span {
   color: black;
-  font-size: 28px;
-}
-.animation .col-md-8 .item .carousel-caption .btn {
-  background: #bdbdbd;
-  margin-top: 15px;
-  border-radius: 30px;
-}
-.animation .col-md-8 .item .carousel-caption .btn:hover {
-  color: white;
-}
-.animation .col-md-8 .carousel-control.right,
-.animation .col-md-8 .carousel-control.left {
-  background-image: none;
-}
-.animation .col-md-8 .carousel-control {
-  width: 5%;
 }
 .animation .col-md-4 .row {
   position: relative;

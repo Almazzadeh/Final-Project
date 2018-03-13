@@ -7,9 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smart Tech</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="imageslidermaker/ism/css/my-slider.css" />
+    <script src="imageslidermaker/ism/js/ism-2.2.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -614,60 +617,27 @@
     <div class="animation">
         <div class="container">
             <div class="col-md-8">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <div class="ism-slider" data-transition_type="zoom" data-play_type="loop" data-image_fx="zoomrotate" id="my-slider">
+                    <ol>
+                        <li>
+                            <img src="images/slider-img-1.jpg">
+                            <div class="ism-caption ism-caption-0" data-delay='400'>High Quality VR Glasses</div>
+                            <div class="ism-caption ism-caption-1" data-delay='600'>3D Daydream View</div>
+                            <div class="ism-caption ism-caption-2" data-delay='800'>Starting at <span>$49.99</span></div>
+                        </li>
+                        <li>
+                            <img src="images/slider-img-2.jpg">
+                            <div class="ism-caption ism-caption-0" data-delay='400'>Get Free Bluetooth when buy</div>
+                            <div class="ism-caption ism-caption-1" data-delay='600'>Flat SmartWatch</div>
+                            <div class="ism-caption ism-caption-2" data-delay='800'>Combo Only <span>$590.00</span></div>
+                        </li>
+                        <li>
+                            <img src="images/slider-img-3.jpg">
+                            <div class="ism-caption ism-caption-0" data-delay='400'>No restocking free ($35 savings)</div>
+                            <div class="ism-caption ism-caption-1" data-delay='600'>M75 Sport Watch</div>
+                            <div class="ism-caption ism-caption-2" data-delay='800'>Now Only <span>$320.99</span></div>
+                        </li>
                     </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="images/slider-img-1.jpg" alt="slider-img-1.jpg">
-                            <div class="carousel-caption">
-                                <h2 class="animated fadeInLeft">High Quality VR Glasses</h2>
-                                <h1 class="animated fadeInRight" style="animation-delay: 1s">3D Daydream View</h1>
-                                <h3 class="animated fadeInUp" style="animation-delay: 2s">Starting at
-                                    <span>$49.99</span>
-                                </h3>
-                                <a href="#" class="btn btn-lg animated flipInX" style="animation-delay: 3s">Shop Now</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="images/slider-img-2.jpg" alt="slider-img-2.jpg">
-                            <div class="carousel-caption">
-                                <h2 class="animated fadeInLeft">No restocking free ($35 savings)</h2>
-                                <h1 class="animated fadeInRight" style="animation-delay: 1s">M75 Sport Watch</h1>
-                                <h3 class="animated fadeInUp" style="animation-delay: 2s">Now Only
-                                    <span>$320.99</span>
-                                </h3>
-                                <a href="#" class="btn btn-lg animated flipInX" style="animation-delay: 3s">Shop Now</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="images/slider-img-3.jpg" alt="slider-img-3.jpg">
-                            <div class="carousel-caption">
-                                <h2 class="animated fadeInLeft">High Quality VR Glasses</h2>
-                                <h1 class="animated fadeInRight" style="animation-delay: 1s">3D Daydream View</h1>
-                                <h3 class="animated fadeInUp" style="animation-delay: 2s">Starting at
-                                    <span>$49.99</span>
-                                </h3>
-                                <a href="#" class="btn btn-lg animated flipInX" style="animation-delay: 3s">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
             <div class="col-md-4">
