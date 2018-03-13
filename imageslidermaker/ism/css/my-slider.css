@@ -444,6 +444,7 @@ p.ism-badge a.ism-link:hover {
     left: 3%;
     border-radius: 8px;
     color: #08c;
+    text-shadow: 1px 1px white;
 }
 
 #my-slider .ism-caption-2 {

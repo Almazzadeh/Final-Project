@@ -72,6 +72,9 @@ img {
   padding: 5px 0;
   background: #f8f8f8;
 }
+.welcome .navbar-item .dropdown-menu {
+  z-index: 10;
+}
 .welcome .socialmedia * {
   margin: 0 3px;
 }
@@ -97,7 +100,7 @@ img {
   position: absolute;
   top: 0;
   right: 13px;
-  z-index: 99999;
+  z-index: 9;
   outline: none;
 }
 .header .shoppingbag {
