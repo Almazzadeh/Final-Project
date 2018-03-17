@@ -81,9 +81,10 @@ img{
     width: 220px;
     height: 340px;
     border: 1px solid $mainGray;
-    margin-right: 1%;
+    margin-right: 10px;
     margin-bottom: 10px;
     padding: 15px;
+    background: white;
 
     p{
         margin-bottom: 6px;
@@ -124,7 +125,7 @@ img{
             color: gold;
         }
         span{
-            margin-left: 10px;
+            margin-left: 8px;
             color: red;
         }
     }
@@ -171,6 +172,12 @@ img{
                 color: white;
             }
         }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
     }
 }
 
@@ -562,33 +569,37 @@ img{
 
         & > .col-md-3{
             border-right: 1px solid $mainGray;
-            height: 200px;  
+            height: 130px;
+            padding: 0 10px;  
             
             .icon{
-                line-height: 200px;
+                line-height: 130px;
                 color: $mainColor;
             }
 
             .col-md-9{
-                padding-top: 40px;
-                text-align: center;
+                padding-top: 30px;
+                // text-align: center;
 
-                h3{
+                h4{
                     margin-bottom: 5px;
                     font-weight: bold;
                 }
 
-                h4{
+                h5{
                     margin-top: 0;
                     color: gray;
+                    font-size: 13px;
                 }
             }
         }
     }
 }
 // ****** 4 DIVS END HERE
-// ****** TABS START HERE
+// ****** FIRST TABS START HERE
 .tabs{
+    padding-bottom: 50px;
+
     .nav-tabs > li{
         &.active a{
             background: $mainColor;
@@ -602,7 +613,192 @@ img{
     .tab-content{
         padding: 20px 0;        
     }
+
+    .slick-prev,
+    .slick-next{
+        position: absolute;
+        border: 1px solid $mainGray;
+        top: -40px;
+        height: 30px;
+        width: 30px;
+        border-radius: 5px;
+
+        &::before{
+            color: gray;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;            
+        }
+
+        &:hover{
+            background: $mainColor;
+
+            &::before{
+                color: white;
+            }
+        }
+    }
+
+    .slick-next{
+        right: 10px;
+
+        &::before{
+            content: '\f054';
+        }
+    }
+
+    .slick-prev{
+        right: 45px;
+
+        &::before{
+            content: '\f053'
+        }
+    }
 }
-// ****** TABS END HERE
+// ****** FIRST TABS END HERE
+// ****** TOP SELLING OF THE WEEK START HERE
+.topselling{
+    background: lighten($mainGray, 8%);
+    padding: $mainPadding;
+
+    & .container > h3{
+        font-weight: bold;
+    }
+
+    hr{
+        position: relative;
+        margin-top: 0;
+        border-top: 1px solid gray;
+
+        // &::before{
+        //     content: "";      
+        //     position: absolute;
+        //     height: 5px;
+        //     top: 0;
+        //     left: 0;
+        //     width: 50px;
+        //     background: $mainColor;
+        // }
+    }
+
+    .watch{
+        float: left;
+        width: 451px;
+        height: 340px;
+        margin-bottom: 10px;
+        margin-right: 12px;
+        position: relative;
+
+        .watchtext{
+            position: absolute;
+            padding-left: 15px;
+            width: 55%;
+            top: 50%;
+            transform: translateY(-50%);
+
+            h5{
+                &:nth-child(2){
+                    font-size: 16px;
+                    color: gray;
+                }
+                
+                &:nth-child(3){
+                    color: darken($mainGray, 15%);
+                }
+            }
+
+            .btn-primary{
+                background: $mainColor;
+                border-radius: 30px;
+
+                &:hover{
+                    border: 1px solid #8a5230;
+                    background: #925632 !important;
+                }
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+}
+// ****** TOP SELLING OF THE WEEK END HERE
+// ****** SECOND TABS START HERE
+.secondtabs{
+    padding: $mainPadding;
+
+    .container{
+        height: 700px;
+        // border: 1px solid black;
+
+        ul.nav-justified{
+            border: 1px solid red;
+
+            li{
+                &:not(:last-child):not(:first-child){
+                    width: 195px;
+                }
+
+                &:first-child,
+                &:last-child{
+                    width: 194px;
+                }
+
+                &:not(:last-child){
+                    border-right: 1px solid green
+                }
+
+                &.active{
+                    background: $mainColor;
+
+                    a{
+                        background: transparent;
+                        position: relative;
+
+                        svg, h4, p{
+                            color: white;
+                        }
+
+                        &::before{
+                            content: "\f0d7";
+                            font-family: 'Font Awesome 5 Free';
+                            font-weight: 900;
+                            font-size: 40px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            bottom: -40px;
+                            color: $mainColor;
+                        }
+                    }
+                }
+
+                a{
+                    margin: 8px;
+
+                    &:hover{
+                        background: transparent;
+                    }
+
+                    svg, p{
+                        color: gray;
+                    }
+                }
+            }
+        }
+
+        .tab-content{
+            padding: 30px 0;
+        }
+    }
+
+    .slick-dots li button::before{
+        font-size: 60px;
+        color: $mainColor;
+    }
+}
+// ****** SECOND TABS END HERE
 
 

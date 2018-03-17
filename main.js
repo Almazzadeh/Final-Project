@@ -18,4 +18,19 @@ $(function(){
     $("li.submenuHover").mouseleave(function(){
         $(this).find("div").first().slideUp(300)
     })
+
+    $("#featured").slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        infinite: true
+    })
+
+    $("#tv").slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: true,
+        // autoplay: true,
+        infinite: true
+    })
 })
