@@ -73,6 +73,48 @@ img {
   padding: 0;
 }
 
+.clear {
+  clear: both;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  border: 1px solid #e6e6e6;
+  top: -40px;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+}
+.slick-prev::before,
+.slick-next::before {
+  color: gray;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.slick-prev:hover,
+.slick-next:hover {
+  background: #08c;
+}
+.slick-prev:hover::before,
+.slick-next:hover::before {
+  color: white;
+}
+
+.slick-next {
+  right: 10px;
+}
+.slick-next::before {
+  content: '\f054';
+}
+
+.slick-prev {
+  right: 45px;
+}
+.slick-prev::before {
+  content: "";
+}
+
 .product {
   position: relative;
   float: left;
@@ -141,6 +183,7 @@ img {
   right: 5px;
   background: #e6e6e6;
   border-radius: 100%;
+  transition: 0.6s;
 }
 .product .buyproduct .fa-shopping-cart {
   color: gray;
@@ -480,41 +523,6 @@ img {
 .tabs .tab-content {
   padding: 20px 0;
 }
-.tabs .slick-prev,
-.tabs .slick-next {
-  position: absolute;
-  border: 1px solid #e6e6e6;
-  top: -40px;
-  height: 30px;
-  width: 30px;
-  border-radius: 5px;
-}
-.tabs .slick-prev::before,
-.tabs .slick-next::before {
-  color: gray;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-.tabs .slick-prev:hover,
-.tabs .slick-next:hover {
-  background: #08c;
-}
-.tabs .slick-prev:hover::before,
-.tabs .slick-next:hover::before {
-  color: white;
-}
-.tabs .slick-next {
-  right: 10px;
-}
-.tabs .slick-next::before {
-  content: '\f054';
-}
-.tabs .slick-prev {
-  right: 45px;
-}
-.tabs .slick-prev::before {
-  content: "";
-}
 
 .topselling {
   background: #fafafa;
@@ -567,11 +575,8 @@ img {
 .secondtabs {
   padding: 50px 0;
 }
-.secondtabs .container {
-  height: 700px;
-}
 .secondtabs .container ul.nav-justified {
-  border: 1px solid red;
+  border: 1px solid #e6e6e6;
 }
 .secondtabs .container ul.nav-justified li:not(:last-child):not(:first-child) {
   width: 195px;
@@ -580,7 +585,7 @@ img {
   width: 194px;
 }
 .secondtabs .container ul.nav-justified li:not(:last-child) {
-  border-right: 1px solid green;
+  border-right: 1px solid #e6e6e6;
 }
 .secondtabs .container ul.nav-justified li.active {
   background: #08c;
@@ -618,6 +623,181 @@ img {
 .secondtabs .slick-dots li button::before {
   font-size: 60px;
   color: #08c;
+}
+
+.fromourblog {
+  padding: 50px 0;
+}
+.fromourblog .container h3 {
+  font-weight: bold;
+}
+.fromourblog .container hr {
+  margin-top: 0;
+  border-top: 1px solid gray;
+}
+.fromourblog .container .postwrapper .col-md-4 .comment {
+  padding-top: 5px;
+}
+.fromourblog .container .postwrapper .col-md-4 .comment a {
+  color: gray;
+}
+.fromourblog .container .postwrapper .col-md-4 .comment a:first-child {
+  margin-right: 40px;
+}
+.fromourblog .container .postwrapper .col-md-4 .comment svg {
+  margin-right: 10px;
+}
+.fromourblog .container .postwrapper .col-md-4 h3 {
+  font-size: 20px;
+  height: 44px;
+}
+.fromourblog .container .postwrapper .col-md-4 a {
+  display: inline-block;
+  color: #08c;
+  margin-top: 10px;
+}
+
+.footer .support {
+  background: #fafafa;
+}
+.footer .support .container .supportelement {
+  float: left;
+  width: 20%;
+}
+.footer .support .container .supportelement img {
+  padding: 20px;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.footer .support .container .supportelement img:hover {
+  opacity: 1;
+}
+.footer .newslatter {
+  background: #08c;
+  padding: 50px 0;
+}
+.footer .newslatter .container {
+  position: relative;
+  height: 100px;
+}
+.footer .newslatter .container .col-md-7,
+.footer .newslatter .container .col-md-5 {
+  padding: 0;
+}
+.footer .newslatter .container .col-md-7 {
+  line-height: 100px;
+}
+.footer .newslatter .container .col-md-7 h2, .footer .newslatter .container .col-md-7 h3 {
+  color: white;
+  display: inline-block;
+}
+.footer .newslatter .container .col-md-7 h2 {
+  padding-right: 13px;
+}
+.footer .newslatter .container .col-md-7 h3 {
+  padding-left: 13px;
+  border-left: 1px solid white;
+}
+.footer .newslatter .container .col-md-5 {
+  padding-top: 25px;
+}
+.footer .newslatter .container .col-md-5 button {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: #005580;
+  border: 1px solid #005580;
+  color: white;
+}
+.footer .newslatter .container .col-md-5 input {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.footer .newslatter .container::before {
+  content: "";
+  background: url("images/env-icon.png");
+  position: absolute;
+  top: -60px;
+  left: 25%;
+  height: 216px;
+  width: 302px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footer .navbar .container {
+  border-bottom: 1px solid #e6e6e6;
+}
+.footer .navbar .container a {
+  color: gray;
+}
+.footer .navbar .container a:hover {
+  background: none;
+}
+.footer .megafooter .container {
+  padding: 50px 0;
+}
+.footer .megafooter .container .col-md-3 li {
+  padding-bottom: 5px;
+}
+.footer .megafooter .container .col-md-3 li:first-child {
+  padding-bottom: 15px;
+}
+.footer .megafooter .container .col-md-3 li a.socialmedia {
+  font-size: 16px;
+  margin-right: 15px;
+  transition: 0.6s;
+}
+.footer .megafooter .container .col-md-3 li a:not(.socialmedia) {
+  transition: 0.3s;
+}
+.footer .megafooter .container .col-md-3 li a:not(.socialmedia):hover {
+  padding-left: 10px;
+  color: black;
+}
+.footer .copyright {
+  background: #fafafa;
+}
+.footer .copyright .container h5 {
+  font-size: 16px;
+  padding: 15px 0;
+}
+.footer .copyright .container span {
+  color: #08c;
+}
+.footer .copyright .container img {
+  padding-top: 15px;
+  width: auto;
+  height: auto;
+}
+
+.gotop {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: 2px solid #9a9a9a;
+  border-radius: 100%;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  opacity: 0.7;
+  text-align: center;
+  transition: 0.6s;
+}
+.gotop:hover {
+  opacity: 1;
+  background: #9a9a9a;
+}
+.gotop:hover .fa-chevron-up {
+  color: white;
+}
+.gotop .fa-chevron-up {
+  color: #9a9a9a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=style.css.map */
