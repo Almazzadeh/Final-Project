@@ -232,12 +232,22 @@ img {
   border-bottom-right-radius: 30px;
 }
 .header .input-group .btn-default:last-child {
+  background: #e6e6e6;
   border-radius: 100%;
   position: absolute;
-  top: 0;
-  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 40px;
+  right: 10px;
   z-index: 9;
   outline: none;
+}
+.header .input-group .btn-default:last-child svg {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
 }
 .header .shoppingbag {
   position: relative;
@@ -798,6 +808,69 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.breadcrumbwrapper .breadcrumb {
+  margin: 0;
+  background: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.iphone {
+  padding: 50px 0;
+}
+.iphone .container {
+  position: relative;
+  height: 500px;
+}
+.iphone .container .aboutaddstext {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+.iphone .container .aboutaddstext h1, .iphone .container .aboutaddstext h3 {
+  margin: 0;
+}
+.iphone .container .aboutaddstext h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+.iphone .container .aboutaddstext h3 {
+  color: gray;
+}
+.iphone .container .aboutaddstext .btn {
+  margin-top: 30px;
+  background: #08c;
+  border-radius: 30px;
+  transition: 0.6s;
+}
+.iphone .container .aboutaddstext .btn:hover {
+  background: #333;
+}
+
+.progressbarwrapper {
+  padding: 50px 0;
+}
+.progressbarwrapper .row {
+  margin: 0;
+}
+.progressbarwrapper .col-md-2 p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.progressbarwrapper .progressbar {
+  margin-top: 10px;
+}
+
+.ourteam {
+  padding: 50px 0;
+}
+.ourteam .col-md-3 {
+  padding: 15px;
+}
+.ourteam .col-md-3 .memberphoto {
+  height: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */

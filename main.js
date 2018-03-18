@@ -57,4 +57,41 @@ $(function () {
         $('html, body').animate({ scrollTop: 0 }, 800);
         return false;
     });
+
+    // PROGRESS BAR SECTION
+    $('#photoshop').LineProgressbar({
+        percentage: 90,
+        duration: 1500,
+        fillBackgroundColor: '#08c',
+        backgroundColor: '#e6e6e6',
+        radius: '20px',
+        height: '15px',
+    })
+
+    $('#uidesign').LineProgressbar({
+        percentage: 70,
+        duration: 1500,
+        fillBackgroundColor: '#08c',
+        backgroundColor: '#e6e6e6',
+        radius: '20px',
+        height: '15px',
+    })
+
+    $('#layoutframe').LineProgressbar({
+        percentage: 80,
+        duration: 1500,
+        fillBackgroundColor: '#08c',
+        backgroundColor: '#e6e6e6',
+        radius: '20px',
+        height: '15px',
+    })
+
+    $('#typography').LineProgressbar({
+        percentage: 80,
+        duration: 1500,
+        fillBackgroundColor: '#08c',
+        backgroundColor: '#e6e6e6',
+        radius: '20px',
+        height: '15px',
+    })
 })
