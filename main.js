@@ -27,6 +27,12 @@ $(function () {
         infinite: true
     })
 
+    $("#recentlyproducts").slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: true
+    })
+
     $("#tv").slick({
         slidesToShow: 5,
         slidesToScroll: 2,
@@ -94,4 +100,14 @@ $(function () {
         radius: '20px',
         height: '15px',
     })
+
+    $("#range").ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: 0,
+        max: 1000,
+        from: 300,
+        to: 700,
+        prefix: "$"
+    });
 })

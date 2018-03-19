@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="Slick/slick.css">
     <link rel="stylesheet" href="Slick/slick-theme.css">
     <link rel="stylesheet" href="ProgressBar/jquery.lineProgressbar.css">
+    <link rel="stylesheet" href="Range/normalize.css">
+    <link rel="stylesheet" href="Range/ion.rangeSlider.css">
+    <link rel="stylesheet" href="Range/ion.rangeSlider.skinHTML5.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -399,13 +402,13 @@
 
                             <ul class="pagesblogsubmenucontent zindex">
                                 <li>
-                                    <a href="#">About</a>
+                                    <a href="about.html">About</a>
                                 </li>
                                 <li>
                                     <a href="authentication.html">Login Form</a>
                                 </li>
                                 <li>
-                                    <a href="product3.html">Product 3 Columns</a>
+                                    <a href="#">Product 3 Columns</a>
                                 </li>
                                 <li>
                                     <a href="#">Product 4 Columns</a>
@@ -629,141 +632,779 @@
                 <li>
                     <a href="index.html">Home</a>
                 </li>
-                <li class="active">About Us</li>
+                <li class="active">Cell Phones & Accessories</li>
             </ol>
         </div>
     </div>
     <!-- BREADCRUMB END HERE -->
-    <!-- BACKGROUND DIV START HERE -->
-    <div class="iphone">
+    <!-- PRODUCT 3 COLUMN START HERE -->
+    <div class="product3wrapper">
         <div class="container">
-            <div class="aboutaddstext">
-                <h1>SmartTech</h1>
-                <h3>Digital & Electronic PSD Template!</h3>
-                <a href="#" class="btn btn-primary btn-lg">Shop with Us</a>
+            <!-- SIDE MENU START HERE -->
+            <div class="col-md-3">
+                <!-- CATEGORIES SECTION -->
+                <div class="categorieswrapper">
+                    <h3>Categories</h3>
+                    <div class="checkboxwrapper">
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="cate1">
+                                <label for="cate1">Home Audio & Theater</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate2">
+                                <label for="cate2">TV & Video</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate3">
+                                <label for="cate3">Camera, Photo & Accessories</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate4">
+                                <label for="cate4">Headphones</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate5">
+                                <label for="cate5">Video Games</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate6">
+                                <label for="cate6">Bluetooth & Wireless Speakers</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate7">
+                                <label for="cate7">Gaming Console</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate8">
+                                <label for="cate8">Computers & Tablets</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate9">
+                                <label for="cate9">Monitors</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate10">
+                                <label for="cate10">Home Appliances</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="cate11">
+                                <label for="cate11">Office Supplies</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRICE SECTION -->
+                <div class="pricewrapper">
+                    <h3>Price</h3>
+                    <input type="text" id="range">
+                    <a href="#" class="btn btn-primary">Filter</a>
+                </div>
+
+                <!-- FEATURED BRANDS SECTION -->
+                <div class="featuredbrands">
+                    <h3>Featured Brands</h3>
+                    <div class="checkboxwrapper">
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="brandcate1">
+                                <label for="brandcate1">Apple
+                                    <span>(217)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate2">
+                                <label for="brandcate2">Acer
+                                    <span>(79)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate3">
+                                <label for="brandcate3">Asus
+                                    <span>(283)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate4">
+                                <label for="brandcate4">Samsung
+                                    <span>(116)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate5">
+                                <label for="brandcate5">LG
+                                    <span>(29)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate6">
+                                <label for="brandcate6">Electrolux
+                                    <span>(179)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate7">
+                                <label for="brandcate7">Toshiba
+                                    <span>(38)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate8">
+                                <label for="brandcate8">Sharp
+                                    <span>(205)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate9">
+                                <label for="brandcate9">Sony
+                                    <span>(35)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate10">
+                                <label for="brandcate10">HTC
+                                    <span>(59)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate11">
+                                <label for="brandcate11">Lenovo
+                                    <span>(68)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate11">
+                                <label for="brandcate11">Sanyo
+                                    <span>(19)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- STARS SECTION -->
+                <div class="starswrapper">
+                    <h3>Stars</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-star goldstar goldstar"></i>
+                            <i class="fas fa-star goldstar goldstar"></i>
+                            <i class="fas fa-star goldstar goldstar"></i>
+                            <i class="fas fa-star goldstar goldstar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <span>(216)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-star goldstar"></i>
+                            <i class="fas fa-star goldstar"></i>
+                            <i class="fas fa-star goldstar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <span>(216)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-star goldstar"></i>
+                            <i class="fas fa-star goldstar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <span>(216)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-star goldstar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <i class="far fa-star graystar"></i>
+                            <span>(216)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SIZE SECTION -->
+                <div class="sizewrapper">
+                    <h3>Sizes</h3>
+                    <a href="#">S</a>
+                    <a href="#">M</a>
+                    <a href="#">L</a>
+                    <a href="#">XL</a>
+                </div>
+
+                <!-- COLOR SECTION -->
+                <div class="colorwrapper">
+                    <h3>Color</h3>
+                    <div class="checkboxwrapper">
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="brandcate1">
+                                <label for="brandcate1">Red</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate2">
+                                <label for="brandcate2">Yellow</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate3">
+                                <label for="brandcate3">Brown</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate4">
+                                <label for="brandcate4">Black</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate5">
+                                <label for="brandcate5">Blue</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate6">
+                                <label for="brandcate6">Gray</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate7">
+                                <label for="brandcate7">Pink</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate8">
+                                <label for="brandcate8">White</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandcate9">
+                                <label for="brandcate9">Green</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <img src="images/about-adds.jpg" alt="">
+            <!-- SIDE MENU END HERE -->
+            <!-- PRODUCTS START HERE -->
+            <div class="col-md-9">
+                <h2>Cell Phones & Accessories</h2>
+                <!-- FILTER SECTION -->
+                <div class="filterwrapper">
+                    <p>Showing 1–12 of 756 results</p>
+                    <select>
+                        <option value="show12">Show 12</option>
+                        <option value="show24">Show 24</option>
+                        <option value="show32">Show 32</option>
+                    </select>
+                    <select>
+                        <option value="defaultsort">Sort by Default</option>
+                        <option value="lowsort">Low to High</option>
+                        <option value="highsort">High to Low</option>
+                    </select>
+                    <div class="sortview">
+                        <i class="fas fa-th-list"></i>
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <select>
+                        <option value="column3">3 Columns</option>
+                        <option value="column4">4 Columns</option>
+                        <option value="column5">5 Columns</option>
+                    </select>
+                </div>
+                <!-- PRODUCT SECTION -->
+                <div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <img src="images/item-img-1-11.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Home Audio & Theater</p>
+                            <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$650.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="images/item-img-1-8.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>22 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <img src="images/item-img-1-9.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Watch</p>
+                            <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="images/item-img-1-6.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <img src="images/item-img-1-4.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Headphones</p>
+                            <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>12 Review(s)</span>
+                            </div>
+                            <p class="productprice">$800.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <img src="images/item-img-1-3.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Phone</p>
+                            <p class="productname">Apple Iphone 5S White</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$650.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="images/item-img-1-1.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">Apple Laptop i7</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>16 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <img src="images/item-img-1-2.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Camera</p>
+                            <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="images/item-img-1-5.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="images/item-img-1-16.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Ninebot Mini Pro White</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="images/item-img-1-14.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">65" KS9000 Curved SUHD Quantum Dot Ultra TV</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>22 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-3">
+                            <div class="productimg">
+                                <img src="images/item-img-1-15.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Headphones</p>
+                            <p class="productname">B&O PLAY Inspiration</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>12 Review(s)</span>
+                            </div>
+                            <p class="productprice">$500.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PAGINATION SECTION -->
+                <div class="paginationwrapper">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <i class="fas fa-chevron-left fa-xs"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <i class="fas fa-chevron-right fa-xs"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- PRODUCTS END HERE -->
         </div>
     </div>
-    <!-- BACKGROUND DIV END HERE -->
-    <!-- 4 DIVS START HERE -->
-    <div class="fourdivs">
+    <!-- PRODUCT 3 COLUMN END HERE -->
+    <!-- PRODUCT CAROUSEL START HERE -->
+    <div class="productcarousel">
         <div class="container">
-            <div class="col-md-3">
-                <div class="col-md-3 icon">
-                    <i class="fas fa-2x fa-shipping-fast"></i>
-                </div>
-                <div class="col-md-9">
-                    <h4>Free Shipping</h4>
-                    <h5>On order over $99</h5>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-3 icon">
-                    <i class="fas fa-2x fa-undo-alt"></i>
-                </div>
-                <div class="col-md-9">
-                    <h4>Money Return</h4>
-                    <h5>30 Days oney return</h5>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-3 icon">
-                    <i class="far fa-2x fa-user"></i>
-                </div>
-                <div class="col-md-9">
-                    <h4>Support 24/7</h4>
-                    <h5>Hotline: (+100) 123 456 7890</h5>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-3 icon">
-                    <i class="far fa-2x fa-credit-card"></i>
-                </div>
-                <div class="col-md-9">
-                    <h4>Safe Payment</h4>
-                    <h5>Protect online payment</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 4 DIVS END HERE -->
-    <!-- PROGRESS BAR START HERE -->
-    <div class="progressbarwrapper">
-        <div class="container">
-            <h3>Our Awesome Skills</h3>
+            <h3>Your Recently Viewed Items</h3>
             <hr>
-            <div class="row">
-                <div class="col-md-2">
-                    <p>Adobe Photoshop</p>
+            <!-- RECENTLY VIEWED ITEMS CAROUSEL -->
+            <div id="recentlyproducts">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                    <div id="photoshop"></div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <p>UI Design</p>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                    <div id="uidesign"></div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <p>Layout Frame</p>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                    <div id="layoutframe"></div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="images/item-img-1-3.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Phone</p>
+                    <p class="productname">Apple Iphone 5S White</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <p>Typography</p>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="images/item-img-1-1.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple Laptop i7</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>16 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                    <div id="typography"></div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="images/item-img-1-2.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Camera</p>
+                    <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="images/item-img-1-5.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- PROGRESS BAR END HERE -->
-    <!-- MEET OUR TEAM START HERE -->
-    <div class="ourteam">
-        <div class="container">
-            <h3>Meet Our Team</h3>
-            <hr>
-            <div class="col-md-3">
-                <div class="memberphoto">
-                    <img src="images/team-img-1.jpg" alt="">
-                </div>
-                <h4>Van Gogh</h4>
-                <h5>Ceo/Founder SmartTech</h5>
-            </div>
-            <div class="col-md-3">
-                <div class="memberphoto">
-                    <img src="images/team-img-2.jpg" alt="">
-                </div>
-                <h4>Frida Kahlo</h4>
-                <h5>Ceo/Founder SmartTech</h5>
-            </div>
-            <div class="col-md-3">
-                <div class="memberphoto">
-                    <img src="images/team-img-3.jpg" alt="">
-                </div>
-                <h4>Salvador Dali</h4>
-                <h5>Ceo/Founder SmartTech</h5>
-            </div>
-            <div class="col-md-3">
-                <div class="memberphoto">
-                    <img src="images/team-img-4.jpg" alt="">
-                </div>
-                <h4>Edvard Munch</h4>
-                <h5>Ceo/Founder SmartTech</h5>
-            </div>
-        </div>
-    </div>
-    <!-- MEET OUR TEAM END HERE -->
+    <!-- PRODUCT CAROUSEL END HERE -->
     <!-- FOOTER START HERE -->
     <div class="footer">
         <!-- SUPPORT SECTION START HERE -->
@@ -1017,6 +1658,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="ProgressBar/jquery.lineProgressbar.js"></script>
     <script src="Slick/slick.js"></script>
+    <script src="Range/ion.rangeSlider.js"></script>
     <script src="main.js"></script>
 </body>
 

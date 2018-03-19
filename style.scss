@@ -118,8 +118,10 @@ img{
     }
 }
 
-// ****** PRODUCT *******
-.product{
+// ****** PRODUCTS *******
+
+// ****** 5 PRODUCTS IN A ROW
+.product-5{
     position: relative;
     float: left;
     width: 220px;
@@ -225,6 +227,111 @@ img{
         clear: both;
     }
 }
+
+// ****** 3 PRODUCTS IN A ROW
+.product-3{
+    height: 400px;
+    position: relative;
+    border: 1px solid $mainGray;
+    padding: 15px;
+    margin-bottom: 30px;
+    
+    p{
+        margin-bottom: 6px;
+    }
+    
+    .productimg{
+        position: relative;
+        height: 240px;
+
+        span{
+            position: absolute;
+            color: white;
+            padding: 7px 11px;
+            font-weight: bold;
+
+            &.discount{
+                background: red;
+            }
+
+            &.new{
+                background: $mainColor;
+            }
+        }
+    }
+
+    .productcategory{
+        color: gray;
+    }
+
+    .productname{
+        color: $mainColor;
+        font-size: 16px;
+        height: 45px;
+    }
+
+    .stars{
+        .fa-star{
+            color: gold;
+        }
+        span{
+            margin-left: 8px;
+            color: red;
+        }
+    }
+
+    .productprice,
+    .oldprice{
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;        
+    }
+
+    .productprice{
+        font-weight: bold;
+    }
+
+    .oldprice{
+        color: darken($mainGray, 15%);
+        margin-left: 10px;
+        text-decoration: line-through;
+    }
+
+    .buyproduct{
+        position: absolute;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        bottom: 5px;
+        right: 5px;
+        background: $mainGray;
+        border-radius: 100%;
+        transition: 0.6s;
+
+        .fa-shopping-cart{
+            color: gray;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover{
+            background: $mainColor;
+
+            .fa-shopping-cart{
+                color: white;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
 
 // WELCOME PART START HERE
 .welcome{
@@ -537,6 +644,7 @@ img{
                         a{
                             margin-left: 15px;
                             font-size: 15px;
+                            height: 100%;
                         }
                     }
                 }
@@ -1137,4 +1245,159 @@ img{
     }
 }
 // MEET OUR TEAM END HERE
+
+// *******>>>>>> AUTHENTICATION PAGE START HERE <<<<<<<*************
+.authentication{
+    padding: $mainPadding;
+    
+    .col-md-5{
+        h3{
+            margin-bottom: 30px;
+        }
+
+        .form-group{
+            margin: 20px 0;
+        }
+
+        .form-check{
+            display: inline-block;
+        }
+
+        a{
+            text-decoration-line: underline !important;
+        }
+
+        button{
+            margin-top: 20px;
+            display: block;
+            border-radius: 30px;
+            background: $mainColor;
+            outline: none !important;
+            border: none;
+        }
+    }
+}
+
+// *******>>>>>> PRODUCT 3 COLUMN PAGE START HERE <<<<<<<*************
+.product3wrapper{
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    // SIDEBAR START HERE
+    .col-md-3{
+        h3{
+            margin-bottom: 20px;
+        }
+
+        label{
+            font-weight: normal;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .featuredbrands span,
+        .starswrapper span{
+            color: gray;
+            margin-left: 10px;
+            font-size: 13px;
+        }
+
+        .categorieswrapper,
+        .pricewrapper,
+        .featuredbrands,
+        .starswrapper,
+        .sizewrapper{
+            margin-bottom: 50px;
+        }
+
+        .pricewrapper{
+            .irs-line,
+            .irs-bar{
+                height: 6px;
+            }
+        
+            .irs-slider{
+                width: 20px;
+                height: 20px;
+            }
+
+            .btn{
+                background: $mainColor;
+                border: none;
+                border-radius: 30px;
+            }
+        }
+        
+        .starswrapper{
+            .goldstar{
+                color: gold;
+            }
+
+            .graystar{
+                color: gray;
+            }
+
+        }
+
+        .sizewrapper{
+            a{
+                font-size: 16px;
+                font-weight: bold;
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                display: inline-block;
+                text-align: center;
+                line-height: 40px;
+                border: 1px solid $mainGray;
+                margin-right: 15px;
+                transition: 0.6s;
+
+                &:hover{
+                    background: $mainColor;
+                    color: white;
+                }
+            }
+        }
+    }
+    
+    .col-md-9{
+        .filterwrapper{
+            margin: 15px 0;
+            font-size: 16px;
+
+            p{
+                display: inline-block;
+                margin-right: 15px;                    
+            }
+
+            select{
+                outline: none;
+                padding-left: 15px;
+                margin-right: 15px;   
+                border: none;
+                border-left: 1px solid $mainGray;
+            }
+
+            .sortview{
+                display: inline-block;
+                padding: 0 15px;
+                border-left: 1px solid $mainGray;
+            }
+        }
+
+        nav{
+            margin-left: 15px;
+        }
+    }
+}
+
+.productcarousel{
+    padding: $mainPadding;
+    
+    h3{
+        font-weight: bold;
+    }
+}
+
 
