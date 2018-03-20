@@ -2,6 +2,7 @@ $mainColor: #08c;
 $DarkBlue: #0077b2;
 $mainPadding: 50px 0;
 $mainGray: #e6e6e6;
+$transition: 0.6s;
 
 %dropmenu{
     display: none;    
@@ -143,7 +144,7 @@ img{
         span{
             position: absolute;
             color: white;
-            padding: 7px 11px;
+            padding: 5px 10px;
             font-weight: bold;
 
             &.discount{
@@ -202,14 +203,113 @@ img{
         right: 5px;
         background: $mainGray;
         border-radius: 100%;
-        transition: 0.6s;
+        transition: $transition;
 
         .fa-shopping-cart{
             color: gray;
+            @extend %center;
+        }
+
+        &:hover{
+            background: $mainColor;
+
+            .fa-shopping-cart{
+                color: white;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// ****** 4 PRODUCTS IN A ROW
+.product-4{
+    height: 320px;
+    position: relative;
+    border: 1px solid $mainGray;
+    padding: 15px;
+    margin-bottom: 10px;
+    
+    p{
+        margin-bottom: 6px;
+    }
+    
+    .productimg{
+        position: relative;
+        height: 170px;
+
+        span{
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+
+            &.discount{
+                background: red;
+            }
+
+            &.new{
+                background: $mainColor;
+            }
+        }
+    }
+
+    .productcategory{
+        color: gray;
+    }
+
+    .productname{
+        color: $mainColor;
+        font-size: 15px;
+        height: 45px;
+    }
+
+    .stars{
+        .fa-star{
+            color: gold;
+        }
+        span{
+            margin-left: 8px;
+            color: red;
+            font-size: 12px;
+        }
+    }
+
+    .productprice,
+    .oldprice{
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;        
+    }
+
+    .productprice{
+        font-weight: bold;
+    }
+
+    .oldprice{
+        color: darken($mainGray, 15%);
+        margin-left: 5px;
+        text-decoration: line-through;
+    }
+
+    .buyproduct{
+        position: absolute;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        bottom: 3px;
+        right: 3px;
+        background: $mainGray;
+        border-radius: 100%;
+        transition: $transition;
+
+        .fa-shopping-cart{
+            color: gray;
+            @extend %center;
         }
 
         &:hover{
@@ -234,7 +334,7 @@ img{
     position: relative;
     border: 1px solid $mainGray;
     padding: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     
     p{
         margin-bottom: 6px;
@@ -247,7 +347,7 @@ img{
         span{
             position: absolute;
             color: white;
-            padding: 7px 11px;
+            padding: 5px 10px;
             font-weight: bold;
 
             &.discount{
@@ -306,14 +406,11 @@ img{
         right: 5px;
         background: $mainGray;
         border-radius: 100%;
-        transition: 0.6s;
+        transition: $transition;
 
         .fa-shopping-cart{
             color: gray;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            @extend %center;
         }
 
         &:hover{
@@ -332,6 +429,185 @@ img{
     }
 }
 
+// ****** PRODUCT LIST
+.productlist{
+    background: white;
+    border: 1px solid $mainGray;
+    padding: 7px;
+    height: 270px;
+    margin-bottom: 15px;
+
+    .col-md-3,
+    .col-md-4,
+    .col-md-5{
+        height: 100%;
+    }
+
+    .col-md-4{
+        padding: 0 !important;
+    }
+
+    .col-md-5{
+        padding: 5px;
+        border-right: 1px solid $mainGray;
+
+        h4{
+            color: $mainColor;
+            height: 38px;
+        }
+
+        .stars{
+            svg{
+                color: gold;
+            }
+    
+            span{
+                color: red;
+                margin-left: 15px;
+            }
+        }
+
+        .productdetails{
+            ul{
+                margin-top: 10px;
+
+                li::before{
+                    content: "•";
+                    color: darken($mainGray, 15%);
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+
+    .col-md-3{
+        .center{
+            text-align: center;
+            @extend %center;
+
+            h4{
+                font-weight: bold;
+            }
+
+            span{
+                color: green;
+            }
+
+            .btn{
+                background: $mainColor;
+                border-radius: 30px;
+                border: none;
+            }
+        }
+
+        .addfavorite{
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .svgwrapper{
+                cursor: pointer;                
+                position: relative;
+                color: darken($mainGray, 20%);
+                border: 1px solid $mainGray;
+                border-radius: 100%;
+                height: 30px;
+                width: 30px;
+                margin-bottom: 7px;
+                transition: $transition;
+
+                svg{
+                    @extend %center;
+                }
+
+                &:hover{
+                    border: 1px solid $mainColor;
+                    background: $mainColor;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+// ******* SIDEBAR START HERE
+.sidebar{
+    h3{
+        margin-bottom: 20px;
+    }
+
+    label{
+        font-weight: normal;
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    .featuredbrands span,
+    .starswrapper span{
+        color: gray;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .categorieswrapper,
+    .pricewrapper,
+    .featuredbrands,
+    .starswrapper,
+    .sizewrapper{
+        margin-bottom: 50px;
+    }
+
+    .pricewrapper{
+        .irs-line,
+        .irs-bar{
+            height: 6px;
+        }
+        
+        .irs-slider{
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn{
+            background: $mainColor;
+            border: none;
+            border-radius: 30px;
+        }
+    }
+        
+    .starswrapper{
+        .goldstar{
+            color: gold;
+        }
+
+        .graystar{
+            color: gray;
+        }
+
+    }
+
+    .sizewrapper{
+        a{
+            font-size: 16px;
+            font-weight: bold;
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid $mainGray;
+            margin-right: 15px;
+            transition: $transition;
+
+            &:hover{
+                background: $mainColor;
+                color: white;
+            }
+        }
+    }
+}
 
 // WELCOME PART START HERE
 .welcome{
@@ -385,10 +661,7 @@ img{
             outline: none;
 
             svg{
-                position: absolute;
-                top: 50%;
-                height: 50%;
-                transform: translate(-50%, -50%);
+                @extend %center;
             }
         }
     }
@@ -984,7 +1257,7 @@ img{
                 img{
                     padding: 20px;
                     opacity: 0.7;
-                    transition: 0.5s;
+                    transition: $transition;
 
                     &:hover{
                         opacity: 1;
@@ -1090,7 +1363,7 @@ img{
                     a.socialmedia{
                         font-size: 16px;
                         margin-right: 15px;
-                        transition: 0.6s;
+                        transition: $transition;
                     }
 
                     a:not(.socialmedia){
@@ -1144,7 +1417,7 @@ img{
     z-index: 5;
     opacity: 0.7;
     text-align: center;
-    transition: 0.6s;
+    transition: $transition;
     &:hover{
         opacity: 1;
         background: darken($mainGray, 30%);
@@ -1155,10 +1428,7 @@ img{
     }
     .fa-chevron-up{
         color: darken($mainGray, 30%);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @extend %center;
     }
 }
 // ****** GO TOP END HERE
@@ -1202,7 +1472,7 @@ img{
                 margin-top: 30px;
                 background: $mainColor;
                 border-radius: 30px;
-                transition: 0.6s;
+                transition: $transition;
 
                 &:hover{
                     background: #333;
@@ -1278,93 +1548,16 @@ img{
     }
 }
 
-// *******>>>>>> PRODUCT 3 COLUMN PAGE START HERE <<<<<<<*************
-.product3wrapper{
+// *******>>>>>> PRODUCT *3*-*4*-*list* COLUMN PAGE START HERE <<<<<<<*************
+.productwrapper{
     padding-top: 30px;
     padding-bottom: 50px;
-
-    // SIDEBAR START HERE
-    .col-md-3{
-        h3{
-            margin-bottom: 20px;
-        }
-
-        label{
-            font-weight: normal;
-            margin-left: 10px;
-            font-size: 16px;
-        }
-
-        .featuredbrands span,
-        .starswrapper span{
-            color: gray;
-            margin-left: 10px;
-            font-size: 13px;
-        }
-
-        .categorieswrapper,
-        .pricewrapper,
-        .featuredbrands,
-        .starswrapper,
-        .sizewrapper{
-            margin-bottom: 50px;
-        }
-
-        .pricewrapper{
-            .irs-line,
-            .irs-bar{
-                height: 6px;
-            }
-        
-            .irs-slider{
-                width: 20px;
-                height: 20px;
-            }
-
-            .btn{
-                background: $mainColor;
-                border: none;
-                border-radius: 30px;
-            }
-        }
-        
-        .starswrapper{
-            .goldstar{
-                color: gold;
-            }
-
-            .graystar{
-                color: gray;
-            }
-
-        }
-
-        .sizewrapper{
-            a{
-                font-size: 16px;
-                font-weight: bold;
-                height: 40px;
-                width: 40px;
-                border-radius: 100%;
-                display: inline-block;
-                text-align: center;
-                line-height: 40px;
-                border: 1px solid $mainGray;
-                margin-right: 15px;
-                transition: 0.6s;
-
-                &:hover{
-                    background: $mainColor;
-                    color: white;
-                }
-            }
-        }
-    }
     
     .col-md-9{
         .filterwrapper{
-            margin: 15px 0;
             font-size: 16px;
+            margin-top: 15px;
+            margin-bottom: 30px;
 
             p{
                 display: inline-block;
@@ -1383,11 +1576,30 @@ img{
                 display: inline-block;
                 padding: 0 15px;
                 border-left: 1px solid $mainGray;
+
+                svg:last-child{
+                    margin-left: 8px;
+                    color: $mainColor;
+                }
+            }
+
+            .listview{
+                svg:first-child{
+                    color: $mainColor;
+                }
+
+                svg:last-child{
+                    color: black;
+                }
             }
         }
 
-        nav{
-            margin-left: 15px;
+        .col-md-4{
+            padding: 0 10px;
+        }
+
+        .col-md-3{
+            padding: 0 5px;
         }
     }
 }
@@ -1399,5 +1611,7 @@ img{
         font-weight: bold;
     }
 }
+
+// *******>>>>>> PRODUCT 4 COLUMN PAGE START HERE <<<<<<<*************
 
 
