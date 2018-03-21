@@ -393,10 +393,10 @@ img {
   color: red;
   margin-left: 15px;
 }
-.productlist .col-md-5 .productdetails ul {
+.productlist .col-md-5 .productcomponents ul {
   margin-top: 10px;
 }
-.productlist .col-md-5 .productdetails ul li::before {
+.productlist .col-md-5 .productcomponents ul li::before {
   content: "•";
   color: silver;
   padding-right: 10px;
@@ -435,6 +435,110 @@ img {
   border: 1px solid #08c;
   background: #08c;
   color: white;
+}
+
+.productdetails .slider-nav {
+  margin-top: 10px;
+}
+.productdetails .slider-nav img {
+  margin-right: 15px;
+}
+.productdetails .productcategory {
+  color: gray;
+}
+.productdetails .productname {
+  height: 38px;
+}
+.productdetails .stars {
+  padding-bottom: 15px;
+}
+.productdetails .stars svg {
+  color: gold;
+}
+.productdetails .stars span {
+  color: gray;
+  margin-left: 25px;
+}
+.productdetails .priceandavailability * {
+  display: inline-block;
+}
+.productdetails .priceandavailability h4 {
+  font-weight: bold;
+  color: red;
+}
+.productdetails .priceandavailability h5 span {
+  color: green;
+}
+.productdetails .productcomponents ul {
+  margin: 20px 0;
+}
+.productdetails .productcomponents ul li {
+  font-size: 16px;
+}
+.productdetails .productcomponents ul li::before {
+  content: "•";
+  color: silver;
+  padding-right: 10px;
+}
+.productdetails .colorandsize * {
+  display: inline-block;
+}
+.productdetails .colorandsize a {
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.productdetails .colorandsize .color svg {
+  visibility: hidden;
+}
+.productdetails .colorandsize .color a:hover svg {
+  visibility: visible;
+  color: white;
+}
+.productdetails .colorandsize .color .blue {
+  background: #068bcd;
+}
+.productdetails .colorandsize .color .gold {
+  background: #d4b174;
+}
+.productdetails .colorandsize .color .black {
+  background: black;
+}
+.productdetails .colorandsize .size a {
+  border: 1px solid lightgray;
+  transition: 0.6s;
+}
+.productdetails .colorandsize .size a:hover {
+  border: 1px solid #08c;
+  background: #08c;
+  color: white;
+}
+.productdetails .productcommands {
+  height: 30px;
+  margin: 20px 0;
+}
+.productdetails .productcommands .col-md-4 {
+  padding: 0 !important;
+  text-align: center;
+}
+.productdetails .productcommands .col-md-4:nth-child(2) {
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+.productdetails .productcommands .col-md-4 a {
+  color: gray;
+}
+.productdetails .productcount * {
+  border-radius: 30px;
+}
+.productdetails .productcount input {
+  height: 46px;
+  outline: none;
+  padding-left: 5px;
+  margin-right: 15px;
+  border: 1px solid lightgray;
 }
 
 .sidebar h3 {
@@ -486,7 +590,7 @@ img {
   display: inline-block;
   text-align: center;
   line-height: 40px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid lightgray;
   margin-right: 15px;
   transition: 0.6s;
 }
@@ -1226,6 +1330,33 @@ img {
 }
 .productcarousel h3 {
   font-weight: bold;
+}
+
+.reviewandshipping {
+  padding: 50px 0;
+}
+.reviewandshipping .nav-tabs li.active a {
+  border-color: transparent;
+  border-bottom-color: #08c;
+}
+.reviewandshipping .tab-content {
+  margin-top: 30px;
+}
+.reviewandshipping .tab-content li {
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+.reviewandshipping .tab-content li::before {
+  content: "•";
+  color: silver;
+  padding-right: 10px;
+}
+.reviewandshipping .tab-content #prodetails table {
+  margin-top: 20px;
+}
+.reviewandshipping .tab-content #prodetails tbody th:not(:first-child):not(:nth-child(2)) {
+  text-align: center;
+  color: green;
 }
 
 /*# sourceMappingURL=style.css.map */
