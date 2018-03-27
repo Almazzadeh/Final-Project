@@ -33,7 +33,7 @@
   background: #dadada;
 }
 
-.product-5 .buyproduct .fa-shopping-cart, .product-4 .buyproduct .fa-shopping-cart, .product-3 .buyproduct .fa-shopping-cart, .productlist .col-md-3 .center, .productlist .col-md-3 .addfavorite .svgwrapper svg, .header .input-group .btn-default:last-child svg, .header .shoppingbag .bagcircle .fa-shopping-bag,
+.product-5 .buyproduct .fa-shopping-cart, .product-4 .buyproduct .fa-shopping-cart, .product-3 .buyproduct .fa-shopping-cart, .productlist .col-md-3 .center, .productlist .col-md-3 .addfavorite .svgwrapper svg, .blogsidebar .quote .quoteicon svg, .header .input-group .btn-default:last-child svg, .header .shoppingbag .bagcircle .fa-shopping-bag,
 .header .shoppingbag .bagcircle .fa-opencart, .animation .col-md-4 .row .firstrowtext, .animation .col-md-4 .row .secondrowtext, .gotop .fa-chevron-up, .steps .col-md-3 .svgcircle svg, .pagecontrol div, .successfulpage .svgcircle svg {
   position: absolute;
   top: 50%;
@@ -597,6 +597,62 @@ img {
 }
 .sidebar .sizewrapper a:hover {
   background: #08c;
+  color: white;
+}
+
+.blogsidebar .input-group,
+.blogsidebar .categorieswrapper,
+.blogsidebar .recentpost {
+  margin-bottom: 40px;
+}
+.blogsidebar h4 {
+  font-weight: bold;
+}
+.blogsidebar label {
+  font-weight: normal;
+  margin-left: 10px;
+  font-size: 16px;
+}
+.blogsidebar .input-group input, .blogsidebar .input-group .btn {
+  height: 40px;
+}
+.blogsidebar .input-group .btn {
+  background: #08c;
+}
+.blogsidebar .blogwrapper {
+  overflow: hidden;
+}
+.blogsidebar .blogwrapper:not(:last-child) {
+  margin-bottom: 20px;
+}
+.blogsidebar .blogwrapper .col-md-4 {
+  padding: 0;
+}
+.blogsidebar .blogwrapper h5 {
+  margin-top: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.blogsidebar .blogwrapper span {
+  font-size: 12px;
+  color: gray;
+}
+.blogsidebar .blogwrapper span:nth-child(2) {
+  padding-right: 5px;
+  border-right: 1px solid lightgray;
+}
+.blogsidebar .blogwrapper span:last-child {
+  padding-left: 5px;
+}
+.blogsidebar .quote .quoteicon {
+  position: relative;
+  height: 34px;
+  width: 34px;
+  border-radius: 100%;
+  background: #08c;
+  margin-bottom: 10px;
+}
+.blogsidebar .quote .quoteicon svg {
   color: white;
 }
 
@@ -1603,7 +1659,6 @@ img {
   border: 1px solid transparent;
   border-radius: 20px;
   color: white;
-  background: green;
   transition: 0.6s;
 }
 .pagecontrol div .prevpage:hover,
@@ -1729,6 +1784,157 @@ img {
 }
 .contact .container .contacttext .col-md-3 p {
   font-size: 15px;
+}
+
+.blogpage {
+  padding: 50px 0;
+}
+.blogpage .col-md-9 {
+  padding-left: 0;
+}
+.blogpage .col-md-9 section {
+  overflow: hidden;
+  padding-bottom: 30px;
+  border-bottom: 1px solid lightgray;
+}
+.blogpage .col-md-9 section:not(:first-child) {
+  padding-top: 30px;
+}
+.blogpage .col-md-9 section .col-md-6 {
+  height: 300px;
+}
+.blogpage .col-md-9 section .col-md-6:first-child {
+  padding: 0;
+}
+.blogpage .col-md-9 section .col-md-6:last-child {
+  padding: 25px 0 0 15px;
+}
+.blogpage .col-md-9 section .col-md-6:last-child span {
+  color: gray;
+  margin-right: 25px;
+}
+.blogpage .col-md-9 section .col-md-6:last-child span svg {
+  color: lightgray;
+  margin-right: 5px;
+}
+.blogpage .col-md-9 section .col-md-6:last-child h4 {
+  font-weight: bold;
+  margin: 15px 0;
+}
+.blogpage .col-md-9 section .col-md-6:last-child a {
+  margin-top: 15px;
+  display: inline-block;
+  color: #08c;
+}
+
+.blogsinglepage {
+  padding: 50px 0;
+  overflow: hidden;
+}
+.blogsinglepage .col-md-9 {
+  padding-left: 0;
+}
+.blogsinglepage .col-md-9 > .col-md-12 {
+  height: 440px;
+  padding-left: 0;
+}
+.blogsinglepage .col-md-9 .spanwrapper {
+  padding-top: 10px;
+}
+.blogsinglepage .col-md-9 .spanwrapper span {
+  display: inline-block;
+  color: gray;
+}
+.blogsinglepage .col-md-9 .spanwrapper span:not(.author) {
+  margin-right: 18px;
+}
+.blogsinglepage .col-md-9 .spanwrapper span.author {
+  font-weight: bold;
+}
+.blogsinglepage .col-md-9 .spanwrapper span svg {
+  margin-right: 3px;
+}
+.blogsinglepage .col-md-9 .blogcontent {
+  padding-bottom: 40px;
+}
+.blogsinglepage .col-md-9 .blogcontent p {
+  font-size: 15px;
+}
+.blogsinglepage .col-md-9 .blogcontent h4 {
+  margin: 35px 0;
+  margin-left: 70px;
+  font-style: oblique;
+}
+.blogsinglepage .col-md-9 .commentwrapper {
+  padding: 50px 0;
+  overflow: hidden;
+  border: 1px solid lightgray;
+  border-style: solid hidden;
+}
+.blogsinglepage .col-md-9 .commentwrapper h4 {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.blogsinglepage .col-md-9 .commentwrapper div {
+  padding-left: 0;
+}
+.blogsinglepage .col-md-9 .commentwrapper .username {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
+}
+.blogsinglepage .col-md-9 .commentwrapper span {
+  color: gray;
+}
+.blogsinglepage .col-md-9 .commentwrapper span svg {
+  margin-right: 8px;
+}
+.blogsinglepage .col-md-9 .commentwrapper p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: black;
+}
+.blogsinglepage .col-md-9 .leavecomment {
+  padding-top: 50px;
+}
+.blogsinglepage .col-md-9 .leavecomment div {
+  padding-left: 0;
+}
+.blogsinglepage .col-md-9 .leavecomment h4 {
+  font-weight: bold;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+.blogsinglepage .col-md-9 .leavecomment label {
+  display: block;
+  font-weight: normal;
+  font-size: 16px;
+}
+.blogsinglepage .col-md-9 .leavecomment input, .blogsinglepage .col-md-9 .leavecomment textarea {
+  border: 1px solid lightgray;
+  outline: none;
+  border-radius: 5px;
+}
+.blogsinglepage .col-md-9 .leavecomment input {
+  height: 40px;
+  width: 98%;
+}
+.blogsinglepage .col-md-9 .leavecomment .col-md-12 {
+  margin: 20px 0;
+}
+.blogsinglepage .col-md-9 .leavecomment .col-md-12 textarea {
+  resize: none;
+  width: 99%;
+}
+.blogsinglepage .col-md-9 .leavecomment .btn {
+  background: #08c;
+  border: none;
+  border-radius: 30px;
+  transition: 0.6s;
+}
+.blogsinglepage .col-md-9 .leavecomment .btn:hover {
+  background: #333;
 }
 
 /*# sourceMappingURL=style.css.map */
