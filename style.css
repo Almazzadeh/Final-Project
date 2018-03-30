@@ -670,6 +670,10 @@ img {
 .header {
   padding-top: 50px;
 }
+.header .col-md-6 {
+  padding-top: 10px;
+  padding-left: 90px;
+}
 .header .input-group {
   position: relative;
 }
@@ -682,6 +686,9 @@ img {
 .header .input-group .form-control:not(:first-child):not(:last-child) {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+.header .input-group input {
+  padding-right: 50px;
 }
 .header .input-group .btn-default:last-child {
   background: #e6e6e6;
@@ -1855,7 +1862,7 @@ img {
   margin-right: 3px;
 }
 .blogsinglepage .col-md-9 .blogcontent {
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 .blogsinglepage .col-md-9 .blogcontent p {
   font-size: 15px;

@@ -864,6 +864,11 @@ img{
 .header{
     padding-top: 50px;
 
+    .col-md-6{
+        padding-top: 10px;
+        padding-left: 90px;
+    }
+
     .input-group{
         position: relative;
 
@@ -876,6 +881,10 @@ img{
         .form-control:not(:first-child):not(:last-child){
             border-top-right-radius: 30px;
             border-bottom-right-radius: 30px;        
+        }
+
+        input{
+            padding-right: 50px;
         }
 
         .btn-default:last-child{
@@ -2452,7 +2461,7 @@ img{
         }
 
         .blogcontent{
-            padding-bottom: 40px;
+            padding-bottom: 50px;
 
             p{
                 font-size: 15px;
