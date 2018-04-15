@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Authentication - Smart Tech";
+}
+
+<!-- BREADCRUMB START HERE -->
+<div class="breadcrumbwrapper">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index")">Home</a>
+            </li>
+            <li class="active">Authentication</li>
+        </ol>
+    </div>
+</div>
+<!-- BREADCRUMB END HERE -->
+<!-- AUTHENTICATION START HERE -->
+<div class="authentication">
+    <div class="container">
+        <div class="col-md-5">
+            <h3>Login Your Account</h3>
+            <form>
+                <div class="form-group">
+                    <label for="loginusername">Username</label>
+                    <input type="text" class="form-control" id="loginusername">
+                </div>
+                <div class="form-group">
+                    <label for="loginpassword">Password</label>
+                    <input type="password" class="form-control" id="loginpassword">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberme">
+                    <label for="rememberme">Keep me logged in</label>
+                </div>
+                <a href="#" class="pull-right">Forgot your password?</a>
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-5 col-md-offset-2">
+            <h3>Don't have an Account? Register now</h3>
+            <form>
+                <div class="form-group">
+                    <label for="registerusername">Username</label>
+                    <input type="text" class="form-control" id="registerusername">
+                </div>
+                <div class="form-group">
+                    <label for="registeremail">Email</label>
+                    <input type="email" class="form-control" id="registeremail">
+                </div>
+                <div class="form-group">
+                    <label for="registerpassword">Password</label>
+                    <input type="password" class="form-control" id="registerpassword">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- AUTHENTICATION END HERE -->

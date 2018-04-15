@@ -1,0 +1,907 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/Public/images/icon.png">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="~/Public/animate.css">
+    <link rel="stylesheet" href="~/Public/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Public/imageslidermaker/ism/css/my-slider.css" />
+    <script src="~/Public/imageslidermaker/ism/js/ism-2.2.min.js"></script>
+    <link rel="stylesheet" href="~/Public/Slick/slick.css">
+    <link rel="stylesheet" href="~/Public/Slick/slick-theme.css">
+    <link rel="stylesheet" href="~/Public/ProgressBar/jquery.lineProgressbar.css">
+    <link rel="stylesheet" href="~/Public/Range/normalize.css">
+    <link rel="stylesheet" href="~/Public/Range/ion.rangeSlider.css">
+    <link rel="stylesheet" href="~/Public/Range/ion.rangeSlider.skinHTML5.css">
+    <link rel="stylesheet" href="~/Public/style.css">
+</head>
+<body>
+    <!-- WELCOME PART START -->
+    <div class="welcome">
+        <div class="container">
+            <div class="col-md-4">
+                <p>Welcome to SmartTech Center!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="navbarwrapper">
+                    <ul class="navbar-nav">
+                        <li class="navbar-item">
+                            <a href="#" class="nav-link">Login/Register</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="nav-link">Store Location</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="nav-link">FAQ</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#" class="nav-link">Newsletter</a>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Language
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">English</a>
+                                </li>
+                                <li>
+                                    <a href="#">Russian</a>
+                                </li>
+                                <li>
+                                    <a href="#">French</a>
+                                </li>
+                                <li>
+                                    <a href="#">German</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Currency
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">
+                                        USD
+                                        <i class="pull-right fas fa-dollar-sign"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        EUR
+                                        <i class="pull-right fas fa-euro-sign"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        GBP
+                                        <i class="pull-right fas fa-pound-sign"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        TL
+                                        <i class="pull-right fas fa-lira-sign"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="socialmedia">
+                        <a href="https://facebook.com">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://dribbble.com/">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="https://www.pinterest.com/">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WELCOME PART END -->
+    <!-- HEADER START HERE -->
+    <div class="header">
+        <!-- BRAND -- SEARCH -- SHOPPING CART -->
+        <div class="container">
+            <div class="row">
+                <!-- BRAND -->
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index")">
+                        <img src="~/Public/images/logo.png" alt="">
+                    </a>
+                </div>
+                <!-- SEO -->
+                <div class="col-md-6">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Choose Category
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">All Categories</a>
+                                </li>
+                                <li>
+                                    <a href="#">Home Audio & Theater</a>
+                                </li>
+                                <li>
+                                    <a href="#">TV & Video</a>
+                                </li>
+                                <li>
+                                    <a href="#">Camera, Photo & Video</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cell Phones & Accessories</a>
+                                </li>
+                                <li>
+                                    <a href="#">Headphones</a>
+                                </li>
+                                <li>
+                                    <a href="#">Video Games</a>
+                                </li>
+                                <li>
+                                    <a href="#">Bluetooth & Wireless</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gaming Console</a>
+                                </li>
+                                <li>
+                                    <a href="#">Computers & Tablets</a>
+                                </li>
+                                <li>
+                                    <a href="#">Monitors</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /btn-group -->
+                        <input type="text" class="form-control" placeholder="Search entire store here..." aria-label="...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fab fa-sistrix"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <!-- SHOPPING BAG -->
+                <div class="col-md-3 shoppingbag">
+                    <div class="pull-right">
+                        <div class="bagcircle">
+                            <i class="fab fa-opencart" data-fa-transform="grow-8"></i>
+                            <span>3</span>
+                        </div>
+                        <div class="bagcontent">
+                            <h4>My Card</h4>
+                            <h5>3 item(s) - $500.00</h5>
+                        </div>
+
+                        <!-- SHOW ACCESSORIES IN CARD -->
+                        <div class="mycard">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img class="img-thumbnail" src="~/Public/images/item-img-1-2.jpg" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Funda Para Ebook 7" 128GB full HD </p>
+                                    <p>250 x 1</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img class="img-thumbnail" src="~/Public/images/item-img-1-8.jpg" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Funda Para Ebook 7" 128GB full HD </p>
+                                    <p>250 x 1</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="#" class="btn btn-primary btn-lg">View Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- THE BLUE SECTION OF THE HEADER -->
+        <div class="row bluesection">
+            <div class="container">
+                <div class="navbarwrapper">
+                    <ul class="navbar-nav">
+                        <!-- OUR CATEGORIES PART START HERE -->
+                        <li class="navbar-item ourcategories blueHover">
+                            <a href="#" class="nav-link withouthover">
+                                <i class="fas fa-list-ul"></i> Our Categories
+                            </a>
+                            <div class="ourcategoriesdrop zindex">
+                                <ul>
+                                    <li>
+                                        <a href="#">Home Audio & Theater</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">TV & Video</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Camera, Photo & Video</a>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="#">
+                                            Cell Phones & Accessories
+                                            <i class="pull-right fas fa-chevron-right" data-fa-transform="shrink-3"></i>
+                                        </a>
+
+                                        <ul class="ourcategoriessubmenucontent">
+                                            <li>
+                                                <a href="#">TV & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Camera, Photo & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="">Cell Phones & Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Headphones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Video Games</a>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="#">
+                                            Bluetooth & Wireless
+                                            <i class="pull-right fas fa-chevron-right" data-fa-transform="shrink-3"></i>
+                                        </a>
+
+                                        <ul class="ourcategoriessubmenucontent">
+                                            <li>
+                                                <a href="#">TV & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Camera, Photo & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="">Cell Phones & Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="#">
+                                            Gaming Console
+                                            <i class="pull-right fas fa-chevron-right" data-fa-transform="shrink-3"></i>
+                                        </a>
+
+                                        <ul class="ourcategoriessubmenucontent">
+                                            <li>
+                                                <a href="#">TV & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Camera, Photo & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="">Cell Phones & Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Computers & Tablets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Monitors</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Home Appliances</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Office Supplies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- OUR CATEGORIES PART END HERE -->
+                        <!-- HOME VERSIONS START HERE -->
+                        <li class="navbar-item submenuHover blueHover">
+                            <a href="#" class="nav-link">
+                                Home
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+
+                            <div class="homemegadropdown zindex">
+                                <a href="@Url.Action("Index")">
+                                    <div class="col-md-2 col-md-offset-1">
+                                        <img src="~/Public/images/home-1.jpg" alt="">
+                                        <h4>Home Version 1</h4>
+                                    </div>
+                                </a>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-2.jpg" alt="">
+                                    <h4>Home Version 2</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-3.jpg" alt="">
+                                    <h4>Home Version 3</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-4.jpg" alt="">
+                                    <h4>Home Version 4</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-5.jpg" alt="">
+                                    <h4>Home Version 5</h4>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <img src="~/Public/images/home-6.jpg" alt="">
+                                    <h4>Home Version 6</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-7.jpg" alt="">
+                                    <h4>Home Version 7</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-8.jpg" alt="">
+                                    <h4>Home Version 8</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-9.jpg" alt="">
+                                    <h4>Home Version 9</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-10.jpg" alt="">
+                                    <h4>Home Version 10</h4>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <img src="~/Public/images/home-11.jpg" alt="">
+                                    <h4>Home Version 11</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-12.jpg" alt="">
+                                    <h4>Home Version 12</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-13.jpg" alt="">
+                                    <h4>Home Version 13</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-14.jpg" alt="">
+                                    <h4>Home Version 14</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-15.jpg" alt="">
+                                    <h4>Home Version 15</h4>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <img src="~/Public/images/home-16.jpg" alt="">
+                                    <h4>Home Version 16</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="~/Public/images/home-17.jpg" alt="">
+                                    <h4>Home Version 17</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- HOME VERSION END HERE -->
+                        <!-- PAGES START HERE -->
+                        <li class="navbar-item submenu blueHover">
+                            <a href="#" class="nav-link">
+                                Pages
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+
+                            <ul class="pagesblogsubmenucontent zindex">
+                                <li>
+                                    <a href="@Url.Action("About")">About</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Authentication")">Login Form</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Product3")">Product 3 Columns</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Product4")">Product 4 Columns</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ProductList")">List Products</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ProductDetails")">Product Details</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ShoppingCart")">Shopping Cart</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PaymentMethods")">Payment Methods</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("DeliveryMethods")">Delivery Methods</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Confirmation")">Confirmation</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Successful")">Checkout Successful</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Error")">Error 404</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Contact")">Contact</a>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#">Dropdown Level</a>
+
+                                    <ul class="levelcontent">
+                                        <li>
+                                            <a href="#">Level 1</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- PAGES END HERE -->
+                        <!-- MEGA MENU START HERE -->
+                        <li class="navbar-item submenuHover blueHover">
+                            <a href="#" class="nav-link">
+                                Mega Menu
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+
+                            <div class="megamenudropdown zindex">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="navbar-nav">
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Cell Phones & Accessories</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Carrier Phones</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Unlocked Phones</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Prime Exclusive Phones</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Accessories</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Cases</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Best Sellers</a>
+                                                </li>
+                                                <li class="navbar-item">
+                                                    <a href="#" class="nav-link">Deals</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <a href="#" class="allelectronics">All Electronics</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <ul class="electronics">
+                                                <li class="listheader">
+                                                    <a href="#">Electronics</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Cell Phones & Accessories</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Carrier Phones</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Unlocked Phones</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Prime Exclusive Phones</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Accessories</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Cases</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Best Sellers</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Deals</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">All Electronics</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li class="listheader">
+                                                    <a href="#">Computers</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Computers & Tablets</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Monitors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Laptops & Tablets</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Networking</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Drives & Storage</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Computer Parts & Components</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Printers & Ink</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Office & School Supplies</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li class="listheader">
+                                                    <a href="#">Home Appliances</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Refrigerators</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Wall Ovens</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Cooktops & Hoods</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Microwaves</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Dish washers</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Washers</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Printers & Ink</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="~/Public/images/navi-img.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- MEGA MENU END HERE -->
+                        <!-- BLOG START HERE -->
+                        <li class="navbar-item submenu blueHover">
+                            <a href="#" class="nav-link">
+                                Blog
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+
+                            <ul class="pagesblogsubmenucontent zindex">
+                                <li>
+                                    <a href="@Url.Action("Blog")">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("BlogSingle")">Blog Single</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- BLOG END HERE -->
+                        <li class="navbar-item blueHover">
+                            <a href="" class="nav-link">Buy theme!</a>
+                        </li>
+                        <li class="pull-right navbar-item blueHover">
+                            <a href="" class="withouthover nav-link">
+                                <i class="fas fa-phone" data-fa-transform="flip-h shrink-4"></i> Hotline: (+100) 123 456 7890
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- HEADER END HERE -->
+
+    @RenderBody()
+
+    <!-- FOOTER START HERE -->
+    <div class="footer">
+        <!-- SUPPORT SECTION START HERE -->
+        <div class="support">
+            <div class="container">
+                <div class="supportelement">
+                    <img src="~/Public/images/c-img-1.png" alt="">
+                </div>
+                <div class="supportelement">
+                    <img src="~/Public/images/c-img-2.png" alt="">
+                </div>
+                <div class="supportelement">
+                    <img src="~/Public/images/c-img-3.png" alt="">
+                </div>
+                <div class="supportelement">
+                    <img src="~/Public/images/c-img-4.png" alt="">
+                </div>
+                <div class="supportelement">
+                    <img src="~/Public/images/c-img-5.png" alt="">
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- SUPPORT SECTION END HERE -->
+        <!-- NEWSLATTER SECTION START HERE -->
+        <div class="newslatter">
+            <div class="container">
+                <div class="col-md-7">
+                    <h2>Subscribe our Newsletter</h2>
+                    <h3>Get 25% Off first purchase!</h3>
+                </div>
+                <div class="col-md-5">
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="Your email address here...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Subscribe!</button>
+                        </span>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+            </div>
+        </div>
+        <!-- NEWSLATTER SECTION END HERE -->
+        <!-- NAVBAR SECTION START HERE -->
+        <div class="navbar">
+            <div class="container">
+                <ul class="nav nav-justified">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Customer Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Site Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Search Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Advanced Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Orders & Returns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- NAVBAR SECTION END HERE -->
+        <!-- MEGA FOOTER SECTION START HERE -->
+        <div class="megafooter">
+            <div class="container">
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <h3>Contact SmartTech!</h3>
+                        </li>
+                        <li>
+                            <h5>Address: 45 Grand Central Terminal New York, NY 1017 United State USA</h5>
+                        </li>
+                        <li>
+                            <h5>Phone: (+100) 123 456 7890</h5>
+                        </li>
+                        <li>
+                            <h5>Email: Support@smarttech.com</h5>
+                        </li>
+                        <li>
+                            <a class="socialmedia" href="http://facebook.com">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="socialmedia" href="http://twitter.com">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="socialmedia" href="https://www.linkedin.com/">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="socialmedia" href="https://www.pinterest.com/">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                            <a class="socialmedia" href="https://www.instagram.com/">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="socialmedia" href="https://www.gmail.com">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <h3>Categories</h3>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Home Audio & Theater</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">TV & Video</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Camera, Photo & Video</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Cell Phones & Accessories</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Headphones</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Video Games</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Bluetooth & Wireless</a>
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <h3>Customer Services</h3>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Shipping Returns</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Secure Shopping</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">International Shipping</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Affiliates</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Contact</a>
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul>
+                        <li>
+                            <h3>Information</h3>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Our Blog</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">About Our Shop</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Secure Shopping</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Delivery Information</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">Store Locations</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="#">FAQs</a>
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- MEGA FOOTER SECTION END HERE -->
+        <!-- COPYRIGHT SECTION START HERE -->
+        <div class="copyright">
+            <div class="container">
+                <div class="col-md-6">
+                    <h5>
+                        Copyright © 2017
+                        <span>SmartTech</span> HTML5 template. All rights reserved
+                    </h5>
+                </div>
+                <div class="col-md-6">
+                    <img class="pull-right" src="~/Public/images/card-icon.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- COPYRIGHT SECTION END HERE -->
+    </div>
+    <!-- FOOTER END HERE -->
+
+    <!-- GO TOP START HERE-->
+    <div class="gotop">
+        <a href="#">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- GO TOP END HERE-->
+    <script src="~/Public/jquery-3.2.1.min.js"></script>
+    <script src="~/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Public/ProgressBar/jquery.lineProgressbar.js"></script>
+    <script src="~/Public/Slick/slick.js"></script>
+    <script src="~/Public/Range/ion.rangeSlider.js"></script>
+    <script src="~/Public/main.js"></script>
+</body>
+</html>

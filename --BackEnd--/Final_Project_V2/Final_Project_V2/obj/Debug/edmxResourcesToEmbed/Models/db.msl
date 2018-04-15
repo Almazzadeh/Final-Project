@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Final_ProjectModelStoreContainer" CdmEntityContainer="Final_ProjectEntities">
+    <EntitySetMapping Name="Animation">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Animation">
+        <MappingFragment StoreEntitySet="Animation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Top_Text" ColumnName="Top_Text" />
+          <ScalarProperty Name="Middle_Text" ColumnName="Middle_Text" />
+          <ScalarProperty Name="Bottom_Text" ColumnName="Bottom_Text" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnimationSide">
+      <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSide">
+        <MappingFragment StoreEntitySet="AnimationSide">
+          <ScalarProperty Name="SecondRow_TopTextSpan" ColumnName="SecondRow_TopTextSpan" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstRow_Background" ColumnName="FirstRow_Background" />
+          <ScalarProperty Name="FirstRow_TopText" ColumnName="FirstRow_TopText" />
+          <ScalarProperty Name="FirstRow_MiddleText" ColumnName="FirstRow_MiddleText" />
+          <ScalarProperty Name="FirstRow_BottomText" ColumnName="FirstRow_BottomText" />
+          <ScalarProperty Name="SecondRow_Background" ColumnName="SecondRow_Background" />
+          <ScalarProperty Name="SecondRow_TopText" ColumnName="SecondRow_TopText" />
+          <ScalarProperty Name="SecondRow_MiddleText" ColumnName="SecondRow_MiddleText" />
+          <ScalarProperty Name="SecondRow_Button" ColumnName="SecondRow_Button" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FourDiv">
+      <EntityTypeMapping TypeName="Final_ProjectModel.FourDiv">
+        <MappingFragment StoreEntitySet="FourDiv">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Final_ProjectModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Color">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MobileOperator">
+      <EntityTypeMapping TypeName="Final_ProjectModel.MobileOperator">
+        <MappingFragment StoreEntitySet="MobileOperator">
+          <ScalarProperty Name="C4GData" ColumnName="4GData" />
+          <ScalarProperty Name="C3GData" ColumnName="3GData" />
+          <ScalarProperty Name="C2GData" ColumnName="2GData" />
+          <ScalarProperty Name="Voice2" ColumnName="Voice2" />
+          <ScalarProperty Name="Voice1" ColumnName="Voice1" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Details_5" ColumnName="Details_5" />
+          <ScalarProperty Name="Details_4" ColumnName="Details_4" />
+          <ScalarProperty Name="Details_3" ColumnName="Details_3" />
+          <ScalarProperty Name="Details_2" ColumnName="Details_2" />
+          <ScalarProperty Name="Details_1" ColumnName="Details_1" />
+          <ScalarProperty Name="Top_Selling_Week" ColumnName="Top_Selling_Week" />
+          <ScalarProperty Name="Onsale" ColumnName="Onsale" />
+          <ScalarProperty Name="Special" ColumnName="Special" />
+          <ScalarProperty Name="Featured" ColumnName="Featured" />
+          <ScalarProperty Name="Size_Id" ColumnName="Size_Id" />
+          <ScalarProperty Name="Color_Id" ColumnName="Color_Id" />
+          <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="New" ColumnName="New" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Review_Count" ColumnName="Review_Count" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Size">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Size">
+        <MappingFragment StoreEntitySet="Size">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipping">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Shipping">
+        <MappingFragment StoreEntitySet="Shipping">
+          <ScalarProperty Name="Tracking_Information" ColumnName="Tracking_Information" />
+          <ScalarProperty Name="Delivery_Time" ColumnName="Delivery_Time" />
+          <ScalarProperty Name="Shipping_Cost" ColumnName="Shipping_Cost" />
+          <ScalarProperty Name="Shipping_Company" ColumnName="Shipping_Company" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AboutWallpaper">
+      <EntityTypeMapping TypeName="Final_ProjectModel.AboutWallpaper">
+        <MappingFragment StoreEntitySet="AboutWallpaper">
+          <ScalarProperty Name="Button" ColumnName="Button" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OurTeam">
+      <EntityTypeMapping TypeName="Final_ProjectModel.OurTeam">
+        <MappingFragment StoreEntitySet="OurTeam">
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="StrongText" ColumnName="StrongText" />
+          <ScalarProperty Name="Paragraph_1" ColumnName="Paragraph_1" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

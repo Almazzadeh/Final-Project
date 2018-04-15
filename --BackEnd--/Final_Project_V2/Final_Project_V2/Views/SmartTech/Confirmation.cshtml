@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "Confirmation - Smart Tech";
+}
+
+<!-- STEPS START HERE -->
+<div class="steps">
+    <div class="container">
+        <!-- STEP 1 - SHOPPING CART -->
+        <div class="col-md-3">
+            <a href="@Url.Action("ShoppingCart")">
+                <div class="svgcircle done">
+                    <i class="fas fa-cart-arrow-down"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 1</p>
+                    <h4>Shopping Cart</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 2 - PAYMENT METHODS -->
+        <div class="col-md-3">
+            <a href="@Url.Action("PaymentMethods")">
+                <div class="svgcircle done">
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 2</p>
+                    <h4>Payment Methods</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 3 - DELIVERY METHODS -->
+        <div class="col-md-3">
+            <a href="@Url.Action("DeliveryMethods")">
+                <div class="svgcircle done">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 3</p>
+                    <h4>Delivery Methods</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 4 - CONFIRMATION -->
+        <div class="col-md-3">
+            <a href="@Url.Action("Confirmation")">
+                <div class="svgcircle active">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 4</p>
+                    <h4>Confirmation</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!-- STEPS END HERE -->
+<!-- CONFIRMATION PAGE START HERE -->
+<div class="confirmationpage">
+    <div class="container">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th colspan="5">Shopping Cart</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="largecolumn">E-book Reader Lector De Libros Digitales 7''</th>
+                    <th>$200.00</th>
+                    <th>02 Items</th>
+                    <th>$400.00</th>
+                </tr>
+                <tr>
+                    <th class="largecolumn">Portero Visor Timbre Camara Ip Wifi lunax 2.7</th>
+                    <th>$100.00</th>
+                    <th>01 Items</th>
+                    <th>$100.00</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th colspan="5">Payment Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="largecolumn">
+                        <img src="~/Public/images/visa-card.jpg" alt=""> Visa Credit Card
+                    </th>
+
+                    <th>Card number: XXX-XXX-XXX-6886</th>
+                </tr>
+                <!-- <tr>
+                    <th colspan="3">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</th>
+                    <th>Lorem, ipsum.</th>
+                    <th>Lorem, ipsum dolor.</th>
+                </tr> -->
+            </tbody>
+        </table>
+
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th colspan="5">Delivery Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="equalcolumns">
+                    <th>
+                        <p>Name</p>
+                        Alex Adkins
+                        <p>City</p>
+                        Washington
+                    </th>
+                    <th>
+                        <p>Phone</p>
+                        (+100) 987 654 3210
+                        <p>State</p>
+                        Washington
+                    </th>
+                    <th>
+                        <p>Country</p>
+                        USA
+                        <p>Zip Code</p>
+                        01234
+                    </th>
+                    <th>
+                        <p>Email</p>
+                        Alexadkins@gmail.com
+                        <p>Address</p>
+                        569 Lexington Ave, New York, NY
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">Expert Delivery</th>
+                    <th>24-48 hours</th>
+                    <th>
+                        <span>+$25</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="5">
+                        Total Price:
+                        <span>$525.00</span>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- CONFIRMATION PAGE END HERE -->
+<!-- PAGE CONTROLS START HERE -->
+<div class="pagecontrol">
+    <div>
+        <a href="@Url.Action("DeliveryMethods")" class="prevpage">Back to Delivery</a>
+        <a href="@Url.Action("Successful")" class="nextpage">Proceed to Checkout</a>
+    </div>
+</div>
+<!-- PAGE CONTROLS END HERE -->

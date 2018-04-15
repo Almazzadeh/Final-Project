@@ -1,0 +1,79 @@
+﻿@model Final_Project_V2.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Public/images/@Model.Image" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Header)
+        </dd>
+
+        <dt>
+            Content
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paragraph_1)
+        </dd>
+
+        <dt>
+            Quote
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StrongText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+            @if (Model.Status == true)
+            {
+                <dd>Visible</dd>
+            }
+            else
+            {
+                <dd>Hidden</dd>
+            }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

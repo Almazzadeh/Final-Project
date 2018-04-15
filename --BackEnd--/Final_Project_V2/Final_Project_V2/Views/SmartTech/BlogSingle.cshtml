@@ -1,0 +1,93 @@
+﻿@using Final_Project_V2.Models;
+
+@{
+    ViewBag.Title = "Blog Single - Smart Tech";
+}
+
+
+<!-- BREADCRUMB START HERE -->
+<div class="breadcrumbwrapper">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index")">Home</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Blog")">Blog</a>
+            </li>
+            <li class="active">@ViewBag.BlogSingle.Header</li>
+        </ol>
+    </div>
+</div>
+<!-- BREADCRUMB END HERE -->
+<!-- BLOG PAGE START HERE -->
+<div class="blogsinglepage">
+    <div class="container">
+        <!-- BLOG POSTS START HERE -->
+        <div class="col-md-9">
+            <div class="col-md-12">
+                <img src="~/Public/images/@ViewBag.BlogSingle.Image" alt="">
+            </div>
+            <div class="clear"></div>
+            <div class="spanwrapper">
+                <span>
+                    By:
+                    <span class="author">@ViewBag.BlogSingle.Author</span>
+                </span>
+                <span>
+                    <i class="far fa-bookmark"></i> @ViewBag.BlogSingle.Date</span>
+                <span>
+                    <i class="far fa-comment"></i> 86 Comments
+                </span>
+            </div>
+            <div class="blogcontent">
+                <h2>@ViewBag.BlogSingle.Header</h2>
+                <p>@ViewBag.BlogSingle.Paragraph_1.Substring(0, 250)</p>
+                <h4>
+                    @ViewBag.BlogSingle.StrongText
+                </h4>
+                <p>@ViewBag.BlogSingle.Paragraph_1.Substring(200)</p>
+            </div>
+            <div class="commentwrapper">
+                <h4>Comments (01)</h4>
+                <div class="col-md-2">
+                    <img class="img-circle" src="~/Public/images/avatar.jpg" alt="">
+                </div>
+                <div class="col-md-10">
+                    <span class="username">Lucian Black</span>
+                    <span>
+                        <i class="far fa-bookmark"></i> 25 Dec, 2017
+                    </span>
+                    @*<span>*@
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae facere repellendus amet corporis
+                            veniam est sunt obcaecati accusamus fugiat, qui quaerat nulla ex id, ea, nobis soluta distinctio
+                            provident saepe?
+                        </p>
+                </div>
+            </div>
+            <div class="leavecomment">
+                <h4>Leave a Comment</h4>
+                <div class="col-md-6">
+                    <label for="firstname">First Name</label>
+                    <input type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname">Last Name</label>
+                    <input type="text">
+                </div>
+                <div class="col-md-12">
+                    <label for="message">Message</label>
+                    <textarea id="message" cols="30" rows="10"></textarea>
+                </div>
+                <a href="#" class="btn btn-primary btn-lg">Send Message</a>
+            </div>
+        </div>
+        <!-- BLOG POSTS END HERE -->
+        <!-- BLOG SIDEBAR START HERE -->
+        @Html.Partial("BlogSideBar")
+        <!-- BLOG SIDEBAR END HERE -->
+    </div>
+</div>
+<!-- BLOG PAGE END HERE -->
+<div class="clear"></div>

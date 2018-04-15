@@ -1,0 +1,78 @@
+﻿@using Final_Project_V2.Models;
+
+@{
+    ViewBag.Title = "Blog - Smart Tech";
+}
+
+
+<!-- BREADCRUMB START HERE -->
+<div class="breadcrumbwrapper">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index")">Home</a>
+            </li>
+            <li class="active">Blog</li>
+        </ol>
+    </div>
+</div>
+<!-- BREADCRUMB END HERE -->
+<div class="blogpage">
+    <div class="container">
+        <!-- BLOG POSTS START HERE -->
+        <div class="col-md-9">
+            @foreach (Blog bg in ViewBag.Blog)
+             {
+                <section>
+                    <div class="col-md-6">
+                        <img src="~/Public/images/@bg.Image" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <span>
+                            <i class="far fa-bookmark"></i> @bg.Date.ToString()</span>
+                        <span>
+                            <i class="far fa-comment"></i> 86 Comments
+                        </span>
+                        <h4>@bg.Header</h4>
+                        <p>
+                           @bg.Paragraph_1.Substring(0, 190) [....]
+                        </p>
+                        <a href="#">Read more</a>
+                    </div>
+                </section>
+             }
+            <div class="clear"></div>
+            <!-- PAGINATION SECTION -->
+            <div class="paginationwrapper">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <i class="fas fa-chevron-left fa-xs"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <i class="fas fa-chevron-right fa-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- BLOG POSTS END HERE -->
+        <!-- BLOG SIDEBAR START HERE -->
+        @Html.Partial("BlogSideBar")
+    </div>
+</div>
+<!-- BLOG PAGE END HERE -->
+<div class="clear"></div>

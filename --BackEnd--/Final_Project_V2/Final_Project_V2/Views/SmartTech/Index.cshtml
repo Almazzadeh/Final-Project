@@ -1,0 +1,1451 @@
+﻿@using Final_Project_V2.Models;
+
+@{
+    ViewBag.Title = "Home Page - Smart Tech";
+}
+
+<!-- ANIMATION & WEEKLY SALE START HERE -->
+<div class="animation">
+    <div class="container">
+        <div class="col-md-8">
+            <div class="ism-slider" data-transition_type="zoom" data-play_type="loop" data-image_fx="zoomrotate" id="my-slider">
+                <ol>
+                    @foreach (Animation anm in ViewBag.Animation)
+                     {
+                        <li>
+                            <img src="~/Public/images/@anm.Image">
+                            <div class="ism-caption ism-caption-0" data-delay='400'>@anm.Top_Text</div>
+                            <div class="ism-caption ism-caption-1" data-delay='600'>@anm.Middle_Text</div>
+                            <div class="ism-caption ism-caption-2" data-delay='800'>@anm.Bottom_Text <span>@anm.Price</span></div>
+                        </li>
+                     }
+                    
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="firstrowtext">
+                    <h3>@ViewBag.AnimationSide.FirstRow_TopText</h3>
+                    <h2>@ViewBag.AnimationSide.FirstRow_MiddleText</h2>
+                    <h3>@ViewBag.AnimationSide.FirstRow_BottomText</h3>
+                </div>
+                <img src="~/Public/images/@ViewBag.AnimationSide.FirstRow_Background" alt="">
+            </div>
+            <div class="row">
+                <div class="secondrowtext">
+                    <h2>
+                        <span>@ViewBag.AnimationSide.SecondRow_TopTextSpan</span> @ViewBag.AnimationSide.SecondRow_TopText
+                    </h2>
+                    <h4>@ViewBag.AnimationSide.SecondRow_MiddleText</h4>
+                    <a href="#" class="btn btn-primary btn-lg">@ViewBag.AnimationSide.SecondRow_Button</a>
+                </div>
+                <img src="~/Public/images/week-sale-bg.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ANIMATION & WEEKLY SALE END HERE -->
+
+<!-- 4 DIVS START HERE -->
+<div class="fourdivs">
+    <div class="container">
+        @foreach (FourDiv fd in ViewBag.FourDiv)
+         {
+            <div class="col-md-3">
+                <div class="col-md-3 icon">
+                    <i class="fa-2x @fd.Icon"></i>
+                </div>
+                <div class="col-md-9">
+                    <h4>@fd.Header</h4>
+                    <h5>@fd.Content</h5>
+                </div>
+            </div>
+         }
+    </div>
+</div>
+<!-- 4 DIVS END HERE -->
+
+<!-- FIRST TABS START HERE -->
+<div class="tabs">
+    <div class="container">
+        <!-- TABS HEADER -->
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#featured" data-toggle="tab">Featured</a>
+            </li>
+            <li>
+                <a href="#special" data-toggle="tab">Special</a>
+            </li>
+            <li>
+                <a href="#onsale" data-toggle="tab">Onsale</a>
+            </li>
+        </ul>
+        <!-- TABS CONTENT -->
+        <div class="tab-content">
+            <!-- FEATURED -->
+            <div class="tab-pane fade in active" id="featured">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Phone</p>
+                    <p class="productname">Apple Iphone 5S White</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple Laptop i7</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>16 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Camera</p>
+                    <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- SPECIAL -->
+            <div class="tab-pane fade" id="special">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ONSALE -->
+            <div class="tab-pane fade" id="onsale">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Phone</p>
+                    <p class="productname">Apple Iphone 5S White</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple Laptop i7</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>16 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Camera</p>
+                    <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIRST TABS END HERE -->
+
+<!-- TOP SELLING OF THE WEEK START HERE -->
+<div class="topselling">
+    <div class="container">
+        <h3>Top Selling of the Week</h3>
+        <hr>
+        <div class="productwrapper">
+            <div class="watch">
+                <div class="watchtext">
+                    <h3>Smart Watch 2.0</h3>
+                    <h5>Space Gray Aluminum Case with Black/Volt Real Sport Band</h5>
+                    <h5>38mm | 42mm</h5>
+                    <a href="#" class="btn btn-primary btn-lg">View Detail</a>
+                </div>
+                <img src="~/Public/images/watch-bg.jpg" alt="">
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                </div>
+                <p class="productcategory">Home Audio & Theater</p>
+                <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>5 Review(s)</span>
+                </div>
+                <p class="productprice">$650.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <span class="discount">-25%</span>
+                    <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                </div>
+                <p class="productcategory">Laptop</p>
+                <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>22 Review(s)</span>
+                </div>
+                <p class="productprice">$1650.00</p>
+                <p class="oldprice">$2200.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                </div>
+                <p class="productcategory">Watch</p>
+                <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>5 Review(s)</span>
+                </div>
+                <p class="productprice">$350.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <span class="new">NEW</span>
+                    <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                </div>
+                <p class="productcategory">Accessories</p>
+                <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>8 Review(s)</span>
+                </div>
+                <p class="productprice">$350.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                </div>
+                <p class="productcategory">Headphones</p>
+                <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>12 Review(s)</span>
+                </div>
+                <p class="productprice">$800.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                </div>
+                <p class="productcategory">Phone</p>
+                <p class="productname">Apple Iphone 5S White</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>5 Review(s)</span>
+                </div>
+                <p class="productprice">$650.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <span class="discount">-25%</span>
+                    <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                </div>
+                <p class="productcategory">Laptop</p>
+                <p class="productname">Apple Laptop i7</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>16 Review(s)</span>
+                </div>
+                <p class="productprice">$1650.00</p>
+                <p class="oldprice">$2200.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            <div class="product-5">
+                <div class="productimg">
+                    <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                </div>
+                <p class="productcategory">Camera</p>
+                <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>5 Review(s)</span>
+                </div>
+                <p class="productprice">$350.00</p>
+                <div class="buyproduct">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TOP SELLING OF THE WEEK START HERE -->
+
+<!-- SECOND TABS START HERE -->
+<div class="secondtabs">
+    <div class="container">
+        <!-- TABS HEADER -->
+        <ul class="nav nav-justified">
+            <li class="active">
+                <a href="#tv" data-toggle="tab">
+                    <i class="fas fa-2x fa-tv"></i>
+                    <h4>TV & Audios</h4>
+                    <p>236 item(s)</p>
+                </a>
+            </li>
+            <li>
+                <a href="#smartphone" data-toggle="tab">
+                    <i class="fas fa-2x fa-mobile-alt"></i>
+                    <h4>Smartphones</h4>
+                    <p>150 item(s)</p>
+                </a>
+            </li>
+            <li>
+                <a href="#laptop" data-toggle="tab">
+                    <i class="fas fa-2x fa-laptop"></i>
+                    <h4>Desk & Laptop</h4>
+                    <p>268 item(s)</p>
+                </a>
+            </li>
+            <li>
+                <a href="#console" data-toggle="tab">
+                    <i class="fas fa-2x fa-gamepad"></i>
+                    <h4>Game Console</h4>
+                    <p>79 item(s)</p>
+                </a>
+            </li>
+            <li>
+                <a href="#watch" data-toggle="tab">
+                    <i class="far fa-2x fa-clock"></i>
+                    <h4>Watches</h4>
+                    <p>105 item(s)</p>
+                </a>
+            </li>
+            <li>
+                <a href="#accessories" data-toggle="tab">
+                    <i class="fas fa-2x fa-keyboard"></i>
+                    <h4>Accessories</h4>
+                    <p>816 item(s)</p>
+                </a>
+            </li>
+        </ul>
+
+        <!-- TABS CONTENT -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="tv">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Phone</p>
+                    <p class="productname">Apple Iphone 5S White</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple Laptop i7</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>16 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Camera</p>
+                    <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="smartphone">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Phone</p>
+                    <p class="productname">Apple Iphone 5S White</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple Laptop i7</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>16 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Camera</p>
+                    <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="laptop">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-12.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Samsung 48-inch Smart 3D 4K LED TV</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="console">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-14.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">65" KS9000 Curved SUHD Quantum Dot Ultra TV</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="watch">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$800.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="accessories">
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-11.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Home Audio & Theater</p>
+                    <p class="productname">Olufsen BeoPlay A9 Floor Standing Stereo Speaker</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$650.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="discount">-25%</span>
+                        <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Laptop</p>
+                    <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>22 Review(s)</span>
+                    </div>
+                    <p class="productprice">$1650.00</p>
+                    <p class="oldprice">$2200.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Watch</p>
+                    <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>5 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <span class="new">NEW</span>
+                        <img src="~/Public/images/item-img-1-16.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Accessories</p>
+                    <p class="productname">Ninebot Mini Pro White</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>8 Review(s)</span>
+                    </div>
+                    <p class="productprice">$350.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        <img src="~/Public/images/item-img-1-15.jpg" alt="">
+                    </div>
+                    <p class="productcategory">Headphones</p>
+                    <p class="productname">B&O PLAY Inspiration</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>12 Review(s)</span>
+                    </div>
+                    <p class="productprice">$500.00</p>
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SECOND TABS END HERE -->
+
+<!-- FROM OUR BLOG START HERE -->
+<div class="fromourblog">
+    <div class="container">
+        <h3>From our Blog</h3>
+        <hr>
+        <div class="postwrapper">
+            @foreach (Blog bg in ViewBag.Blog)
+             {
+                <div class="col-md-4">
+                    <div class="postpicture">
+                        <img src="~/Public/images/@bg.Image" alt="">
+                    </div>
+                    <div class="comment">
+                        <a href="#">
+                            <i class="far fa-bookmark"></i> @bg.Date</a>
+                        <a href="#">
+                            <i class="far fa-comment"></i> 86 Comments
+                        </a>
+                    </div>
+
+                    <h3>@bg.Header</h3>
+                    <p>@bg.Paragraph_1.Substring(0, 92) [....]</p>
+                    <a href="#">Read More</a>
+                </div>
+             }
+        </div>
+    </div>
+</div>
+<!-- FROM OUR BLOG END HERE -->

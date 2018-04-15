@@ -1,0 +1,226 @@
+﻿@using Final_Project_V2.Models;
+
+@{
+    ViewBag.Title = "Product 4 Columns - Smart Tech";
+}
+
+<!-- BREADCRUMB START HERE -->
+<div class="breadcrumbwrapper">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index")">Home</a>
+            </li>
+            <li class="active">Cell Phones & Accessories</li>
+        </ol>
+    </div>
+</div>
+<!-- BREADCRUMB END HERE -->
+<!-- PRODUCT 3 COLUMN START HERE -->
+<div class="productwrapper">
+    <div class="container">
+        <!-- SIDE MENU START HERE -->
+        @Html.Partial("ProductSideBar")
+        <!-- SIDE MENU END HERE -->
+        <!-- PRODUCTS START HERE -->
+        <div class="col-md-9">
+            <h2>Cell Phones & Accessories</h2>
+            <!-- FILTER SECTION -->
+            <div class="filterwrapper">
+                <p>Showing 1–16 of 756 results</p>
+                <select>
+                    <option value="show16">Show 16</option>
+                    <option value="show24">Show 24</option>
+                    <option value="show32">Show 32</option>
+                </select>
+                <select>
+                    <option value="defaultsort">Sort by Default</option>
+                    <option value="lowsort">Low to High</option>
+                    <option value="highsort">High to Low</option>
+                </select>
+                <div class="sortview">
+                    <i class="fas fa-th-list"></i>
+                    <i class="fas fa-th"></i>
+                </div>
+                <select>
+                    <option value="column3">3 Columns</option>
+                    <option value="column4" selected>4 Columns</option>
+                    <option value="column5">5 Columns</option>
+                </select>
+            </div>
+            <!-- PRODUCT SECTION -->
+            <div class="row">
+                @foreach (Product pr in ViewBag.Product)
+                {
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                @if (pr.Discount != null)
+                                {
+                                    <span class="discount">-@pr.Discount%</span>
+                                }
+                                @if (pr.New == true)
+                                {
+                                    <span class="new">NEW</span>
+                                }
+                                <img src="~/Public/images/@pr.Image" alt="">
+                            </div>
+                            <p class="productcategory">@pr.Category.Name</p>
+                            <p class="productname">@pr.Name</p>
+                            <div class="stars">
+                                @if (pr.Rating == 0)
+                                {
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                }
+                                else if (pr.Rating == 1)
+                                {
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                }
+                                else if (pr.Rating == 2)
+                                {
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                }
+                                else if (pr.Rating == 3)
+                                {
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                }
+                                else if (pr.Rating == 4)
+                                {
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                }
+                                else if (pr.Rating == 5)
+                                {
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                }
+                                <span>@pr.Review_Count Review(s)</span>
+                            </div>
+
+                            @if (pr.Discount != null)
+                             {
+                                @*<p class="productprice">$@pr.Price*((100-@pr.Discount)/100)</p>*@
+
+                                <p class="oldprice">$@pr.Price</p>
+                             }
+                            else
+                            {
+                                <p class="productprice">$@pr.Price</p>
+                            }
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @*<div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>22 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>*@
+
+            </div>
+            <!-- PAGINATION SECTION -->
+            <div class="paginationwrapper">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <i class="fas fa-chevron-left fa-xs"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <i class="fas fa-chevron-right fa-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- PRODUCTS END HERE -->
+    </div>
+</div>
+<!-- PRODUCT 3 COLUMN END HERE -->
+<!-- PRODUCT CAROUSEL START HERE -->
+@Html.Partial("RecentlyViewedProductCarousel")
+<!-- PRODUCT CAROUSEL END HERE -->

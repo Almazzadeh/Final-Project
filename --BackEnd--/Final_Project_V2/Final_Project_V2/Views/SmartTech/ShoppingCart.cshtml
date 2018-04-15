@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Shopping Cart - Smart Tech";
+}
+
+<!-- STEPS START HERE -->
+<div class="steps">
+    <div class="container">
+        <!-- STEP 1 - SHOPPING CART -->
+        <div class="col-md-3">
+            <a href="@Url.Action("ShoppingCart")">
+                <div class="svgcircle active">
+                    <i class="fas fa-cart-arrow-down"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 1</p>
+                    <h4>Shopping Cart</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 2 - PAYMENT METHODS -->
+        <div class="col-md-3">
+            <a href="@Url.Action("PaymentMethods")">
+                <div class="svgcircle">
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 2</p>
+                    <h4>Payment Methods</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 3 - DELIVERY METHODS -->
+        <div class="col-md-3">
+            <a href="@Url.Action("DeliveryMethods")">
+                <div class="svgcircle">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 3</p>
+                    <h4>Delivery Methods</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 4 - CONFIRMATION -->
+        <div class="col-md-3">
+            <a href="@Url.Action("Confirmation")">
+                <div class="svgcircle">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 4</p>
+                    <h4>Confirmation</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!-- STEPS END HERE -->
+<!-- SHOPPING CART PAGE START HERE -->
+<div class="shoppingcartpage">
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <div class="col-md-2">
+                            <img src="~/Public/images/item-img-1-10.jpg" alt="" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-10">
+                            <p>E-book Reader Lector De Libros Digitales 7''</p>
+                        </div>
+                    </th>
+                    <th>
+                        <p>$200.00</p>
+                    </th>
+                    <th>
+                        <input class="quantity" type="number" min="1" value="2">
+                    </th>
+                    <th>
+                        <p>$400.00</p>
+                    </th>
+                    <th>
+                        <a href="#">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col-md-2">
+                            <img src="~/Public/images/item-img-1-13.jpg" alt="" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-10">
+                            <p>E-book Reader Lector De Libros Digitales 7''</p>
+                        </div>
+                    </th>
+                    <th>
+                        <p>$200.00</p>
+                    </th>
+                    <th>
+                        <input class="quantity" type="number" min="1" value="2">
+                    </th>
+                    <th>
+                        <p>$400.00</p>
+                    </th>
+                    <th>
+                        <a href="#">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="5">
+                        <h5>Promotion Code</h5>
+                        <div>
+                            <input type="text" placeholder="Your code here">
+                            <a href="#">
+                                <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                        <h5 class="pull-right">
+                            Grand Total:
+                            <span>$500.00</span>
+                        </h5>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- SHOPPING CART PAGE END HERE -->
+<!-- PAGE CONTROLS START HERE -->
+<div class="pagecontrol">
+    <div>
+        <a href="@Url.Action("Product3")" class="prevpage">Continue Shopping</a>
+        <a href="@Url.Action("PaymentMethods")" class="nextpage">Go Payments Methods</a>
+    </div>
+</div>
+<!-- PAGE CONTROLS END HERE -->

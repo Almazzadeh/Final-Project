@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Payment Methods - Smart Tech";
+}
+
+<!-- STEPS START HERE -->
+<div class="steps">
+    <div class="container">
+        <!-- STEP 1 - SHOPPING CART -->
+        <div class="col-md-3">
+            <a href="@Url.Action("ShoppingCart")">
+                <div class="svgcircle done">
+                    <i class="fas fa-cart-arrow-down"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 1</p>
+                    <h4>Shopping Cart</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 2 - PAYMENT METHODS -->
+        <div class="col-md-3">
+            <a href="@Url.Action("PaymentMethods")">
+                <div class="svgcircle active">
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 2</p>
+                    <h4>Payment Methods</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 3 - DELIVERY METHODS -->
+        <div class="col-md-3">
+            <a href="@Url.Action("DeliveryMethods")">
+                <div class="svgcircle">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 3</p>
+                    <h4>Delivery Methods</h4>
+                </div>
+            </a>
+        </div>
+        <!-- STEP 4 - CONFIRMATION -->
+        <div class="col-md-3">
+            <a href="@Url.Action("Confirmation")">
+                <div class="svgcircle">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="steptext">
+                    <p>Step 4</p>
+                    <h4>Confirmation</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!-- STEPS END HERE -->
+<!-- PAYMENT METHODS PAGE START HERE -->
+<div class="paymentmethodspage">
+    <div class="container">
+        <div class="col-md-6 yourcard">
+            <h3>Your Card</h3>
+            <hr>
+            <div>
+                <img src="~/Public/images/card-icon.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-6 yourinformation">
+            <h3>Your Information</h3>
+            <hr>
+
+            <div class="col-md-6">
+                <label for="cardholdername">Cardholder Name</label>
+                <input type="text" id="cardholdername">
+            </div>
+            <div class="col-md-6">
+                <label for="cardnumber">Card Number</label>
+                <input type="text" id="cardnumber">
+            </div>
+            <div class="col-md-7">
+                <label>Expire Date</label>
+                <select>
+                    <option value="mm" selected>MM</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select class="pull-right">
+                    <option value="yyyy" selected>YYYY</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAYMENT METHODS PAGE END HERE -->
+<!-- PAGE CONTROLS START HERE -->
+<div class="pagecontrol">
+    <div>
+        <a href="@Url.Action("ShoppingCart")" class="prevpage">Back to Shopping Cart</a>
+        <a href="@Url.Action("DeliveryMethods")" class="nextpage">Go to Delivery Methods</a>
+    </div>
+</div>
+<!-- PAGE CONTROLS END HERE -->
