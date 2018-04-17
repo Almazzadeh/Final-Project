@@ -151,7 +151,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnimationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnimationSideBottomController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnimationSideTopController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FourDivController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TopSellingController.cs" />
     <Compile Include="Controllers\SmartTechController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,10 +164,16 @@
     <Compile Include="Models\AboutWallpaper.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Animation.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AnimationSide.cs">
+    <Compile Include="Models\AnimationSideBottom.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnimationSideTop.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Blog.cs">
@@ -211,6 +222,9 @@
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TopSelling.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -355,6 +369,21 @@
     <Content Include="Areas\Admin\Views\Blog\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Blog\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\Animation\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Animation\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Animation\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimationSideTop\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimationSideTop\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimationSideBottom\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimationSideBottom\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FourDiv\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\FourDiv\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\FourDiv\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\FourDiv\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FourDiv\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FourDiv\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\TopSelling\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\TopSelling\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -1,0 +1,48 @@
+﻿@model Final_Project_V2.Models.AnimationSideTop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<div>
+    <h4>Animation Top Side</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Public/images/@Model.Image" alt="Picture not found" />
+        </dd>
+
+        <dt>
+            Top Text
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopText)
+        </dd>
+
+        <dt>
+            Middle Text
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+</p>

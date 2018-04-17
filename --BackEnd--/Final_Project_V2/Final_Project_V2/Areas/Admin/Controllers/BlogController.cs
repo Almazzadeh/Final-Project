@@ -18,7 +18,7 @@ namespace Final_Project_V2.Areas.Admin.Controllers
         // GET: Admin/Blog
         public ActionResult Index()
         {
-            return View(db.Blog.ToList());
+            return View(db.Blog.OrderByDescending(s => s.Date).ToList());
         }
 
         // GET: Admin/Blog/Details/5
@@ -44,16 +44,54 @@ namespace Final_Project_V2.Areas.Admin.Controllers
 
         // POST: Admin/Blog/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Image,Header,Paragraph_1,StrongText,Author,Date,Status")] Blog blog)
+        public ActionResult Create([Bind(Include = "Id,Image,Header,Paragraph_1,StrongText,Author,Date,Status")] Blog blog, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
+                if (Image != null)
+                {
+                    string fileName = null;
+                    string today = DateTime.Now.ToString("yyyy-MM-dd");
+                    if (Image.ContentLength > 0 && Image.ContentLength <= 3 * 1024 * 1024)
+                    {
+                        if (Image.ContentType.ToLower() == "image/jpeg" ||
+                            Image.ContentType.ToLower() == "image/jpg" ||
+                            Image.ContentType.ToLower() == "image/png" ||
+                            Image.ContentType.ToLower() == "image/gif"
+                        )
+                        {
+                            DateTime dt = DateTime.Now;
+                            var beforeStr = dt.Year + "_" + dt.Month + "_" + dt.Day + "_" + dt.Hour + "_" + dt.Minute + "_" + dt.Second;
+                            fileName = beforeStr + Path.GetFileName(Image.FileName);
+                            var newFilePath = Path.Combine(Server.MapPath("~/Public/images/"), fileName);
+
+                            Image.SaveAs(newFilePath);
+                            blog.Image = fileName;
+                            blog.Date = dt;
+                            blog.Status = true;
+                        }
+                        else
+                        {
+                            ViewBag.EditError = "Photo type is not valid.";
+                            return View();
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.EditError = "Photo type should not be more than 3 MB.";
+                        return View();
+                    }
+                }
+                else
+                {
+                    blog.Image = "default.jpg";
+                    blog.Date = DateTime.Now;
+                    blog.Status = true;
+                }
                 db.Blog.Add(blog);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(blog);
         }
 
@@ -92,12 +130,12 @@ namespace Final_Project_V2.Areas.Admin.Controllers
                                 Image.ContentType.ToLower() == "image/gif"
                             )
                             {
-                                var path = Path.Combine(Server.MapPath("~/Public/images/"), activeBlog.Image);
+                                //var path = Path.Combine(Server.MapPath("~/Public/images/"), activeBlog.Image);
 
-                                if (System.IO.File.Exists(path))
-                                {
-                                    System.IO.File.Delete(path);
-                                }
+                                //if (System.IO.File.Exists(path))
+                                //{
+                                //    System.IO.File.Delete(path);
+                                //}
 
                                 DateTime dt = DateTime.Now;
                                 var beforeStr = dt.Year + "_" + dt.Month + "_" + dt.Day + "_" + dt.Hour + "_" + dt.Minute + "_" + dt.Second;

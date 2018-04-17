@@ -5,48 +5,62 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="60" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Header" Type="nvarchar" MaxLength="30" />
     <Property Name="Text" Type="nvarchar" MaxLength="40" />
     <Property Name="Button" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="40" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Animation">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="60" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Top_Text" Type="nvarchar" MaxLength="60" />
     <Property Name="Middle_Text" Type="nvarchar" MaxLength="60" />
     <Property Name="Bottom_Text" Type="nvarchar" MaxLength="60" />
     <Property Name="Price" Type="nvarchar" MaxLength="20" />
   </EntityType>
-  <EntityType Name="AnimationSide">
+  <EntityType Name="AnimationSideBottom">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FirstRow_Background" Type="nvarchar" MaxLength="60" />
-    <Property Name="FirstRow_TopText" Type="nvarchar" MaxLength="60" />
-    <Property Name="FirstRow_MiddleText" Type="nvarchar" MaxLength="60" />
-    <Property Name="FirstRow_BottomText" Type="nvarchar" MaxLength="60" />
-    <Property Name="SecondRow_Background" Type="nvarchar" MaxLength="60" />
-    <Property Name="SecondRow_TopText" Type="nvarchar" MaxLength="60" />
-    <Property Name="SecondRow_MiddleText" Type="nvarchar" MaxLength="100" />
-    <Property Name="SecondRow_Button" Type="nvarchar" MaxLength="60" />
-    <Property Name="SecondRow_TopTextSpan" Type="nvarchar" MaxLength="30" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="TopText_1" Type="nvarchar" MaxLength="10" />
+    <Property Name="TopText_2" Type="nvarchar" MaxLength="10" />
+    <Property Name="MiddleText" Type="nvarchar" MaxLength="100" />
+    <Property Name="Button" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AnimationSideTop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="TopText" Type="nvarchar" MaxLength="30" />
+    <Property Name="MiddleText" Type="nvarchar" MaxLength="30" />
+    <Property Name="Price" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Blog">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="60" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Header" Type="nvarchar" MaxLength="60" />
     <Property Name="Paragraph_1" Type="nvarchar(max)" />
     <Property Name="StrongText" Type="nvarchar" MaxLength="300" />
     <Property Name="Author" Type="nvarchar" MaxLength="30" />
-    <Property Name="Date" Type="date" />
+    <Property Name="Date" Type="datetime" />
     <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="Brand">
@@ -77,7 +91,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Icon" Type="nvarchar" MaxLength="30" />
     <Property Name="Header" Type="nvarchar" MaxLength="40" />
-    <Property Name="Content" Type="nvarchar" MaxLength="40" />
+    <Property Name="Content" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="MobileOperator">
     <Key>
@@ -97,7 +112,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="60" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Name" Type="nvarchar" MaxLength="20" />
     <Property Name="position" Type="nvarchar" MaxLength="30" />
   </EntityType>
@@ -109,7 +124,7 @@
     <Property Name="Name" Type="nvarchar" MaxLength="45" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Category_Id" Type="int" />
-    <Property Name="Image" Type="nvarchar" MaxLength="60" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Rating" Type="tinyint" />
     <Property Name="Review_Count" Type="int" />
     <Property Name="Discount" Type="tinyint" />
@@ -154,6 +169,17 @@
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TopSelling">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="20" />
+    <Property Name="Content" Type="nvarchar" MaxLength="80" />
+    <Property Name="Span" Type="nvarchar" MaxLength="20" />
+    <Property Name="Button" Type="nvarchar" MaxLength="20" />
+    <Property Name="Image" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK__Product__Brand_I__5070F446">
     <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
@@ -205,8 +231,10 @@
   </Association>
   <EntityContainer Name="Final_ProjectModelStoreContainer">
     <EntitySet Name="AboutWallpaper" EntityType="Self.AboutWallpaper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Animation" EntityType="Self.Animation" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="AnimationSide" EntityType="Self.AnimationSide" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnimationSideBottom" EntityType="Self.AnimationSideBottom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnimationSideTop" EntityType="Self.AnimationSideTop" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -218,6 +246,7 @@
     <EntitySet Name="Shipping" EntityType="Self.Shipping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopSelling" EntityType="Self.TopSelling" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Self.FK__Product__Brand_I__5070F446">
       <End Role="Brand" EntitySet="Brand" />
       <End Role="Product" EntitySet="Product" />

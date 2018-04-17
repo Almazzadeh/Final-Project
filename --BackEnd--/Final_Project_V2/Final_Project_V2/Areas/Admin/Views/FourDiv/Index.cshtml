@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Final_Project_V2.Models.FourDiv>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<p class="btn btn-info">
+    @Html.ActionLink("Create", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Icon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="va-middle">
+            <i class="@item.Icon fa-2x"></i>
+        </td>
+        <td class="va-middle">
+            @Html.DisplayFor(modelItem => item.Header)
+        </td>
+        <td class="va-middle">
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td class="va-middle">
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-primary" })
+            @if(item.Status == true)
+            {
+                @Html.ActionLink("Hide", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" });
+            }
+            else
+            {
+                @Html.ActionLink("Show", "Show", new { id = item.Id }, new { @class = "btn btn-success" });
+            }
+        </td>
+    </tr>
+}
+
+</table>

@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8425832ceda9458098ebfd5303f3002d" Name="Diagram1">
         <EntityTypeShape EntityType="Final_ProjectModel.Animation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Final_ProjectModel.AnimationSide" Width="1.875" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Final_ProjectModel.FourDiv" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Final_ProjectModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Final_ProjectModel.Brand" Width="1.5" PointX="3.375" PointY="12.625" />
@@ -22,7 +21,11 @@
         <EntityTypeShape EntityType="Final_ProjectModel.Shipping" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.AboutWallpaper" Width="1.5" PointX="8.375" PointY="4.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.OurTeam" Width="1.5" PointX="8.375" PointY="7.75" />
-        <EntityTypeShape EntityType="Final_ProjectModel.Blog" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.Blog" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.Admin" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.AnimationSideBottom" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.AnimationSideTop" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.TopSelling" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

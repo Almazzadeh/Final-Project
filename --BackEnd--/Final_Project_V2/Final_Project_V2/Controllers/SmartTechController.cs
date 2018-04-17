@@ -15,9 +15,11 @@ namespace Final_Project_V2.Controllers
         public ActionResult Index()
         {
             ViewBag.Animation = db.Animation.ToList();
-            ViewBag.AnimationSide = db.AnimationSide.First();
-            ViewBag.FourDiv = db.FourDiv.ToList();
-            ViewBag.Blog = db.Blog.ToList();
+            ViewBag.AnimationSideTop = db.AnimationSideTop.First();
+            ViewBag.AnimationSideBottom = db.AnimationSideBottom.First();
+            ViewBag.FourDiv = db.FourDiv.Where(s => s.Status == true).ToList();
+            ViewBag.Blog = db.Blog.Where(s => s.Status == true).OrderByDescending(s => s.Date).ToList();
+            ViewBag.TopSelling = db.TopSelling.First();
             return View();
         }
 
@@ -123,7 +125,7 @@ namespace Final_Project_V2.Controllers
         //***** BLOG *****
         public ActionResult Blog()
         {
-            ViewBag.Blog = db.Blog.Where(s => s.Status == true).ToList();
+            ViewBag.Blog = db.Blog.Where(s => s.Status == true).OrderByDescending(s => s.Date).ToList();
             return View();
         }
 

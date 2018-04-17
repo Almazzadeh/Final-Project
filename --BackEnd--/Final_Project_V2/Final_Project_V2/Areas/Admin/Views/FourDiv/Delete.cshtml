@@ -1,0 +1,46 @@
+﻿@model Final_Project_V2.Models.FourDiv
+
+@{
+    ViewBag.Title = "Hide";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h3>Are you sure you want to hide this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Icon)
+        </dt>
+
+        <dd>
+            <i class="@Model.Icon fa-2x"></i>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Hide" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

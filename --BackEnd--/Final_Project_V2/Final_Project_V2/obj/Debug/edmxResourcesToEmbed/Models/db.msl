@@ -13,25 +13,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="AnimationSide">
-      <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSide">
-        <MappingFragment StoreEntitySet="AnimationSide">
-          <ScalarProperty Name="SecondRow_TopTextSpan" ColumnName="SecondRow_TopTextSpan" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FirstRow_Background" ColumnName="FirstRow_Background" />
-          <ScalarProperty Name="FirstRow_TopText" ColumnName="FirstRow_TopText" />
-          <ScalarProperty Name="FirstRow_MiddleText" ColumnName="FirstRow_MiddleText" />
-          <ScalarProperty Name="FirstRow_BottomText" ColumnName="FirstRow_BottomText" />
-          <ScalarProperty Name="SecondRow_Background" ColumnName="SecondRow_Background" />
-          <ScalarProperty Name="SecondRow_TopText" ColumnName="SecondRow_TopText" />
-          <ScalarProperty Name="SecondRow_MiddleText" ColumnName="SecondRow_MiddleText" />
-          <ScalarProperty Name="SecondRow_Button" ColumnName="SecondRow_Button" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="FourDiv">
       <EntityTypeMapping TypeName="Final_ProjectModel.FourDiv">
         <MappingFragment StoreEntitySet="FourDiv">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Icon" ColumnName="Icon" />
           <ScalarProperty Name="Header" ColumnName="Header" />
@@ -166,6 +151,50 @@
           <ScalarProperty Name="Paragraph_1" ColumnName="Paragraph_1" />
           <ScalarProperty Name="Header" ColumnName="Header" />
           <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnimationSideBottom">
+      <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideBottom">
+        <MappingFragment StoreEntitySet="AnimationSideBottom">
+          <ScalarProperty Name="Button" ColumnName="Button" />
+          <ScalarProperty Name="MiddleText" ColumnName="MiddleText" />
+          <ScalarProperty Name="TopText_2" ColumnName="TopText_2" />
+          <ScalarProperty Name="TopText_1" ColumnName="TopText_1" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnimationSideTop">
+      <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideTop">
+        <MappingFragment StoreEntitySet="AnimationSideTop">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MiddleText" ColumnName="MiddleText" />
+          <ScalarProperty Name="TopText" ColumnName="TopText" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopSelling">
+      <EntityTypeMapping TypeName="Final_ProjectModel.TopSelling">
+        <MappingFragment StoreEntitySet="TopSelling">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Button" ColumnName="Button" />
+          <ScalarProperty Name="Span" ColumnName="Span" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

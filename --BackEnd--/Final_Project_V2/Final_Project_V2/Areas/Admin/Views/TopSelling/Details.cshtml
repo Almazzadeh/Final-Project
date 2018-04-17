@@ -1,0 +1,56 @@
+﻿@model Final_Project_V2.Models.TopSelling
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<div>
+    <h4>Top Selling of the Week</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Public/images/@Model.Image" alt="Picture not found" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Span)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Span)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Button)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Button)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Back to Details", "Details/1")
+</p>

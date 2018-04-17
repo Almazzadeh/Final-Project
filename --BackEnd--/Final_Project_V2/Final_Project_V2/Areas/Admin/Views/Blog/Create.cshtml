@@ -7,22 +7,22 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
+<form method="post" enctype="multipart/form-data">
     <div class="form-horizontal">
-        <h4>Blog</h4>
+        <h4>New Blog</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @*IMAGE*@
         <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="file" name="Image" class="form-control" />
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @*HEADER*@
         <div class="form-group">
             @Html.LabelFor(model => model.Header, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -31,22 +31,25 @@
             </div>
         </div>
 
+        @*CONTENT*@
         <div class="form-group">
             @Html.LabelFor(model => model.Paragraph_1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paragraph_1, new { htmlAttributes = new { @class = "form-control" } })
+                <textarea class="form-control" name="Paragraph_1"></textarea>
                 @Html.ValidationMessageFor(model => model.Paragraph_1, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @*QUOTE*@
         <div class="form-group">
             @Html.LabelFor(model => model.StrongText, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StrongText, new { htmlAttributes = new { @class = "form-control" } })
+                <textarea class="form-control" name="StrongText"></textarea>
                 @Html.ValidationMessageFor(model => model.StrongText, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @*AUTHOR*@
         <div class="form-group">
             @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -55,31 +58,14 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Status)
-                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
+        @*SUBMIT*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

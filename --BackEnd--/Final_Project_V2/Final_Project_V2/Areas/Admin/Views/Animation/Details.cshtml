@@ -1,0 +1,59 @@
+﻿@model Final_Project_V2.Models.Animation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Animation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img class="img-thumbnail" src="~/Public/images/@Model.Image" />
+        </dd>
+
+        <dt>
+            Top Text
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Top_Text)
+        </dd>
+
+        <dt>
+            Middle Text
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Middle_Text)
+        </dd>
+
+        <dt>
+            Bottom Text
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bottom_Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

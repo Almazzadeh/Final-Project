@@ -1,0 +1,81 @@
+﻿@model Final_Project_V2.Models.FourDiv
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @*@Html.AntiForgeryToken()*@
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Icon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Icon, new { htmlAttributes = new { @class = "form-control", id = "fromscript" } })
+                @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="iconholder">
+                            <i class="fab fa-amazon-pay"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-fighter-jet"></i>
+                            <i class="fas fa-ship"></i>
+                            <i class="far fa-thumbs-up"></i>
+                            <i class="far fa-user"></i>
+                            <i class="fas fa-tag"></i>
+                            <i class="fas fa-bomb"></i>
+                            <i class="fas fa-shipping-fast"></i>
+                            <i class="fas fa-undo"></i>
+                            <i class="far fa-credit-card"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Header, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Header, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Header, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+    <div>
+        @Html.ActionLink("Back to List", "Index") |
+        <a href="https://fontawesome.com/icons" target="_blank" class="moreicons">
+            For More Icons<div class="introduction">
+                <span></span>
+                <p>1. Visit site</p>
+                <p>2. Click icon</p>
+                <p>3. Copy class names</p>
+                <img src="~/Public/images/introduction.jpg" alt="picture not found">
+                <p>4. Paste "Icon" input</p>
+            </div>
+        </a>
+    </div>

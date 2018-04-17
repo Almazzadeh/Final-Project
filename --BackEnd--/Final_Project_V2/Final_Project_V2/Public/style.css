@@ -991,9 +991,12 @@ img {
 }
 .fourdivs .container {
   border: 1px solid #e6e6e6;
+  border-right: none;
+  border-bottom: none;
 }
 .fourdivs .container > .col-md-3 {
   border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   height: 130px;
   padding: 0 10px;
 }
@@ -1139,6 +1142,9 @@ img {
   margin-top: 0;
   border-top: 1px solid gray;
 }
+.fromourblog .container .postwrapper .col-md-4 .postpicture {
+  height: 223.86px;
+}
 .fromourblog .container .postwrapper .col-md-4 .comment {
   padding-top: 5px;
 }
@@ -1150,6 +1156,9 @@ img {
 }
 .fromourblog .container .postwrapper .col-md-4 .comment svg {
   margin-right: 10px;
+}
+.fromourblog .container .postwrapper .col-md-4 p {
+  height: 40px;
 }
 .fromourblog .container .postwrapper .col-md-4 h3 {
   font-size: 20px;

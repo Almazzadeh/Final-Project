@@ -1296,9 +1296,12 @@ img{
     
     .container{
         border: 1px solid $mainGray;
+        border-right: none;
+        border-bottom: none;
 
         & > .col-md-3{
             border-right: 1px solid $mainGray;
+            border-bottom: 1px solid $mainGray;
             height: 130px;
             padding: 0 10px;  
             
@@ -1505,8 +1508,13 @@ img{
 
         .postwrapper{
             .col-md-4{
+                .postpicture{
+                    height: 223.86px;
+                }
                 .comment{
                     padding-top: 5px;
+
+                    
 
                     a{
                         color: gray;
@@ -1521,6 +1529,10 @@ img{
                     }
                 }
 
+                p{
+                    height: 40px;
+                }
+                
                 h3{
                     font-size: 20px;
                     height: 44px;

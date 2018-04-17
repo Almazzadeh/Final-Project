@@ -34,9 +34,18 @@
                             <i class="far fa-comment"></i> 86 Comments
                         </span>
                         <h4>@bg.Header</h4>
-                        <p>
+
+                        @if(bg.Paragraph_1.Length > 190)
+                        {
+                            <p>
                            @bg.Paragraph_1.Substring(0, 190) [....]
-                        </p>
+                            </p>
+                        }
+                        else
+                        {
+                            <p>@bg.Paragraph_1</p>
+                        }
+
                         <a href="#">Read more</a>
                     </div>
                 </section>

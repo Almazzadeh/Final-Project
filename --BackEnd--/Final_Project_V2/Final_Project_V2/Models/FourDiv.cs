@@ -18,5 +18,6 @@ namespace Final_Project_V2.Models
         public string Icon { get; set; }
         public string Header { get; set; }
         public string Content { get; set; }
+        public Nullable<bool> Status { get; set; }
     }
 }

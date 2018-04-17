@@ -24,23 +24,26 @@
             </div>
         </div>
         <div class="col-md-4">
+            @*ANIMATION SIDE 1ST ROW*@
             <div class="row">
                 <div class="firstrowtext">
-                    <h3>@ViewBag.AnimationSide.FirstRow_TopText</h3>
-                    <h2>@ViewBag.AnimationSide.FirstRow_MiddleText</h2>
-                    <h3>@ViewBag.AnimationSide.FirstRow_BottomText</h3>
+                    <h3>@ViewBag.AnimationSideTop.TopText</h3>
+                    <h2>@ViewBag.AnimationSideTop.MiddleText</h2>
+                    <h3>@ViewBag.AnimationSideTop.Price</h3>
                 </div>
-                <img src="~/Public/images/@ViewBag.AnimationSide.FirstRow_Background" alt="">
+                <img src="~/Public/images/@ViewBag.AnimationSideTop.Image" alt="">
             </div>
+
+            @*ANIMATION SIDE 2ND ROW*@
             <div class="row">
                 <div class="secondrowtext">
                     <h2>
-                        <span>@ViewBag.AnimationSide.SecondRow_TopTextSpan</span> @ViewBag.AnimationSide.SecondRow_TopText
+                        <span>@ViewBag.AnimationSideBottom.TopText_1</span> @ViewBag.AnimationSideBottom.TopText_2
                     </h2>
-                    <h4>@ViewBag.AnimationSide.SecondRow_MiddleText</h4>
-                    <a href="#" class="btn btn-primary btn-lg">@ViewBag.AnimationSide.SecondRow_Button</a>
+                    <h4>@ViewBag.AnimationSideBottom.MiddleText</h4>
+                    <a href="#" class="btn btn-primary btn-lg">@ViewBag.AnimationSideBottom.Button</a>
                 </div>
-                <img src="~/Public/images/week-sale-bg.jpg" alt="">
+                <img src="~/Public/images/@ViewBag.AnimationSideBottom.Image" alt="">
             </div>
         </div>
     </div>
@@ -497,12 +500,12 @@
         <div class="productwrapper">
             <div class="watch">
                 <div class="watchtext">
-                    <h3>Smart Watch 2.0</h3>
-                    <h5>Space Gray Aluminum Case with Black/Volt Real Sport Band</h5>
-                    <h5>38mm | 42mm</h5>
-                    <a href="#" class="btn btn-primary btn-lg">View Detail</a>
+                    <h3>@ViewBag.TopSelling.Header</h3>
+                    <h5>@ViewBag.TopSelling.Content</h5>
+                    <h5>@ViewBag.TopSelling.Span</h5>
+                    <a href="#" class="btn btn-primary btn-lg">@ViewBag.TopSelling.Button</a>
                 </div>
-                <img src="~/Public/images/watch-bg.jpg" alt="">
+                <img src="~/Public/images/@ViewBag.TopSelling.Image" alt="">
             </div>
             <div class="product-5">
                 <div class="productimg">
@@ -1441,7 +1444,14 @@
                     </div>
 
                     <h3>@bg.Header</h3>
-                    <p>@bg.Paragraph_1.Substring(0, 92) [....]</p>
+                    @if(bg.Paragraph_1.Length > 92)
+                    {
+                        <p>@bg.Paragraph_1.Substring(0, 92) [....]</p>
+                    }
+                    else
+                    {
+                        <p>@bg.Paragraph_1</p>
+                    }
                     <a href="#">Read More</a>
                 </div>
              }

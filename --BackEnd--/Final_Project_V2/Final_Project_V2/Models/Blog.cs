@@ -11,25 +11,15 @@ namespace Final_Project_V2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Blog
     {
         public int Id { get; set; }
         public string Image { get; set; }
-
-        [Required]
         public string Header { get; set; }
-
-        [Required]
         public string Paragraph_1 { get; set; }
-
         public string StrongText { get; set; }
-
-        [Required]
         public string Author { get; set; }
-
-        [Required]
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<bool> Status { get; set; }
     }

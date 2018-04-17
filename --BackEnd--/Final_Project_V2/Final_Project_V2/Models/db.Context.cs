@@ -26,7 +26,6 @@ namespace Final_Project_V2.Models
         }
     
         public virtual DbSet<Animation> Animation { get; set; }
-        public virtual DbSet<AnimationSide> AnimationSide { get; set; }
         public virtual DbSet<FourDiv> FourDiv { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Brand> Brand { get; set; }
@@ -39,5 +38,9 @@ namespace Final_Project_V2.Models
         public virtual DbSet<AboutWallpaper> AboutWallpaper { get; set; }
         public virtual DbSet<OurTeam> OurTeam { get; set; }
         public virtual DbSet<Blog> Blog { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<AnimationSideBottom> AnimationSideBottom { get; set; }
+        public virtual DbSet<AnimationSideTop> AnimationSideTop { get; set; }
+        public virtual DbSet<TopSelling> TopSelling { get; set; }
     }
 }

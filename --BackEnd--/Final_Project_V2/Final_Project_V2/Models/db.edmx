@@ -10,48 +10,62 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="60" />
+          <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="Header" Type="nvarchar" MaxLength="30" />
           <Property Name="Text" Type="nvarchar" MaxLength="40" />
           <Property Name="Button" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Animation">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="60" />
+          <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="Top_Text" Type="nvarchar" MaxLength="60" />
           <Property Name="Middle_Text" Type="nvarchar" MaxLength="60" />
           <Property Name="Bottom_Text" Type="nvarchar" MaxLength="60" />
           <Property Name="Price" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="AnimationSide">
+        <EntityType Name="AnimationSideBottom">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstRow_Background" Type="nvarchar" MaxLength="60" />
-          <Property Name="FirstRow_TopText" Type="nvarchar" MaxLength="60" />
-          <Property Name="FirstRow_MiddleText" Type="nvarchar" MaxLength="60" />
-          <Property Name="FirstRow_BottomText" Type="nvarchar" MaxLength="60" />
-          <Property Name="SecondRow_Background" Type="nvarchar" MaxLength="60" />
-          <Property Name="SecondRow_TopText" Type="nvarchar" MaxLength="60" />
-          <Property Name="SecondRow_MiddleText" Type="nvarchar" MaxLength="100" />
-          <Property Name="SecondRow_Button" Type="nvarchar" MaxLength="60" />
-          <Property Name="SecondRow_TopTextSpan" Type="nvarchar" MaxLength="30" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="TopText_1" Type="nvarchar" MaxLength="10" />
+          <Property Name="TopText_2" Type="nvarchar" MaxLength="10" />
+          <Property Name="MiddleText" Type="nvarchar" MaxLength="100" />
+          <Property Name="Button" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AnimationSideTop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="TopText" Type="nvarchar" MaxLength="30" />
+          <Property Name="MiddleText" Type="nvarchar" MaxLength="30" />
+          <Property Name="Price" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Blog">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="60" />
+          <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="Header" Type="nvarchar" MaxLength="60" />
           <Property Name="Paragraph_1" Type="nvarchar(max)" />
           <Property Name="StrongText" Type="nvarchar" MaxLength="300" />
           <Property Name="Author" Type="nvarchar" MaxLength="30" />
-          <Property Name="Date" Type="date" />
+          <Property Name="Date" Type="datetime" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Brand">
@@ -82,7 +96,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Icon" Type="nvarchar" MaxLength="30" />
           <Property Name="Header" Type="nvarchar" MaxLength="40" />
-          <Property Name="Content" Type="nvarchar" MaxLength="40" />
+          <Property Name="Content" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="MobileOperator">
           <Key>
@@ -102,7 +117,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="60" />
+          <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="Name" Type="nvarchar" MaxLength="20" />
           <Property Name="position" Type="nvarchar" MaxLength="30" />
         </EntityType>
@@ -114,7 +129,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="45" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Category_Id" Type="int" />
-          <Property Name="Image" Type="nvarchar" MaxLength="60" />
+          <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="Rating" Type="tinyint" />
           <Property Name="Review_Count" Type="int" />
           <Property Name="Discount" Type="tinyint" />
@@ -159,6 +174,17 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TopSelling">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="20" />
+          <Property Name="Content" Type="nvarchar" MaxLength="80" />
+          <Property Name="Span" Type="nvarchar" MaxLength="20" />
+          <Property Name="Button" Type="nvarchar" MaxLength="20" />
+          <Property Name="Image" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK__Product__Brand_I__5070F446">
           <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
@@ -210,8 +236,10 @@
         </Association>
         <EntityContainer Name="Final_ProjectModelStoreContainer">
           <EntitySet Name="AboutWallpaper" EntityType="Self.AboutWallpaper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Animation" EntityType="Self.Animation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AnimationSide" EntityType="Self.AnimationSide" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnimationSideBottom" EntityType="Self.AnimationSideBottom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnimationSideTop" EntityType="Self.AnimationSideTop" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -223,6 +251,7 @@
           <EntitySet Name="Shipping" EntityType="Self.Shipping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TopSelling" EntityType="Self.TopSelling" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Self.FK__Product__Brand_I__5070F446">
             <End Role="Brand" EntitySet="Brand" />
             <End Role="Product" EntitySet="Product" />
@@ -249,26 +278,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Top_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="Middle_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="Bottom_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="AnimationSide">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstRow_Background" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="FirstRow_TopText" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="FirstRow_MiddleText" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="FirstRow_BottomText" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="SecondRow_Background" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="SecondRow_TopText" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="SecondRow_MiddleText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SecondRow_Button" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="SecondRow_TopTextSpan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FourDiv">
           <Key>
@@ -277,7 +291,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Header" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Content" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -291,7 +306,6 @@
         </EntityType>
         <EntityContainer Name="Final_ProjectEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Animation" EntityType="Self.Animation" />
-          <EntitySet Name="AnimationSide" EntityType="Self.AnimationSide" />
           <EntitySet Name="FourDiv" EntityType="Self.FourDiv" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Brand" EntityType="Final_ProjectModel.Brand" />
@@ -320,6 +334,10 @@
           <EntitySet Name="AboutWallpaper" EntityType="Final_ProjectModel.AboutWallpaper" />
           <EntitySet Name="OurTeam" EntityType="Final_ProjectModel.OurTeam" />
           <EntitySet Name="Blog" EntityType="Final_ProjectModel.Blog" />
+          <EntitySet Name="Admin" EntityType="Final_ProjectModel.Admin" />
+          <EntitySet Name="AnimationSideBottom" EntityType="Final_ProjectModel.AnimationSideBottom" />
+          <EntitySet Name="AnimationSideTop" EntityType="Final_ProjectModel.AnimationSideTop" />
+          <EntitySet Name="TopSelling" EntityType="Final_ProjectModel.TopSelling" />
         </EntityContainer>
         <EntityType Name="Brand">
           <Key>
@@ -366,7 +384,7 @@
           <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Category_Id" Type="Int32" />
-          <Property Name="Image" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Rating" Type="Byte" />
           <Property Name="Review_Count" Type="Int32" />
           <Property Name="Discount" Type="Byte" />
@@ -460,7 +478,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Header" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Text" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -470,7 +488,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -479,13 +497,53 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Header" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="Paragraph_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StrongText" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="Author" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AnimationSideBottom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopText_1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TopText_2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AnimationSideTop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopText" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleText" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TopSelling">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Span" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -505,25 +563,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AnimationSide">
-            <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSide">
-              <MappingFragment StoreEntitySet="AnimationSide">
-                <ScalarProperty Name="SecondRow_TopTextSpan" ColumnName="SecondRow_TopTextSpan" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="FirstRow_Background" ColumnName="FirstRow_Background" />
-                <ScalarProperty Name="FirstRow_TopText" ColumnName="FirstRow_TopText" />
-                <ScalarProperty Name="FirstRow_MiddleText" ColumnName="FirstRow_MiddleText" />
-                <ScalarProperty Name="FirstRow_BottomText" ColumnName="FirstRow_BottomText" />
-                <ScalarProperty Name="SecondRow_Background" ColumnName="SecondRow_Background" />
-                <ScalarProperty Name="SecondRow_TopText" ColumnName="SecondRow_TopText" />
-                <ScalarProperty Name="SecondRow_MiddleText" ColumnName="SecondRow_MiddleText" />
-                <ScalarProperty Name="SecondRow_Button" ColumnName="SecondRow_Button" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="FourDiv">
             <EntityTypeMapping TypeName="Final_ProjectModel.FourDiv">
               <MappingFragment StoreEntitySet="FourDiv">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Header" ColumnName="Header" />
@@ -658,6 +701,50 @@
                 <ScalarProperty Name="Paragraph_1" ColumnName="Paragraph_1" />
                 <ScalarProperty Name="Header" ColumnName="Header" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimationSideBottom">
+            <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideBottom">
+              <MappingFragment StoreEntitySet="AnimationSideBottom">
+                <ScalarProperty Name="Button" ColumnName="Button" />
+                <ScalarProperty Name="MiddleText" ColumnName="MiddleText" />
+                <ScalarProperty Name="TopText_2" ColumnName="TopText_2" />
+                <ScalarProperty Name="TopText_1" ColumnName="TopText_1" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimationSideTop">
+            <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideTop">
+              <MappingFragment StoreEntitySet="AnimationSideTop">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="MiddleText" ColumnName="MiddleText" />
+                <ScalarProperty Name="TopText" ColumnName="TopText" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TopSelling">
+            <EntityTypeMapping TypeName="Final_ProjectModel.TopSelling">
+              <MappingFragment StoreEntitySet="TopSelling">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Button" ColumnName="Button" />
+                <ScalarProperty Name="Span" ColumnName="Span" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
