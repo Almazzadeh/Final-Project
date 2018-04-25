@@ -76,6 +76,8 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="Final_ProjectModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Details_5" ColumnName="Details_5" />
           <ScalarProperty Name="Details_4" ColumnName="Details_4" />
           <ScalarProperty Name="Details_3" ColumnName="Details_3" />
@@ -134,6 +136,7 @@
     <EntitySetMapping Name="OurTeam">
       <EntityTypeMapping TypeName="Final_ProjectModel.OurTeam">
         <MappingFragment StoreEntitySet="OurTeam">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="position" ColumnName="position" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Image" ColumnName="Image" />
@@ -195,6 +198,17 @@
           <ScalarProperty Name="Span" ColumnName="Span" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skill">
+      <EntityTypeMapping TypeName="Final_ProjectModel.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Div_Id_Name" ColumnName="Div_Id_Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

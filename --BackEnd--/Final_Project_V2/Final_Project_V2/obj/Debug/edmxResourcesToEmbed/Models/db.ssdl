@@ -115,6 +115,7 @@
     <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Name" Type="nvarchar" MaxLength="20" />
     <Property Name="position" Type="nvarchar" MaxLength="30" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -142,6 +143,8 @@
     <Property Name="Details_3" Type="nvarchar" MaxLength="200" />
     <Property Name="Details_4" Type="nvarchar" MaxLength="200" />
     <Property Name="Details_5" Type="nvarchar" MaxLength="200" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Date" Type="date" />
   </EntityType>
   <EntityType Name="Shipping">
     <Key>
@@ -159,6 +162,16 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Div_Id_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -245,6 +258,7 @@
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shipping" EntityType="Self.Shipping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TopSelling" EntityType="Self.TopSelling" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Self.FK__Product__Brand_I__5070F446">

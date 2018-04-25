@@ -151,11 +151,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutWallpaperController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationSideBottomController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationSideTopController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
     <Compile Include="Areas\Admin\Controllers\FourDivController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OurTeamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SkillController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopSellingController.cs" />
     <Compile Include="Controllers\SmartTechController.cs" />
     <Compile Include="Global.asax.cs">
@@ -221,6 +225,9 @@
     <Compile Include="Models\Size.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Skill.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
@@ -230,6 +237,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Public\jquery.mswitch.css" />
+    <Content Include="Areas\Admin\Public\jquery.mswitch.js" />
     <Content Include="Areas\Admin\Public\main.js" />
     <Content Include="Areas\Admin\Public\style.css" />
     <Content Include="favicon.ico" />
@@ -384,6 +393,28 @@
     <Content Include="Areas\Admin\Views\FourDiv\Show.cshtml" />
     <Content Include="Areas\Admin\Views\TopSelling\Details.cshtml" />
     <Content Include="Areas\Admin\Views\TopSelling\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutWallpaper\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutWallpaper\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutWallpaper\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutWallpaper\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutWallpaper\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Skill\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Skill\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Skill\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Skill\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Skill\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Show.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -425,6 +456,8 @@
     <Content Include="Views\Shared\BlogSideBar.cshtml" />
     <Content Include="Views\SmartTech\Blog.cshtml" />
     <Content Include="Views\SmartTech\BlogSingle.cshtml" />
+    <Content Include="Views\SmartTech\BlogDetails.cshtml" />
+    <Content Include="Views\SmartTech\ProductSingle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

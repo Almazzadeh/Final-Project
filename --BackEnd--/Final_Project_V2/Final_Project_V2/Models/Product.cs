@@ -36,6 +36,8 @@ namespace Final_Project_V2.Models
         public string Details_3 { get; set; }
         public string Details_4 { get; set; }
         public string Details_5 { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }

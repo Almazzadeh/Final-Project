@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Final_Project_V2.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p class="btn btn-info">
+    @Html.ActionLink("Create", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+
+        <th class="sticky">
+            Category
+        </th>
+
+        <th class="sticky"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img class="img-thumbnail" src="~/Public/images/@item.Image" alt="Picture not found" />
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+            <td>
+                $@Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-warning" }) <br />
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-primary" }) <br />
+            @if(item.Status == true)
+            {
+                @Html.ActionLink("Hide", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" });
+            }
+            else
+            {
+                @Html.ActionLink("Show", "Show", new { id = item.Id }, new { @class = "btn btn-success" });
+            }
+            </td>
+        </tr>
+    }
+
+</table>

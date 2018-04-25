@@ -1,22 +1,27 @@
 $(function () {
+    //$(".skillvalue").each(function () {
+    //    console.log(this)
+    //})
+
+
     $("li.submenu").mouseenter(function () {
-        $(this).find("ul").first().slideDown(400);
+        $(this).find("ul").first().slideDown(600);
         // $(this).find('[data-fa-i2svg]').first().toggleClass('fa-caret-right').toggleCLass('fa-caret-down')
     })
     $("li.submenu").mouseleave(function () {
-        $(this).find("ul").slideUp(400);
+        $(this).find("ul").slideUp(600);
         // $(this).find('[data-fa-i2svg]').first().toggleClass('fa-caret-right').toggleCLass('fa-caret-down')
     })
 
     $("li.ourcategories").click(function () {
-        $(".ourcategoriesdrop").slideToggle(400)
+        $(".ourcategoriesdrop").slideToggle(600)
     })
 
     $("li.submenuHover").mouseenter(function () {
-        $(this).find("div").first().slideDown(400)
+        $(this).find("div").first().slideDown(600)
     })
     $("li.submenuHover").mouseleave(function () {
-        $(this).find("div").first().slideUp(400)
+        $(this).find("div").first().slideUp(600)
     })
 
     // CAROUSELS START HERE
@@ -91,42 +96,98 @@ $(function () {
     });
 
     // PROGRESS BAR SECTION
-    $('#photoshop').LineProgressbar({
-        percentage: 90,
-        duration: 1500,
-        fillBackgroundColor: '#08c',
-        backgroundColor: '#e6e6e6',
-        radius: '20px',
-        height: '15px',
+    //$('#photoshop').LineProgressbar({
+    //    percentage: 90,
+    //    duration: 1500,
+    //    fillBackgroundColor: '#08c',
+    //    backgroundColor: '#e6e6e6',
+    //    radius: '20px',
+    //    height: '15px',
+    //})
+
+    //$('#uidesign').LineProgressbar({
+    //    percentage: 70,
+    //    duration: 1500,
+    //    fillBackgroundColor: '#08c',
+    //    backgroundColor: '#e6e6e6',
+    //    radius: '20px',
+    //    height: '15px',
+    //})
+
+    //$('#layoutframe').LineProgressbar({
+    //    percentage: 80,
+    //    duration: 1500,
+    //    fillBackgroundColor: '#08c',
+    //    backgroundColor: '#e6e6e6',
+    //    radius: '20px',
+    //    height: '15px',
+    //})
+
+    //$('#typography').LineProgressbar({
+    //    percentage: 13,
+    //    duration: 1500,
+    //    fillBackgroundColor: '#08c',
+    //    backgroundColor: '#e6e6e6',
+    //    radius: '20px',
+    //    height: '15px',
+    //})
+
+    $('.skillvalue').each(function () {
+        var id = $(this).next().text();
+        var per = parseInt($(this).text());
+
+        $("#" + id).LineProgressbar({
+            percentage: per,
+            duration: 1000,
+            fillBackgroundColor: '#08c',
+            backgroundColor: '#e6e6e6',
+            radius: '20px',
+            height: '15px',
+        })
     })
 
-    $('#uidesign').LineProgressbar({
-        percentage: 70,
-        duration: 1500,
-        fillBackgroundColor: '#08c',
-        backgroundColor: '#e6e6e6',
-        radius: '20px',
-        height: '15px',
+
+    $('.discount').each(function () {
+        var discount = parseInt($(this).text().slice(1, 3));
+        var oldprice = parseInt(parseFloat($(this).parent().next().next().next().next().text().slice(1, -1)).toFixed());
+        var newprice = ((oldprice * (100 - discount)) / 100).toFixed(2);
+
+        var oldpriceparagraph = $(this).parent().next().next().next().next();
+        var p = document.createElement('p');
+        p.innerHTML = "$" + newprice;
+        p.className = "productprice";
+        oldpriceparagraph.before(p);
+        //console.log(newprice);
     })
 
-    $('#layoutframe').LineProgressbar({
-        percentage: 80,
-        duration: 1500,
-        fillBackgroundColor: '#08c',
-        backgroundColor: '#e6e6e6',
-        radius: '20px',
-        height: '15px',
+    $('.discountlist').each(function () {
+        var discount = parseInt($(this).text().slice(1, 3));
+        var oldprice = parseInt(parseFloat($(this).next().children().first().text().slice(1, -1)).toFixed());
+        var newprice = ((oldprice * (100 - discount)) / 100).toFixed(2);
+        //console.log(oldprice);
+
+        var oldpriceh4 = $(this).next().children().first();
+        var h4 = document.createElement('h4');
+        h4.innerHTML = "$" + newprice;
+        h4.className = "productprice";
+        oldpriceh4.before(h4);
     })
 
-    $('#typography').LineProgressbar({
-        percentage: 80,
-        duration: 1500,
-        fillBackgroundColor: '#08c',
-        backgroundColor: '#e6e6e6',
-        radius: '20px',
-        height: '15px',
-    })
+    $('.discountsingle').each(function () {
+        var discount = parseInt($(this).text().slice(1, 3));
+        var oldprice = parseInt(parseFloat($(this).next().next().children().first().text().slice(1, -1)).toFixed());
+        var newprice = ((oldprice * (100 - discount)) / 100).toFixed(2);
+        //console.log(oldprice);
 
+        var oldpriceh4 = $(this).next().next().children().first();
+        var h4 = document.createElement('h4');
+        h4.innerHTML = "$" + newprice;
+        h4.className = "productprice";
+        oldpriceh4.before(h4);
+    })
+        
+
+    //RANGE SECTION
     $("#range").ionRangeSlider({
         type: "double",
         grid: true,

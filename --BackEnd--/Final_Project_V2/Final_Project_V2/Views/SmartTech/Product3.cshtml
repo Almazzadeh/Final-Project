@@ -24,7 +24,7 @@
         <!-- SIDE MENU END HERE -->
         <!-- PRODUCTS START HERE -->
         <div class="col-md-9">
-            <h2>Cell Phones & Accessories</h2>
+            <h2>Products</h2>
             <!-- FILTER SECTION -->
             <div class="filterwrapper">
                 <p>Showing 1–12 of 756 results</p>
@@ -66,7 +66,9 @@
                                 <img src="~/Public/images/@pr.Image" alt="">
                             </div>
                             <p class="productcategory">@pr.Category.Name</p>
-                            <p class="productname">@pr.Name</p>
+                            @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
+
+                            @*<a href="/ProductSingle/@pr.Id" class="productname">@pr.Name</a>*@
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -129,8 +131,6 @@
 
                             @if(pr.Discount != null)
                             {
-                                @*<p class="productprice">$@pr.Price*((100-@pr.Discount)/100)</p>*@
-
                                 <p class="oldprice">$@pr.Price</p>
                             }
                             else

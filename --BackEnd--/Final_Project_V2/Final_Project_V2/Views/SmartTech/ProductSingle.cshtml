@@ -1,0 +1,617 @@
+﻿@using Final_Project_V2.Models;
+
+@model Final_Project_V2.Models.Product
+
+@{
+    ViewBag.Title = "Product Details - Smart Tech";
+}
+
+<!-- BREADCRUMB START HERE -->
+<div class="breadcrumbwrapper">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index")">Home</a>
+            </li>
+            <li>@Model.Category.Name</li>
+            <li class="active">@Model.Name</li>
+        </ol>
+    </div>
+</div>
+<!-- BREADCRUMB END HERE -->
+<!-- PRODUCT 3 COLUMN START HERE -->
+<div class="productwrapper">
+    <div class="container">
+        <!-- SIDE MENU START HERE -->
+        @Html.Partial("ProductSideBar")
+        <!-- SIDE MENU END HERE -->
+        <!-- PRODUCTS START HERE -->
+        <div class="col-md-9">
+            <!-- SIMPLE DETAILS START HERE -->
+            <div class="productdetails">
+                <div class="row">
+                    <!-- IMAGE CAROUSEL -->
+                    <div class="col-md-6">
+                        <div class="slider-for">
+                            <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                        </div>
+                        <div class="slider-nav">
+                            <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                            <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- PRODUCT DETAILS -->
+                    <div class="col-md-6">
+                        <p class="productcategory">@Model.Category.Name</p>
+                        <h4 class="productname">@Model.Name</h4>
+                        @if(Model.Discount != null)
+                        {
+                            <span class="discountsingle">-@Model.Discount%</span>
+                        }
+                        <div class="stars">
+                            @if (Model.Rating == 0)
+                            {
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            }
+                            else if (Model.Rating == 1)
+                            {
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            }
+                            else if (Model.Rating == 2)
+                            {
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            }
+                            else if (Model.Rating == 3)
+                            {
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            }
+                            else if (Model.Rating == 4)
+                            {
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            }
+                            else if (Model.Rating == 5)
+                            {
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="fas fa-exclamation-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            }
+                            <span>@Model.Review_Count Review(s)</span>
+                        </div>
+                        <div class="priceandavailability">
+                            @if (Model.Discount != null)
+                            {
+                                <h4 class="oldprice">$@Model.Price</h4>
+                            }
+                            else
+                            {
+                                <h4 class="productprice">$@Model.Price</h4>
+                            }
+                            <h5 class="pull-right">
+                                Availability:
+                                @if (Model.Count > 0)
+                                {
+                                    <span>In Stock</span>
+
+                                }
+                                else
+                                {
+                                    <span class="unachievable">Unachievable</span>
+                                }
+                            </h5>
+                        </div>
+                        <div class="productcomponents">
+                            <ul>
+                                <li>@Model.Details_1</li>
+                                <li>@Model.Details_2</li>
+                                <li>@Model.Details_3</li>
+                                <li>@Model.Details_4</li>
+                                <li>@Model.Details_5</li>
+                            </ul>
+                        </div>
+                        <div class="colorandsize">
+                            <div class="color">
+                                <a href="#" style="background: @Model.Color.Name; border: 1px solid #08c;">
+                                    <i class="fas fa-check"></i>
+                                </a>
+                                <a href="#" class="blue">
+                                    <i class="fas fa-check"></i>
+                                </a>
+                                <a href="#" class="gold">
+                                    <i class="fas fa-check"></i>
+                                </a>
+                                <a href="#" class="black">
+                                    <i class="fas fa-check"></i>
+                                </a>
+                            </div>
+                            <div class="size pull-right">
+                                @if(Model.Size.Name == "S")
+                                {
+                                    <a href="#" style="border: 1px solid #08c;">S</a>
+                                    <a href="#">M</a>
+                                    <a href="#">L</a>
+                                    <a href="#">XL</a>
+                                }
+                                else if(Model.Size.Name == "M")
+                                {
+                                    <a href="#">S</a>
+                                    <a href="#" style="border: 1px solid #08c;">M</a>
+                                    <a href="#">L</a>
+                                    <a href="#">XL</a>
+                                }
+                                else if(Model.Size.Name == "L")
+                                {
+                                    <a href="#">S</a>
+                                    <a href="#">M</a>
+                                    <a href="#" style="border: 1px solid #08c;">L</a>
+                                    <a href="#">XL</a>
+                                }
+                                else if(Model.Size.Name == "XL")
+                                {
+                                    <a href="#">S</a>
+                                    <a href="#">M</a>
+                                    <a href="#">L</a>
+                                    <a href="#" style="border: 1px solid #08c;">XL</a>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="productcommands">
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <i class="fas fa-heart"></i> Add to Wishlist
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <i class="fas fa-bars"></i> Add to Compare
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i> Email to a friend
+                                </a>
+                            </div>
+                        </div>
+                        <div class="productcount">
+                            <input type="number" min="1">
+                            <a href="#" class="btn btn-primary btn-lg">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DETAILS, REVIEWS, SHIPPING TABS START HERE -->
+            <div class="reviewandshipping">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#prodetails" data-toggle="tab">Product Details</a>
+                    </li>
+                    <li>
+                        <a href="#customerreviews" data-toggle="tab">Customer Reviews</a>
+                    </li>
+                    <li>
+                        <a href="#shipping" data-toggle="tab">Shipping & Payment</a>
+                    </li>
+                </ul>
+                <!-- TABS CONTENT -->
+                <div class="tab-content">
+                    <!-- PRODUCT DETAILS TAB -->
+                    <div class="tab-pane fade in active" id="prodetails">
+                        <ul>
+                            <li>@Model.Details_1</li>
+                            <li>@Model.Details_2</li>
+                            <li>@Model.Details_3</li>
+                            <li>@Model.Details_4</li>
+                            <li>@Model.Details_5</li>
+                        </ul>
+
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Carrier</th>
+                                    <th>Compatibility Rating</th>
+                                    <th>Voice / Text</th>
+                                    <th>Voice / Text</th>
+                                    <th>2G Data</th>
+                                    <th>3G Data</th>
+                                    <th>4G LTE Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (MobileOperator mo in ViewBag.MobileOperator)
+                                {
+                                    <tr>
+                                        <th>@mo.Carrier</th>
+                                        <th>@mo.Rating</th>
+                                        <th>
+                                            @if (mo.Voice1 == true)
+                                            {
+                                                <i class="fas fa-check"></i>
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (mo.Voice2 == true)
+                                            {
+                                                <i class="fas fa-check"></i>
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (mo.C2GData == true)
+                                            {
+                                                <i class="fas fa-check"></i>
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (mo.C3GData == true)
+                                            {
+                                                <i class="fas fa-check"></i>
+                                            }
+                                        </th>
+                                        <th>
+                                            @if (mo.C4GData == true)
+                                            {
+                                                <i class="fas fa-check"></i>
+                                            }
+                                        </th>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- CUSTOMER REVIEWS TAB -->
+                    <div class="tab-pane fade" id="customerreviews">
+
+                    </div>
+                    <!-- SHIPPING & PAYMENT TAB -->
+                    <div class="tab-pane fade" id="shipping">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Shipping Company</th>
+                                    <th>Shipping Cost</th>
+                                    <th>Estimated Delivery Time</th>
+                                    <th>Tracking Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Shipping sh in ViewBag.Shipping)
+                                {
+                                    <tr>
+                                        <th>@sh.Shipping_Company</th>
+                                        <th>@sh.Shipping_Cost</th>
+                                        <th>@sh.Delivery_Time</th>
+                                        @if (sh.Tracking_Information == true)
+                                        {
+                                            <th>Available</th>
+                                        }
+                                        else
+                                        {
+                                            <th>Not available</th>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATED PRODUCT START HERE -->
+            <div class="relatedproduct">
+                <h3>Related Product</h3>
+                <hr>
+                <div class="relatedcarousel">
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="~/Public/images/item-img-1-8.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">Apple MacBook Air 11.6-Inch</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>22 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <img src="~/Public/images/item-img-1-9.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Watch</p>
+                            <p class="productname">Apple Watch Series 3 (GPS) 38mm Gold</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="~/Public/images/item-img-1-6.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Bang & Olufsen Bluetooth Speakers</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <img src="~/Public/images/item-img-1-4.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Headphones</p>
+                            <p class="productname">Level Over Wireless Over-ear Headphones</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>12 Review(s)</span>
+                            </div>
+                            <p class="productprice">$800.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <img src="~/Public/images/item-img-1-3.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Phone</p>
+                            <p class="productname">Apple Iphone 5S White</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$650.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="~/Public/images/item-img-1-1.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">Apple Laptop i7</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>16 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <img src="~/Public/images/item-img-1-2.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Camera</p>
+                            <p class="productname">Samsung Gear 360 Camera SM-C200</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>5 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="~/Public/images/item-img-1-5.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Beolit 17 Bluetooth Speaker</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="~/Public/images/item-img-1-16.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Ninebot Mini Pro White</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="discount">-25%</span>
+                                <img src="~/Public/images/item-img-1-14.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Laptop</p>
+                            <p class="productname">65" KS9000 Curved SUHD Quantum Dot Ultra TV</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>22 Review(s)</span>
+                            </div>
+                            <p class="productprice">$1650.00</p>
+                            <p class="oldprice">$2200.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <img src="~/Public/images/item-img-1-15.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Headphones</p>
+                            <p class="productname">B&O PLAY Inspiration</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>12 Review(s)</span>
+                            </div>
+                            <p class="productprice">$500.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-4">
+                            <div class="productimg">
+                                <span class="new">NEW</span>
+                                <img src="~/Public/images/item-img-1-16.jpg" alt="">
+                            </div>
+                            <p class="productcategory">Accessories</p>
+                            <p class="productname">Ninebot Mini Pro White</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>8 Review(s)</span>
+                            </div>
+                            <p class="productprice">$350.00</p>
+                            <div class="buyproduct">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PRODUCTS END HERE -->
+        </div>
+    </div>
+</div>
+<!-- PRODUCT 3 COLUMN END HERE -->
+<!-- PRODUCT CAROUSEL START HERE -->
+@Html.Partial("RecentlyViewedProductCarousel")
+<!-- PRODUCT CAROUSEL END HERE -->

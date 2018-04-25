@@ -42,5 +42,6 @@ namespace Final_Project_V2.Models
         public virtual DbSet<AnimationSideBottom> AnimationSideBottom { get; set; }
         public virtual DbSet<AnimationSideTop> AnimationSideTop { get; set; }
         public virtual DbSet<TopSelling> TopSelling { get; set; }
+        public virtual DbSet<Skill> Skill { get; set; }
     }
 }

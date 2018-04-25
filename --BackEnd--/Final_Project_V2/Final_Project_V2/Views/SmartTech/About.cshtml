@@ -31,7 +31,7 @@
 <div class="fourdivs">
     <div class="container">
         @foreach (FourDiv fd in ViewBag.FourDiv)
-         {
+        {
             <div class="col-md-3">
                 <div class="col-md-3 icon">
                     <i class="fa-2x @fd.Icon"></i>
@@ -41,7 +41,7 @@
                     <h5>@fd.Content</h5>
                 </div>
             </div>
-         }
+        }
     </div>
 </div>
 <!-- 4 DIVS END HERE -->
@@ -50,38 +50,17 @@
     <div class="container">
         <h3>Our Awesome Skills</h3>
         <hr>
-        <div class="row">
-            <div class="col-md-2">
-                <p>Adobe Photoshop</p>
+        @foreach (Skill sl in ViewBag.Skill)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <p>@sl.Name</p><span class="skillvalue">@sl.Value</span><span id="skillid">@sl.Div_Id_Name</span>
+                </div>
+                <div class="col-md-10">
+                    <div id="@sl.Div_Id_Name"></div>
+                </div>
             </div>
-            <div class="col-md-10">
-                <div id="photoshop"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p>UI Design</p>
-            </div>
-            <div class="col-md-10">
-                <div id="uidesign"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p>Layout Frame</p>
-            </div>
-            <div class="col-md-10">
-                <div id="layoutframe"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p>Typography</p>
-            </div>
-            <div class="col-md-10">
-                <div id="typography"></div>
-            </div>
-        </div>
+        }
     </div>
 </div>
 <!-- PROGRESS BAR END HERE -->
@@ -91,7 +70,7 @@
         <h3>Meet Our Team</h3>
         <hr>
         @foreach (OurTeam ot in ViewBag.OurTeam)
-         {
+        {
             <div class="col-md-3">
                 <div class="memberphoto">
                     <img src="~/Public/images/@ot.Image" alt="">
@@ -99,7 +78,7 @@
                 <h4>@ot.Name</h4>
                 <h5>@ot.position</h5>
             </div>
-         }
+        }
     </div>
 </div>
 <!-- MEET OUR TEAM END HERE -->

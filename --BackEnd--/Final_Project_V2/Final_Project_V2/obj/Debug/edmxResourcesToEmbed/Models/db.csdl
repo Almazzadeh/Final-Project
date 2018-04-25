@@ -65,6 +65,7 @@
     <EntitySet Name="AnimationSideBottom" EntityType="Final_ProjectModel.AnimationSideBottom" />
     <EntitySet Name="AnimationSideTop" EntityType="Final_ProjectModel.AnimationSideTop" />
     <EntitySet Name="TopSelling" EntityType="Final_ProjectModel.TopSelling" />
+    <EntitySet Name="Skill" EntityType="Final_ProjectModel.Skill" />
   </EntityContainer>
   <EntityType Name="Brand">
     <Key>
@@ -133,6 +134,8 @@
     <NavigationProperty Name="Category" Relationship="Final_ProjectModel.FK__Product__Categor__4F7CD00D" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="Color" Relationship="Final_ProjectModel.FK__Product__Color_I__5165187F" FromRole="Product" ToRole="Color" />
     <NavigationProperty Name="Size" Relationship="Final_ProjectModel.FK__Product__Size_Id__52593CB8" FromRole="Product" ToRole="Size" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Size">
     <Key>
@@ -218,6 +221,7 @@
     <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
   </EntityType>
   <EntityType Name="Blog">
     <Key>
@@ -271,5 +275,15 @@
     <Property Name="Span" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="Int32" />
+    <Property Name="Div_Id_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
   </EntityType>
 </Schema>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Final_Project_V2.Models;
@@ -18,6 +19,7 @@ namespace Final_Project_V2.Controllers
             ViewBag.AnimationSideTop = db.AnimationSideTop.First();
             ViewBag.AnimationSideBottom = db.AnimationSideBottom.First();
             ViewBag.FourDiv = db.FourDiv.Where(s => s.Status == true).ToList();
+            ViewBag.Product = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
             ViewBag.Blog = db.Blog.Where(s => s.Status == true).OrderByDescending(s => s.Date).ToList();
             ViewBag.TopSelling = db.TopSelling.First();
             return View();
@@ -27,8 +29,9 @@ namespace Final_Project_V2.Controllers
         public ActionResult About()
         {
             ViewBag.AboutWallpaper = db.AboutWallpaper.First();
-            ViewBag.FourDiv = db.FourDiv.ToList();
-            ViewBag.OurTeam = db.OurTeam.ToList();
+            ViewBag.FourDiv = db.FourDiv.Where(s => s.Status == true).ToList();
+            ViewBag.OurTeam = db.OurTeam.Where(s => s.Status == true).ToList();
+            ViewBag.Skill = db.Skill.Where(s => s.Status == true).ToList();
             return View();
         }
 
@@ -42,37 +45,50 @@ namespace Final_Project_V2.Controllers
         //***** PRODUCT - 3 - COLUMNS*****
         public ActionResult Product3()
         {
-            ViewBag.Product = db.Product.ToList();
-            //Product prd = db.Product.FirstOrDefault();
-            //if(prd.Discount != null)
-            //{
-
-            //}
+            ViewBag.Product = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
             return View();
         }
 
         //***** PRODUCT - 4 - COLUMNS*****
         public ActionResult Product4()
         {
-            ViewBag.Product = db.Product.ToList();
+            ViewBag.Product = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
             return View();
         }
 
         //***** PRODUCT - LIST *****
         public ActionResult ProductList()
         {
-            ViewBag.Product = db.Product.ToList();
+            ViewBag.Product = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
             return View();
         }
 
-        //***** PRODUCT - DETAILS *****
+        //***** PRODUCT - DETAILS WITHOUT ID*****
         public ActionResult ProductDetails()
         {
-            ViewBag.Product = db.Product.First();
+            ViewBag.Product = db.Product.Where(s => s.Status == true).First();
             ViewBag.MobileOperator = db.MobileOperator.ToList();
             ViewBag.Shipping = db.Shipping.ToList();
             return View();
         }
+
+        //***** PRODUCT - DETAILS WITH ID*****
+        public ActionResult ProductSingle(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Product.Find(id);
+            ViewBag.MobileOperator = db.MobileOperator.ToList();
+            ViewBag.Shipping = db.Shipping.ToList();
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+
 
         // *************************** PAYMENT SECTION **********************************
         //***** SHOPPING CART *****
@@ -134,6 +150,21 @@ namespace Final_Project_V2.Controllers
         {
             ViewBag.BlogSingle = db.Blog.First();
             return View();
+        }
+
+        //***** BLOG DETAILS *****
+        public ActionResult BlogDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Blog blog = db.Blog.Find(id);
+            if (blog == null)
+            {
+                return HttpNotFound();
+            }
+            return View(blog);
         }
     }
 }

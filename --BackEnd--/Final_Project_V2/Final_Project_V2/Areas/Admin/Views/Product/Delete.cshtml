@@ -1,0 +1,312 @@
+﻿@model Final_Project_V2.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h3>Are you sure you want to hide this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*IMAGE*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Public/images/@Model.Image" alt="Picture not found" />
+        </dd>
+
+        @*NAME*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        @*PRICE*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.Price)
+        </dd>
+
+        @*BRAND*@
+        <dt>
+            Brand
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.Name)
+        </dd>
+
+        @*CATEGORY*@
+        <dt>
+            Category
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        @*RATING*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        @if (Model.Rating == 0)
+         {
+            <dd>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </dd>
+         }
+         else if (Model.Rating == 1)
+         {
+            <dd>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </dd>
+         }
+         else if (Model.Rating == 2)
+         {
+            <dd>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="far fa-star"></i>
+               <i class="far fa-star"></i>
+               <i class="far fa-star"></i>
+            </dd>
+         }
+         else if (Model.Rating == 3)
+         {
+            <dd>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </dd>
+                                    
+         }
+         else if (Model.Rating == 4)
+         {
+            <dd>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </dd>
+         }
+         else if (Model.Rating == 5)
+         {
+            <dd>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </dd>
+         }
+         else
+         {
+            <dd>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+            </dd>
+         }
+
+        @*REVIEW*@
+        <dt>
+            Reviews
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review_Count)
+        </dd>
+
+        @*DISCOUNT*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        @if(Model.Discount != null)
+        {
+            <dd>@Model.Discount%</dd>
+        }
+        else
+        {
+            <dd><i class="no far fa-times-circle"></i></dd>
+        }
+
+        @*NEW*@
+        <dt>
+            @Html.DisplayNameFor(model => model.New)
+        </dt>
+
+        @if (Model.New == true)
+        {
+            <dd><i class="yes far fa-check-circle"></i></dd>
+        }
+        else
+        {
+            <dd><i class="no far fa-times-circle"></i></dd>
+        }
+
+        @*COUNT*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+        @*FEATURED*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Featured)
+        </dt>
+
+        @if (Model.Featured == true)
+        {
+            <dd><i class="yes far fa-check-circle"></i></dd>
+        }
+        else
+        {
+            <dd><i class="no far fa-times-circle"></i></dd>
+        }
+
+        @*SPECIAL*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Special)
+        </dt>
+
+        @if (Model.Special == true)
+        {
+            <dd><i class="yes far fa-check-circle"></i></dd>
+        }
+        else
+        {
+            <dd><i class="no far fa-times-circle"></i></dd>
+        }
+
+        @*ONSALE*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Onsale)
+        </dt>
+
+        @if (Model.Onsale == true)
+        {
+            <dd><i class="yes far fa-check-circle"></i></dd>
+        }
+        else
+        {
+            <dd><i class="no far fa-times-circle"></i></dd>
+        }
+
+        @*TOP SELLING OF THE WEEK*@
+        <dt>
+            Weekly Sale
+        </dt>
+
+        @if (Model.Top_Selling_Week == true)
+        {
+            <dd><i class="yes far fa-check-circle"></i></dd>
+        }
+        else
+        {
+            <dd><i class="no far fa-times-circle"></i></dd>
+        }
+
+        @*DETAILS 1*@
+        <dt>
+            1st Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details_1)
+        </dd>
+
+        @*DETAILS 2*@
+        <dt>
+            2nd Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details_2)
+        </dd>
+
+        @*DETAILS 3*@
+        <dt>
+            3rd Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details_3)
+        </dd>
+
+        @*DETAILS 4*@
+        <dt>
+            4th Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details_4)
+        </dd>
+
+        @*DETAILS 5*@
+        <dt>
+           5th Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details_5)
+        </dd>
+
+        
+
+        @*COLOR*@
+        <dt>
+            Color
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.Name)
+            <span class="colorbox" style="background: @Model.Color.Name"></span>
+        </dd>
+
+        @*SIZE*@
+        <dt>
+            Size
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Hide" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

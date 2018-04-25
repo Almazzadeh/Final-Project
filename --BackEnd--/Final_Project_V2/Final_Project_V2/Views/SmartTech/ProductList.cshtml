@@ -54,7 +54,10 @@
                             </div>
                             <div class="col-md-5">
                                 <p class="productcategory">@pr.Category.Name</p>
-                                <h4>@pr.Name</h4>
+
+                                <h4>
+                                    @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
+                                </h4>
                                 <div class="stars">
                                     @if (pr.Rating == 0)
                                      {
@@ -125,8 +128,20 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
+                                @if(pr.Discount != null)
+                                {
+                                    <span class="discountlist">-@pr.Discount%</span>
+                                }
                                 <div class="center">
-                                    <h4>$@pr.Price</h4>
+                                    @if(pr.Discount != null)
+                                    {
+                                        <h4 class="oldprice">$@pr.Price</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4 class="productprice">$@pr.Price</h4>
+
+                                    }
                                     <h5>
                                         Availability:<br />
                                         @if (pr.Count > 0)

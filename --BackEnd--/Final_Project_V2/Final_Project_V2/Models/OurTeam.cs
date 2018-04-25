@@ -18,5 +18,6 @@ namespace Final_Project_V2.Models
         public string Image { get; set; }
         public string Name { get; set; }
         public string position { get; set; }
+        public Nullable<bool> Status { get; set; }
     }
 }

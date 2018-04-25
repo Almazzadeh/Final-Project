@@ -29,24 +29,25 @@
                     </div>
                     <div class="col-md-6">
                         <span>
-                            <i class="far fa-bookmark"></i> @bg.Date.ToString()</span>
+                            <i class="far fa-bookmark"></i> @bg.Date.ToString()
+                        </span>
                         <span>
                             <i class="far fa-comment"></i> 86 Comments
                         </span>
                         <h4>@bg.Header</h4>
 
-                        @if(bg.Paragraph_1.Length > 190)
-                        {
-                            <p>
-                           @bg.Paragraph_1.Substring(0, 190) [....]
-                            </p>
-                        }
-                        else
-                        {
-                            <p>@bg.Paragraph_1</p>
-                        }
-
-                        <a href="#">Read more</a>
+                        @if (bg.Paragraph_1.Length > 190)
+    {
+                    <p>
+                        @bg.Paragraph_1.Substring(0, 190) [....]
+                    </p>
+}
+else
+{
+                    <p>@bg.Paragraph_1</p>
+}
+                        @Html.ActionLink("Read more", "BlogDetails", new { id = bg.Id })
+                        @*<a href="@Url.Action("")">Read more</a>*@
                     </div>
                 </section>
              }

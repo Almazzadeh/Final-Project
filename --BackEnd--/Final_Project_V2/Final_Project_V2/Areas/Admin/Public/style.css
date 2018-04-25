@@ -322,6 +322,63 @@ a.article, a.article:hover {
     margin-bottom: 0;
 }
 
+.fa-star, dd .fa-exclamation-circle{
+    color: gold;
+}
+
+.no, .yes{
+    font-size: 1.3em;
+}
+
+.no{
+    color: red;
+}
+
+.yes{
+    color: green;
+}
+
+.colorbox{
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    position: relative;
+    left: 5px;
+    top: 2px;
+}
+
+.checkbox {
+    margin-top: 6px !important;
+    position: relative;
+    width: 60px;
+    min-height: 20px !important;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none !important;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2)
+}
+.checkbox:checked{
+    background: #08c;
+}
+
+.checkbox:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: scale(1.4);
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: .3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+.checkbox:checked:before{
+    left: 40px;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

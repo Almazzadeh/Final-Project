@@ -16,4 +16,43 @@ $(document).ready(function () {
     })
 
     $(".alert-danger").delay(5000).slideUp(500);
+
+
+    $('.checkbox').each(function () {
+        if ($(this).val() == "True") {
+            $(this).prop('checked', true);
+        } else {
+            $(this).prop('checked', false);
+        }
+
+        var span = $(this).parent().next().children();
+
+        $(this).on('change', function () {
+            if ($(this).is(':checked')) {
+                span.val('True')
+            } else {
+                span.val('False')
+            }
+        })
+    })
+
+
+    //$('.checkbox').each(function () {
+    //    $(this).on('change', function () {
+    //        if ($(this).is(':checked')) {
+    //            $(this).attr('value', 'True');
+    //        } else {
+    //            $(this).attr('value', 'False');
+    //        }
+    //    }
+    //})
+
+    //$(".checkbox").on('change', function () {
+    //    if ($(this).is(':checked')) {
+    //        $(this).attr('value', 'True');
+    //    } else {
+    //        $(this).attr('value', 'False');
+    //    }
+    //}
+
 });
