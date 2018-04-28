@@ -17,7 +17,7 @@ namespace Final_Project_V2.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional },
+                new { controller = "Product", action = "Index", id = UrlParameter.Optional },
                 new string[] {"Final_Project_V2.Areas.Admin.Controllers"}
             );
         }

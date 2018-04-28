@@ -38,10 +38,10 @@ namespace Final_Project_V2.Models
         public virtual DbSet<AboutWallpaper> AboutWallpaper { get; set; }
         public virtual DbSet<OurTeam> OurTeam { get; set; }
         public virtual DbSet<Blog> Blog { get; set; }
-        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<AnimationSideBottom> AnimationSideBottom { get; set; }
         public virtual DbSet<AnimationSideTop> AnimationSideTop { get; set; }
         public virtual DbSet<TopSelling> TopSelling { get; set; }
         public virtual DbSet<Skill> Skill { get; set; }
+        public virtual DbSet<Setting> Setting { get; set; }
     }
 }

@@ -11,6 +11,7 @@ using Final_Project_V2.Models;
 
 namespace Final_Project_V2.Areas.Admin.Controllers
 {
+    [AuthorizationFilterController]
     public class AboutWallpaperController : Controller
     {
         private Final_ProjectEntities db = new Final_ProjectEntities();

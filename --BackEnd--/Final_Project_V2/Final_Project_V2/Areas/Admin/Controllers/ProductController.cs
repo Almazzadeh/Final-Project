@@ -22,6 +22,12 @@ namespace Final_Project_V2.Areas.Admin.Controllers
             return View(product.OrderByDescending(s => s.Date).ToList());
         }
 
+        public ActionResult Index2()
+        {
+            var product = db.Product.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color).Include(p => p.Size);
+            return View(product.OrderByDescending(s => s.Date).ToList());
+        }
+
         // GET: Admin/Product/Details/5
         public ActionResult Details(int? id)
         {

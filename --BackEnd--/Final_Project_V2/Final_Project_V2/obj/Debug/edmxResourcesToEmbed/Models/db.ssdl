@@ -10,14 +10,6 @@
     <Property Name="Text" Type="nvarchar" MaxLength="40" />
     <Property Name="Button" Type="nvarchar" MaxLength="20" />
   </EntityType>
-  <EntityType Name="Admin">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="40" />
-    <Property Name="Password" Type="nvarchar" MaxLength="200" />
-  </EntityType>
   <EntityType Name="Animation">
     <Key>
       <PropertyRef Name="Id" />
@@ -144,7 +136,15 @@
     <Property Name="Details_4" Type="nvarchar" MaxLength="200" />
     <Property Name="Details_5" Type="nvarchar" MaxLength="200" />
     <Property Name="Status" Type="bit" />
-    <Property Name="Date" Type="date" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminEmail" Type="nvarchar" MaxLength="65" />
+    <Property Name="AdminPassword" Type="nvarchar" MaxLength="325" />
   </EntityType>
   <EntityType Name="Shipping">
     <Key>
@@ -244,7 +244,6 @@
   </Association>
   <EntityContainer Name="Final_ProjectModelStoreContainer">
     <EntitySet Name="AboutWallpaper" EntityType="Self.AboutWallpaper" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Animation" EntityType="Self.Animation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AnimationSideBottom" EntityType="Self.AnimationSideBottom" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AnimationSideTop" EntityType="Self.AnimationSideTop" Schema="dbo" store:Type="Tables" />
@@ -256,6 +255,7 @@
     <EntitySet Name="MobileOperator" EntityType="Self.MobileOperator" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OurTeam" EntityType="Self.OurTeam" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shipping" EntityType="Self.Shipping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />

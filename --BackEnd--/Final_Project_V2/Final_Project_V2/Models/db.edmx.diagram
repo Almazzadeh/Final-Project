@@ -22,11 +22,11 @@
         <EntityTypeShape EntityType="Final_ProjectModel.AboutWallpaper" Width="1.5" PointX="8.375" PointY="4.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.OurTeam" Width="1.5" PointX="8.375" PointY="7.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.Blog" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Final_ProjectModel.Admin" Width="1.5" PointX="0.75" PointY="10.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.AnimationSideBottom" Width="1.5" PointX="10.75" PointY="4.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.AnimationSideTop" Width="1.5" PointX="10.75" PointY="7.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.TopSelling" Width="1.5" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.Skill" Width="1.5" PointX="8.375" PointY="10.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.Setting" Width="1.5" PointX="0.75" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

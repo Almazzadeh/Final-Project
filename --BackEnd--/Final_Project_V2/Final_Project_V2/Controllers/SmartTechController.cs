@@ -20,8 +20,17 @@ namespace Final_Project_V2.Controllers
             ViewBag.AnimationSideBottom = db.AnimationSideBottom.First();
             ViewBag.FourDiv = db.FourDiv.Where(s => s.Status == true).ToList();
             ViewBag.Product = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
+            ViewBag.SpecialProduct = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Special == true).Take(5);
+            ViewBag.OnsaleProduct = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Onsale == true).Take(5);
+            ViewBag.WeeklySaleProduct = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Top_Selling_Week == true).Take(8);
             ViewBag.Blog = db.Blog.Where(s => s.Status == true).OrderByDescending(s => s.Date).ToList();
             ViewBag.TopSelling = db.TopSelling.First();
+            ViewBag.TV = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Category_Id == 2).ToList();
+            ViewBag.Phone = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Category_Id == 13).Take(5);
+            ViewBag.PC = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Category_Id == 8).Take(5);
+            ViewBag.GameConsole = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Category_Id == 7).Take(5);
+            ViewBag.Watch = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Category_Id == 12).Take(5);
+            ViewBag.Headphone = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true && s.Category_Id == 4).Take(5);
             return View();
         }
 

@@ -15,14 +15,6 @@
           <Property Name="Text" Type="nvarchar" MaxLength="40" />
           <Property Name="Button" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="Admin">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="40" />
-          <Property Name="Password" Type="nvarchar" MaxLength="200" />
-        </EntityType>
         <EntityType Name="Animation">
           <Key>
             <PropertyRef Name="Id" />
@@ -149,7 +141,15 @@
           <Property Name="Details_4" Type="nvarchar" MaxLength="200" />
           <Property Name="Details_5" Type="nvarchar" MaxLength="200" />
           <Property Name="Status" Type="bit" />
-          <Property Name="Date" Type="date" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminEmail" Type="nvarchar" MaxLength="65" />
+          <Property Name="AdminPassword" Type="nvarchar" MaxLength="325" />
         </EntityType>
         <EntityType Name="Shipping">
           <Key>
@@ -249,7 +249,6 @@
         </Association>
         <EntityContainer Name="Final_ProjectModelStoreContainer">
           <EntitySet Name="AboutWallpaper" EntityType="Self.AboutWallpaper" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Animation" EntityType="Self.Animation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnimationSideBottom" EntityType="Self.AnimationSideBottom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnimationSideTop" EntityType="Self.AnimationSideTop" Schema="dbo" store:Type="Tables" />
@@ -261,6 +260,7 @@
           <EntitySet Name="MobileOperator" EntityType="Self.MobileOperator" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OurTeam" EntityType="Self.OurTeam" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shipping" EntityType="Self.Shipping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
@@ -348,11 +348,11 @@
           <EntitySet Name="AboutWallpaper" EntityType="Final_ProjectModel.AboutWallpaper" />
           <EntitySet Name="OurTeam" EntityType="Final_ProjectModel.OurTeam" />
           <EntitySet Name="Blog" EntityType="Final_ProjectModel.Blog" />
-          <EntitySet Name="Admin" EntityType="Final_ProjectModel.Admin" />
           <EntitySet Name="AnimationSideBottom" EntityType="Final_ProjectModel.AnimationSideBottom" />
           <EntitySet Name="AnimationSideTop" EntityType="Final_ProjectModel.AnimationSideTop" />
           <EntitySet Name="TopSelling" EntityType="Final_ProjectModel.TopSelling" />
           <EntitySet Name="Skill" EntityType="Final_ProjectModel.Skill" />
+          <EntitySet Name="Setting" EntityType="Final_ProjectModel.Setting" />
         </EntityContainer>
         <EntityType Name="Brand">
           <Key>
@@ -422,7 +422,7 @@
           <NavigationProperty Name="Color" Relationship="Final_ProjectModel.FK__Product__Color_I__5165187F" FromRole="Product" ToRole="Color" />
           <NavigationProperty Name="Size" Relationship="Final_ProjectModel.FK__Product__Size_Id__52593CB8" FromRole="Product" ToRole="Size" />
           <Property Name="Status" Type="Boolean" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
@@ -523,14 +523,6 @@
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
-        <EntityType Name="Admin">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="AnimationSideBottom">
           <Key>
             <PropertyRef Name="Id" />
@@ -572,6 +564,14 @@
           <Property Name="Value" Type="Int32" />
           <Property Name="Div_Id_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminEmail" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+          <Property Name="AdminPassword" Type="String" MaxLength="325" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -736,15 +736,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Admin">
-            <EntityTypeMapping TypeName="Final_ProjectModel.Admin">
-              <MappingFragment StoreEntitySet="Admin">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AnimationSideBottom">
             <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideBottom">
               <MappingFragment StoreEntitySet="AnimationSideBottom">
@@ -787,6 +778,15 @@
                 <ScalarProperty Name="Div_Id_Name" ColumnName="Div_Id_Name" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Setting">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Setting">
+              <MappingFragment StoreEntitySet="Setting">
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

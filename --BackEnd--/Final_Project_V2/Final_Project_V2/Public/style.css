@@ -965,6 +965,7 @@ img {
   margin-left: 15px;
   font-size: 15px;
   height: 100%;
+  display: block;
 }
 
 .animation .col-md-8,

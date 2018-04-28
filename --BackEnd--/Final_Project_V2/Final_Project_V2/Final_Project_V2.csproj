@@ -152,9 +152,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutWallpaperController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminAccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationSideBottomController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationSideTopController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthorizationFilterController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
     <Compile Include="Areas\Admin\Controllers\FourDivController.cs" />
     <Compile Include="Areas\Admin\Controllers\OurTeamController.cs" />
@@ -166,9 +168,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AboutWallpaper.cs">
-      <DependentUpon>db.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Admin.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Animation.cs">
@@ -219,6 +218,9 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Setting.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Shipping.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
@@ -237,6 +239,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Public\admin.css" />
+    <Content Include="Areas\Admin\Public\admin.js" />
     <Content Include="Areas\Admin\Public\jquery.mswitch.css" />
     <Content Include="Areas\Admin\Public\jquery.mswitch.js" />
     <Content Include="Areas\Admin\Public\main.js" />
@@ -415,6 +419,8 @@
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Show.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index2.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminAccount\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -462,6 +468,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\AuthorizationFilter\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
