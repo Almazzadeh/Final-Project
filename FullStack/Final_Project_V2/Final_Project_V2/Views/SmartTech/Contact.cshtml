@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Contact - Smart Tech";
+}
+
+<!-- BREADCRUMB START HERE -->
+<div class="breadcrumbwrapper">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index")">Home</a>
+            </li>
+            <li class="active">Contact</li>
+        </ol>
+    </div>
+</div>
+<!-- BREADCRUMB END HERE -->
+<!-- GOOGLE MAP START HERE -->
+<div class="contact">
+    <div class="container">
+        <div class="mapwrapper">
+            <div id="map" data-locationMap="@ViewBag.Setting.Location"></div>
+            <script>
+                var map;
+                var mapElement = document.querySelector("#map");
+
+                var locationMap = mapElement.getAttribute("data-locationMap");
+                var settingsArray = locationMap.split(",");
+                var latMap = Number(settingsArray[0]);
+                var lonMap = Number(settingsArray[1]);
+                console.log(settingsArray);
+
+                var SmartTech = { lat: latMap, lng: lonMap };
+
+
+                function initMap() {
+                    // Create a map object and specify the DOM element for display.
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: SmartTech,
+                        zoom: 16
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: SmartTech,
+                        map: map
+                    });
+                }
+
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7wxRW7Hz7pY8LqJf0PeFJQ6cdxL8ia4Q&callback=initMap"
+                    async defer></script>
+        </div>
+        <div class="contacttext">
+            <div class="col-md-9">
+                <h3>Do you have a Question for Us?</h3>
+                <div class="col-md-6">
+                    <label for="firstname">First Name</label>
+                    <input type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname">Last Name</label>
+                    <input type="text">
+                </div>
+                <div class="col-md-12">
+                    <label for="message">Message</label>
+                    <textarea id="message" cols="30" rows="10"></textarea>
+                </div>
+                <a href="#" class="btn btn-primary">Send Message</a>
+            </div>
+            <div class="col-md-3">
+                <h4>SmartTech</h4>
+                <p>The most powerful PSD for Digital & Electronic!</p>
+                <hr>
+                <h4>Address:</h4>
+                <p>@ViewBag.Address.Address1</p>
+                <h4>Phone:</h4>
+                <p>@ViewBag.Address.Phone_1</p>
+                <p>@ViewBag.Address.Phone_2</p>
+                <h4>Email:</h4>
+                <p>@ViewBag.Address.Email_1</p>
+                <p>@ViewBag.Address.Email_2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- GOOGLE MAP END HERE -->

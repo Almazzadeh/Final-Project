@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Final_ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboutWallpaper">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Header" Type="nvarchar" MaxLength="30" />
+          <Property Name="Text" Type="nvarchar" MaxLength="40" />
+          <Property Name="Button" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Phone_1" Type="nvarchar" MaxLength="30" />
+          <Property Name="Phone_2" Type="nvarchar" MaxLength="30" />
+          <Property Name="Email_1" Type="nvarchar" MaxLength="60" />
+          <Property Name="Email_2" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Animation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Top_Text" Type="nvarchar" MaxLength="60" />
+          <Property Name="Middle_Text" Type="nvarchar" MaxLength="60" />
+          <Property Name="Bottom_Text" Type="nvarchar" MaxLength="60" />
+          <Property Name="Price" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="AnimationSideBottom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="TopText_1" Type="nvarchar" MaxLength="10" />
+          <Property Name="TopText_2" Type="nvarchar" MaxLength="10" />
+          <Property Name="MiddleText" Type="nvarchar" MaxLength="100" />
+          <Property Name="Button" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AnimationSideTop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="TopText" Type="nvarchar" MaxLength="30" />
+          <Property Name="MiddleText" Type="nvarchar" MaxLength="30" />
+          <Property Name="Price" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Header" Type="nvarchar" MaxLength="60" />
+          <Property Name="Paragraph_1" Type="nvarchar(max)" />
+          <Property Name="StrongText" Type="nvarchar" MaxLength="300" />
+          <Property Name="Author" Type="nvarchar" MaxLength="30" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="22" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="FourDiv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="30" />
+          <Property Name="Header" Type="nvarchar" MaxLength="40" />
+          <Property Name="Content" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="MobileOperator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Carrier" Type="nvarchar" MaxLength="30" />
+          <Property Name="Rating" Type="nvarchar" MaxLength="70" />
+          <Property Name="Voice1" Type="bit" />
+          <Property Name="Voice2" Type="bit" />
+          <Property Name="2GData" Type="bit" />
+          <Property Name="3GData" Type="bit" />
+          <Property Name="4GData" Type="bit" />
+        </EntityType>
+        <EntityType Name="Newsletter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="40" />
+          <Property Name="Content" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="OurTeam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="position" Type="nvarchar" MaxLength="30" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="45" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Category_Id" Type="int" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Rating" Type="tinyint" />
+          <Property Name="Review_Count" Type="int" />
+          <Property Name="Discount" Type="tinyint" />
+          <Property Name="New" Type="bit" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Brand_Id" Type="int" />
+          <Property Name="Color_Id" Type="int" />
+          <Property Name="Size_Id" Type="int" />
+          <Property Name="Featured" Type="bit" />
+          <Property Name="Special" Type="bit" />
+          <Property Name="Onsale" Type="bit" />
+          <Property Name="Top_Selling_Week" Type="bit" />
+          <Property Name="Details_1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Details_2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Details_3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Details_4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Details_5" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminEmail" Type="nvarchar" MaxLength="65" />
+          <Property Name="AdminPassword" Type="nvarchar(max)" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Shipping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shipping_Company" Type="nvarchar" MaxLength="60" />
+          <Property Name="Shipping_Cost" Type="nvarchar" MaxLength="20" />
+          <Property Name="Delivery_Time" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tracking_Information" Type="bit" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Value" Type="int" />
+          <Property Name="Div_Id_Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="SocialNetwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="30" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TopSelling">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="20" />
+          <Property Name="Content" Type="nvarchar" MaxLength="80" />
+          <Property Name="Span" Type="nvarchar" MaxLength="20" />
+          <Property Name="Button" Type="nvarchar" MaxLength="20" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Product__Brand_I__5070F446">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Brand_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Categor__4F7CD00D">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Color_I__5165187F">
+          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Color_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Size_Id__52593CB8">
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Size_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Final_ProjectModelStoreContainer">
+          <EntitySet Name="AboutWallpaper" EntityType="Self.AboutWallpaper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Animation" EntityType="Self.Animation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnimationSideBottom" EntityType="Self.AnimationSideBottom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnimationSideTop" EntityType="Self.AnimationSideTop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FourDiv" EntityType="Self.FourDiv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MobileOperator" EntityType="Self.MobileOperator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Newsletter" EntityType="Self.Newsletter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OurTeam" EntityType="Self.OurTeam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shipping" EntityType="Self.Shipping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SocialNetwork" EntityType="Self.SocialNetwork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Support" EntityType="Self.Support" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TopSelling" EntityType="Self.TopSelling" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Self.FK__Product__Brand_I__5070F446">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Categor__4F7CD00D" Association="Self.FK__Product__Categor__4F7CD00D">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Color_I__5165187F" Association="Self.FK__Product__Color_I__5165187F">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Size_Id__52593CB8" Association="Self.FK__Product__Size_Id__52593CB8">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Final_ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Animation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Top_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Middle_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Bottom_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FourDiv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="Final_ProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Animation" EntityType="Self.Animation" />
+          <EntitySet Name="FourDiv" EntityType="Self.FourDiv" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Brand" EntityType="Final_ProjectModel.Brand" />
+          <EntitySet Name="Category" EntityType="Final_ProjectModel.Category" />
+          <EntitySet Name="Color" EntityType="Final_ProjectModel.Color" />
+          <EntitySet Name="MobileOperator" EntityType="Final_ProjectModel.MobileOperator" />
+          <EntitySet Name="Product" EntityType="Final_ProjectModel.Product" />
+          <EntitySet Name="Size" EntityType="Final_ProjectModel.Size" />
+          <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Final_ProjectModel.FK__Product__Brand_I__5070F446">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Categor__4F7CD00D" Association="Final_ProjectModel.FK__Product__Categor__4F7CD00D">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Color_I__5165187F" Association="Final_ProjectModel.FK__Product__Color_I__5165187F">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Size_Id__52593CB8" Association="Final_ProjectModel.FK__Product__Size_Id__52593CB8">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <EntitySet Name="Shipping" EntityType="Final_ProjectModel.Shipping" />
+          <EntitySet Name="AboutWallpaper" EntityType="Final_ProjectModel.AboutWallpaper" />
+          <EntitySet Name="OurTeam" EntityType="Final_ProjectModel.OurTeam" />
+          <EntitySet Name="Blog" EntityType="Final_ProjectModel.Blog" />
+          <EntitySet Name="AnimationSideBottom" EntityType="Final_ProjectModel.AnimationSideBottom" />
+          <EntitySet Name="AnimationSideTop" EntityType="Final_ProjectModel.AnimationSideTop" />
+          <EntitySet Name="TopSelling" EntityType="Final_ProjectModel.TopSelling" />
+          <EntitySet Name="Skill" EntityType="Final_ProjectModel.Skill" />
+          <EntitySet Name="Setting" EntityType="Final_ProjectModel.Setting" />
+          <EntitySet Name="Address" EntityType="Final_ProjectModel.Address" />
+          <EntitySet Name="Support" EntityType="Final_ProjectModel.Support" />
+          <EntitySet Name="Newsletter" EntityType="Final_ProjectModel.Newsletter" />
+          <EntitySet Name="SocialNetwork" EntityType="Final_ProjectModel.SocialNetwork" />
+        </EntityContainer>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Brand_I__5070F446" FromRole="Brand" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Categor__4F7CD00D" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Color_I__5165187F" FromRole="Color" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="MobileOperator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Carrier" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Voice1" Type="Boolean" />
+          <Property Name="Voice2" Type="Boolean" />
+          <Property Name="C2GData" Type="Boolean" />
+          <Property Name="C3GData" Type="Boolean" />
+          <Property Name="C4GData" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Category_Id" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="Byte" />
+          <Property Name="Review_Count" Type="Int32" />
+          <Property Name="Discount" Type="Byte" />
+          <Property Name="New" Type="Boolean" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Brand_Id" Type="Int32" />
+          <Property Name="Color_Id" Type="Int32" />
+          <Property Name="Size_Id" Type="Int32" />
+          <Property Name="Featured" Type="Boolean" />
+          <Property Name="Special" Type="Boolean" />
+          <Property Name="Onsale" Type="Boolean" />
+          <Property Name="Top_Selling_Week" Type="Boolean" />
+          <Property Name="Details_1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Details_2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Details_3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Details_4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Details_5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Brand" Relationship="Final_ProjectModel.FK__Product__Brand_I__5070F446" FromRole="Product" ToRole="Brand" />
+          <NavigationProperty Name="Category" Relationship="Final_ProjectModel.FK__Product__Categor__4F7CD00D" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Color" Relationship="Final_ProjectModel.FK__Product__Color_I__5165187F" FromRole="Product" ToRole="Color" />
+          <NavigationProperty Name="Size" Relationship="Final_ProjectModel.FK__Product__Size_Id__52593CB8" FromRole="Product" ToRole="Size" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Size_Id__52593CB8" FromRole="Size" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__Product__Brand_I__5070F446">
+          <End Type="Final_ProjectModel.Brand" Role="Brand" Multiplicity="0..1" />
+          <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Brand_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Categor__4F7CD00D">
+          <End Type="Final_ProjectModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Color_I__5165187F">
+          <End Type="Final_ProjectModel.Color" Role="Color" Multiplicity="0..1" />
+          <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Color_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Size_Id__52593CB8">
+          <End Type="Final_ProjectModel.Size" Role="Size" Multiplicity="0..1" />
+          <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Size_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Shipping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shipping_Company" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Shipping_Cost" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tracking_Information" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="AboutWallpaper">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OurTeam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Paragraph_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StrongText" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="AnimationSideBottom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopText_1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TopText_2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AnimationSideTop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopText" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleText" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TopSelling">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Span" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="Int32" />
+          <Property Name="Div_Id_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminEmail" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+          <Property Name="AdminPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Email_1" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Email_2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Newsletter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SocialNetwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Final_ProjectModelStoreContainer" CdmEntityContainer="Final_ProjectEntities">
+          <EntitySetMapping Name="Animation">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Animation">
+              <MappingFragment StoreEntitySet="Animation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Top_Text" ColumnName="Top_Text" />
+                <ScalarProperty Name="Middle_Text" ColumnName="Middle_Text" />
+                <ScalarProperty Name="Bottom_Text" ColumnName="Bottom_Text" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FourDiv">
+            <EntityTypeMapping TypeName="Final_ProjectModel.FourDiv">
+              <MappingFragment StoreEntitySet="FourDiv">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Final_ProjectModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Color">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MobileOperator">
+            <EntityTypeMapping TypeName="Final_ProjectModel.MobileOperator">
+              <MappingFragment StoreEntitySet="MobileOperator">
+                <ScalarProperty Name="C4GData" ColumnName="4GData" />
+                <ScalarProperty Name="C3GData" ColumnName="3GData" />
+                <ScalarProperty Name="C2GData" ColumnName="2GData" />
+                <ScalarProperty Name="Voice2" ColumnName="Voice2" />
+                <ScalarProperty Name="Voice1" ColumnName="Voice1" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Details_5" ColumnName="Details_5" />
+                <ScalarProperty Name="Details_4" ColumnName="Details_4" />
+                <ScalarProperty Name="Details_3" ColumnName="Details_3" />
+                <ScalarProperty Name="Details_2" ColumnName="Details_2" />
+                <ScalarProperty Name="Details_1" ColumnName="Details_1" />
+                <ScalarProperty Name="Top_Selling_Week" ColumnName="Top_Selling_Week" />
+                <ScalarProperty Name="Onsale" ColumnName="Onsale" />
+                <ScalarProperty Name="Special" ColumnName="Special" />
+                <ScalarProperty Name="Featured" ColumnName="Featured" />
+                <ScalarProperty Name="Size_Id" ColumnName="Size_Id" />
+                <ScalarProperty Name="Color_Id" ColumnName="Color_Id" />
+                <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="New" ColumnName="New" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Review_Count" ColumnName="Review_Count" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Size">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Size">
+              <MappingFragment StoreEntitySet="Size">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shipping">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Shipping">
+              <MappingFragment StoreEntitySet="Shipping">
+                <ScalarProperty Name="Tracking_Information" ColumnName="Tracking_Information" />
+                <ScalarProperty Name="Delivery_Time" ColumnName="Delivery_Time" />
+                <ScalarProperty Name="Shipping_Cost" ColumnName="Shipping_Cost" />
+                <ScalarProperty Name="Shipping_Company" ColumnName="Shipping_Company" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AboutWallpaper">
+            <EntityTypeMapping TypeName="Final_ProjectModel.AboutWallpaper">
+              <MappingFragment StoreEntitySet="AboutWallpaper">
+                <ScalarProperty Name="Button" ColumnName="Button" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OurTeam">
+            <EntityTypeMapping TypeName="Final_ProjectModel.OurTeam">
+              <MappingFragment StoreEntitySet="OurTeam">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blog">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="StrongText" ColumnName="StrongText" />
+                <ScalarProperty Name="Paragraph_1" ColumnName="Paragraph_1" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimationSideBottom">
+            <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideBottom">
+              <MappingFragment StoreEntitySet="AnimationSideBottom">
+                <ScalarProperty Name="Button" ColumnName="Button" />
+                <ScalarProperty Name="MiddleText" ColumnName="MiddleText" />
+                <ScalarProperty Name="TopText_2" ColumnName="TopText_2" />
+                <ScalarProperty Name="TopText_1" ColumnName="TopText_1" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimationSideTop">
+            <EntityTypeMapping TypeName="Final_ProjectModel.AnimationSideTop">
+              <MappingFragment StoreEntitySet="AnimationSideTop">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="MiddleText" ColumnName="MiddleText" />
+                <ScalarProperty Name="TopText" ColumnName="TopText" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TopSelling">
+            <EntityTypeMapping TypeName="Final_ProjectModel.TopSelling">
+              <MappingFragment StoreEntitySet="TopSelling">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Button" ColumnName="Button" />
+                <ScalarProperty Name="Span" ColumnName="Span" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skill">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Skill">
+              <MappingFragment StoreEntitySet="Skill">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Div_Id_Name" ColumnName="Div_Id_Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Setting">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Setting">
+              <MappingFragment StoreEntitySet="Setting">
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Email_2" ColumnName="Email_2" />
+                <ScalarProperty Name="Email_1" ColumnName="Email_1" />
+                <ScalarProperty Name="Phone_2" ColumnName="Phone_2" />
+                <ScalarProperty Name="Phone_1" ColumnName="Phone_1" />
+                <ScalarProperty Name="Address1" ColumnName="Address" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Support">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Support">
+              <MappingFragment StoreEntitySet="Support">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Newsletter">
+            <EntityTypeMapping TypeName="Final_ProjectModel.Newsletter">
+              <MappingFragment StoreEntitySet="Newsletter">
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocialNetwork">
+            <EntityTypeMapping TypeName="Final_ProjectModel.SocialNetwork">
+              <MappingFragment StoreEntitySet="SocialNetwork">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

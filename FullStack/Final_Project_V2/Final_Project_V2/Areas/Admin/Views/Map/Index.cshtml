@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Map</h2>
+
+<div class="row">
+    <div id="map" data-locationMap="@ViewBag.Setting.Location"></div>
+    <script>
+            var map;
+            var mapElement = document.querySelector("#map");
+
+            var locationMap = mapElement.getAttribute("data-locationMap");
+            var settingsArray = locationMap.split(",");
+            var latMap = Number(settingsArray[0]);
+            var lonMap = Number(settingsArray[1]);
+
+            var SmartTech = { lat: latMap, lng: lonMap };
+
+          function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: SmartTech,
+                zoom: 16,
+              });
+            var marker = new google.maps.Marker({
+                position: SmartTech,
+                map: map,
+                draggable: true
+            });
+
+            marker.addListener('dragend', function (event) {
+                var value = event.latLng.lat() + "," + event.latLng.lng();
+                var input = document.querySelector("input[name=mapLocation]");
+                input.value = value;
+            });
+          }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7wxRW7Hz7pY8LqJf0PeFJQ6cdxL8ia4Q&callback=initMap"
+            async defer></script>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div class="form-group">
+                <input class="form-control" type="hidden" name="mapLocation" />
+                <input type="submit" value="Save" class="btn btn-success pull-right" />
+            </div>
+        </form>
+    </div>
+</div>

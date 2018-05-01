@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Final_Project_V2.Models.SocialNetwork>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Social Networks</h2>
+
+<p class="btn btn-info">
+    @Html.ActionLink("Create", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Icon)
+        </th>
+        <th class="sticky"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="@item.Url" target="_blank">@item.Url</a>
+        </td>
+        <td>
+            <i class="@item.Icon fa-2x"></i>
+        </td>
+        <td class="float-right">
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-primary" })
+            @if(item.Status == true)
+            {
+                @Html.ActionLink("Hide", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" });
+            }
+            else
+            {
+                @Html.ActionLink("Show", "Show", new { id = item.Id }, new { @class = "btn btn-success" });
+            }
+        </td>
+    </tr>
+}
+
+</table>

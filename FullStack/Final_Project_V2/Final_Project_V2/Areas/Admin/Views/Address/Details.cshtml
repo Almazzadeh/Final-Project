@@ -1,0 +1,58 @@
+﻿@model Final_Project_V2.Models.Address
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            1st Phone Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_1)
+        </dd>
+
+        <dt>
+            2nd Phone Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_2)
+        </dd>
+
+        <dt>
+            1st Email Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_1)
+        </dd>
+
+        <dt>
+            2nd Email Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_2)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+</p>

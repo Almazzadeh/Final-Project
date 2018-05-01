@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Final_ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Animation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Top_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Middle_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Bottom_Text" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FourDiv">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Header" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="Final_ProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Animation" EntityType="Self.Animation" />
+    <EntitySet Name="FourDiv" EntityType="Self.FourDiv" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Brand" EntityType="Final_ProjectModel.Brand" />
+    <EntitySet Name="Category" EntityType="Final_ProjectModel.Category" />
+    <EntitySet Name="Color" EntityType="Final_ProjectModel.Color" />
+    <EntitySet Name="MobileOperator" EntityType="Final_ProjectModel.MobileOperator" />
+    <EntitySet Name="Product" EntityType="Final_ProjectModel.Product" />
+    <EntitySet Name="Size" EntityType="Final_ProjectModel.Size" />
+    <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Final_ProjectModel.FK__Product__Brand_I__5070F446">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Categor__4F7CD00D" Association="Final_ProjectModel.FK__Product__Categor__4F7CD00D">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Color_I__5165187F" Association="Final_ProjectModel.FK__Product__Color_I__5165187F">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Size_Id__52593CB8" Association="Final_ProjectModel.FK__Product__Size_Id__52593CB8">
+      <End Role="Size" EntitySet="Size" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <EntitySet Name="Shipping" EntityType="Final_ProjectModel.Shipping" />
+    <EntitySet Name="AboutWallpaper" EntityType="Final_ProjectModel.AboutWallpaper" />
+    <EntitySet Name="OurTeam" EntityType="Final_ProjectModel.OurTeam" />
+    <EntitySet Name="Blog" EntityType="Final_ProjectModel.Blog" />
+    <EntitySet Name="AnimationSideBottom" EntityType="Final_ProjectModel.AnimationSideBottom" />
+    <EntitySet Name="AnimationSideTop" EntityType="Final_ProjectModel.AnimationSideTop" />
+    <EntitySet Name="TopSelling" EntityType="Final_ProjectModel.TopSelling" />
+    <EntitySet Name="Skill" EntityType="Final_ProjectModel.Skill" />
+    <EntitySet Name="Setting" EntityType="Final_ProjectModel.Setting" />
+    <EntitySet Name="Address" EntityType="Final_ProjectModel.Address" />
+    <EntitySet Name="Support" EntityType="Final_ProjectModel.Support" />
+    <EntitySet Name="Newsletter" EntityType="Final_ProjectModel.Newsletter" />
+    <EntitySet Name="SocialNetwork" EntityType="Final_ProjectModel.SocialNetwork" />
+  </EntityContainer>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Brand_I__5070F446" FromRole="Brand" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Categor__4F7CD00D" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Color_I__5165187F" FromRole="Color" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="MobileOperator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Carrier" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Rating" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Voice1" Type="Boolean" />
+    <Property Name="Voice2" Type="Boolean" />
+    <Property Name="C2GData" Type="Boolean" />
+    <Property Name="C3GData" Type="Boolean" />
+    <Property Name="C4GData" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Category_Id" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rating" Type="Byte" />
+    <Property Name="Review_Count" Type="Int32" />
+    <Property Name="Discount" Type="Byte" />
+    <Property Name="New" Type="Boolean" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="Brand_Id" Type="Int32" />
+    <Property Name="Color_Id" Type="Int32" />
+    <Property Name="Size_Id" Type="Int32" />
+    <Property Name="Featured" Type="Boolean" />
+    <Property Name="Special" Type="Boolean" />
+    <Property Name="Onsale" Type="Boolean" />
+    <Property Name="Top_Selling_Week" Type="Boolean" />
+    <Property Name="Details_1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Details_2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Details_3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Details_4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Details_5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Brand" Relationship="Final_ProjectModel.FK__Product__Brand_I__5070F446" FromRole="Product" ToRole="Brand" />
+    <NavigationProperty Name="Category" Relationship="Final_ProjectModel.FK__Product__Categor__4F7CD00D" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Color" Relationship="Final_ProjectModel.FK__Product__Color_I__5165187F" FromRole="Product" ToRole="Color" />
+    <NavigationProperty Name="Size" Relationship="Final_ProjectModel.FK__Product__Size_Id__52593CB8" FromRole="Product" ToRole="Size" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Final_ProjectModel.FK__Product__Size_Id__52593CB8" FromRole="Size" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK__Product__Brand_I__5070F446">
+    <End Type="Final_ProjectModel.Brand" Role="Brand" Multiplicity="0..1" />
+    <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Brand_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Categor__4F7CD00D">
+    <End Type="Final_ProjectModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Color_I__5165187F">
+    <End Type="Final_ProjectModel.Color" Role="Color" Multiplicity="0..1" />
+    <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Color_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Size_Id__52593CB8">
+    <End Type="Final_ProjectModel.Size" Role="Size" Multiplicity="0..1" />
+    <End Type="Final_ProjectModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Size_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Shipping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Shipping_Company" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_Cost" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_Time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tracking_Information" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AboutWallpaper">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Header" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OurTeam">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Header" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Paragraph_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StrongText" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AnimationSideBottom">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TopText_1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TopText_2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Button" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AnimationSideTop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TopText" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleText" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TopSelling">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Span" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Button" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="Int32" />
+    <Property Name="Div_Id_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminEmail" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+    <Property Name="AdminPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Email_1" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Email_2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Support">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Newsletter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SocialNetwork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+</Schema>

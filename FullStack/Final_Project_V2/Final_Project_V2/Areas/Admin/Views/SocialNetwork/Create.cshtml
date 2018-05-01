@@ -1,0 +1,77 @@
+﻿@model Final_Project_V2.Models.SocialNetwork
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SocialNetwork</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @*URL*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Url, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control", Value = "https://" } })
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*ICON*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Icon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Icon, new { htmlAttributes = new { @class = "form-control", id = "fromscript" } })
+                @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="iconholder">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-pinterest"></i>
+                            <i class="fab fa-google-plus-g"></i>
+                            <i class="fab fa-whatsapp"></i>
+                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-snapchat-ghost"></i>
+                            <i class="fab fa-facebook-messenger"></i>
+                            <i class="fab fa-github"></i>
+                            <i class="fab fa-odnoklassniki"></i>
+                            <i class="fab fa-vk"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+    <div>
+        @Html.ActionLink("Back to List", "Index") | <a href="https://fontawesome.com/icons" target="_blank" class="moreicons">
+            For More Icons<div class="introduction">
+                <span></span>
+                <p>1. Visit site</p>
+                <p>2. Click icon</p>
+                <p>3. Copy class names</p>
+                <img src="~/Public/images/introduction.jpg" alt="picture not found">
+                <p>4. Paste "Icon" input</p>
+            </div>
+        </a>
+    </div>
