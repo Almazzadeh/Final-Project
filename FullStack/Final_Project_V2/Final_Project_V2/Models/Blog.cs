@@ -14,6 +14,12 @@ namespace Final_Project_V2.Models
     
     public partial class Blog
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Blog()
+        {
+            this.BlogComment = new HashSet<BlogComment>();
+        }
+    
         public int Id { get; set; }
         public string Image { get; set; }
         public string Header { get; set; }
@@ -22,5 +28,8 @@ namespace Final_Project_V2.Models
         public string Author { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<bool> Status { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BlogComment> BlogComment { get; set; }
     }
 }

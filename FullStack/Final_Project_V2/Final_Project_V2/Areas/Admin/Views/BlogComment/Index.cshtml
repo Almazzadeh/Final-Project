@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Final_Project_V2.Models.BlogComment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Comments</h2>
+
+<table class="table">
+    <tr>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th class="sticky">
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th class="sticky">Blog</th>
+        <th class="sticky"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firstname)
+            @*<span class="commentId">@item.Id</span>*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lastname)
+        </td>
+        @if(item.Content.Length > 100)
+        {
+            <td>@item.Content.Substring(0, 101).....</td>
+        }
+        else
+        {
+            <td>@item.Content</td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            <iframe class="tdframe" src="@Url.Action("BlogFrame", "SmartTech", new { area = "", id = item.Blog_Id })"></iframe>
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-primary" }) <br />
+            @if(item.Status == true)
+            {
+                @Html.ActionLink("Hide", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" });
+            }
+            else
+            {
+                @Html.ActionLink("Show", "Show", new { id = item.Id }, new { @class = "btn btn-success" });
+            }
+        </td>
+    </tr>
+}
+
+</table>

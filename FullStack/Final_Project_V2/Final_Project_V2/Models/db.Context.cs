@@ -47,5 +47,6 @@ namespace Final_Project_V2.Models
         public virtual DbSet<Support> Support { get; set; }
         public virtual DbSet<Newsletter> Newsletter { get; set; }
         public virtual DbSet<SocialNetwork> SocialNetwork { get; set; }
+        public virtual DbSet<BlogComment> BlogComment { get; set; }
     }
 }

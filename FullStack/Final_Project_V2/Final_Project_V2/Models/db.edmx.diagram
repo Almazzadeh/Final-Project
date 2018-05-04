@@ -31,6 +31,8 @@
         <EntityTypeShape EntityType="Final_ProjectModel.Support" Width="1.5" PointX="11.375" PointY="0.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.Newsletter" Width="1.5" PointX="5.375" PointY="12.75" />
         <EntityTypeShape EntityType="Final_ProjectModel.SocialNetwork" Width="1.5" PointX="12.375" PointY="10.75" />
+        <EntityTypeShape EntityType="Final_ProjectModel.BlogComment" Width="1.5" PointX="5" PointY="15.875" />
+        <AssociationConnector Association="Final_ProjectModel.FK__BlogComme__Blog___0E6E26BF" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

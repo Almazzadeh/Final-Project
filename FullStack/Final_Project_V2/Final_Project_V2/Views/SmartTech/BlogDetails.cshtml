@@ -1,4 +1,5 @@
 ﻿@model Final_Project_V2.Models.Blog
+@using Final_Project_V2.Models;
 
 @{
     ViewBag.Title = "BlogDetails";
@@ -35,10 +36,10 @@
                     <span class="author">@Model.Author</span>
                 </span>
                 <span>
-                    <i class="far fa-bookmark"></i> @Model.Date
+                    <i class="far fa-bookmark"></i> @Convert.ToDateTime(Model.Date).ToString("dd MMM, yyyy")
                 </span>
                 <span>
-                    <i class="far fa-comment"></i> 86 Comments
+                    <i class="far fa-comment"></i> @Enumerable.Count(ViewBag.Comment) Comments
                 </span>
             </div>
             <div class="blogcontent">
@@ -47,41 +48,47 @@
                 <h4>
                     @Model.StrongText
                 </h4>
-                <p>@Model.Paragraph_1.Substring(200)</p>
+                <p>@Model.Paragraph_1.Substring(250)</p>
             </div>
             <div class="commentwrapper">
-                <h4>Comments (01)</h4>
-                <div class="col-md-2">
-                    <img class="img-circle" src="~/Public/images/avatar.jpg" alt="">
-                </div>
-                <div class="col-md-10">
-                    <span class="username">Lucian Black</span>
-                    <span>
-                        <i class="far fa-bookmark"></i> 25 Dec, 2017
-                    </span>
-                    @*<span>*@
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae facere repellendus amet corporis
-                        veniam est sunt obcaecati accusamus fugiat, qui quaerat nulla ex id, ea, nobis soluta distinctio
-                        provident saepe?
-                    </p>
-                </div>
+                <h4>Comments (@Enumerable.Count(ViewBag.Comment))</h4>
+                @foreach (BlogComment bc in ViewBag.Comment)
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                            @*<img class="img-circle" src="~/Public/images/avatar.jpg" alt="">*@
+                            <div class="char"><span>@bc.Firstname.Substring(0,1).ToUpper()</span><span>@bc.Lastname.Substring(0, 1).ToUpper()</span></div>
+                        </div>
+                        <div class="col-md-10">
+                            <span class="username">@bc.Firstname @bc.Lastname</span>
+                            <span>
+                                <i class="far fa-bookmark"></i> @Convert.ToDateTime(bc.Date).ToString("dd MMM, yyyy")
+                            </span>
+                            <p>
+                                @bc.Content
+                            </p>
+                        </div>
+                    </div>
+                }
             </div>
             <div class="leavecomment">
                 <h4>Leave a Comment</h4>
-                <div class="col-md-6">
-                    <label for="firstname">First Name</label>
-                    <input type="text">
-                </div>
-                <div class="col-md-6">
-                    <label for="lastname">Last Name</label>
-                    <input type="text">
-                </div>
-                <div class="col-md-12">
-                    <label for="message">Message</label>
-                    <textarea id="message" cols="30" rows="10"></textarea>
-                </div>
-                <a href="#" class="btn btn-primary btn-lg">Send Message</a>
+                <form method="post">
+                    <div class="col-md-6">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="Firstname" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="Lastname" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="message">Message</label>
+                        <textarea id="message" cols="30" rows="10" name="Content" required></textarea>
+                    </div>
+                    @*<a href="#" class="btn btn-primary btn-lg">Send Message</a>*@
+                    <input type="submit" class="btn btn-primary" value="Send Message" />
+                </form>
             </div>
         </div>
         <!-- BLOG POSTS END HERE -->

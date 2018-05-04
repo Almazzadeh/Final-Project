@@ -41,7 +41,7 @@
                         <span>@ViewBag.AnimationSideBottom.TopText_1</span> @ViewBag.AnimationSideBottom.TopText_2
                     </h2>
                     <h4>@ViewBag.AnimationSideBottom.MiddleText</h4>
-                    <a href="#" class="btn btn-primary btn-lg">@ViewBag.AnimationSideBottom.Button</a>
+                    <a href="@Url.Action("Product3")" class="btn btn-primary btn-lg">@ViewBag.AnimationSideBottom.Button</a>
                 </div>
                 <img src="~/Public/images/@ViewBag.AnimationSideBottom.Image" alt="">
             </div>
@@ -105,7 +105,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -185,91 +185,91 @@
             <div class="tab-pane fade" id="special">
                 @foreach (Product pr in ViewBag.SpecialProduct)
                 {
-                        <div class="product-5">
-                                        <div class="productimg">
-                                            @if(pr.Discount != null)
-                                            {
-                                                <span class="discount">-@pr.Discount%</span>
-                                            }
-                                            @if( pr.New == true)
-                                            {
-                                                <span class="new">NEW</span>
-                                            }
-                                            <img src="~/Public/images/@pr.Image" alt="">
-                                        </div>
-                                        <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
-                            <div class="stars">
-                                @if (pr.Rating == 0)
-                                 {
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                 }
-                                 else if (pr.Rating == 1)
-                                 {
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                 }
-                                 else if (pr.Rating == 2)
-                                 {
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                 }
-                                 else if (pr.Rating == 3)
-                                 {
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                 }
-                                 else if (pr.Rating == 4)
-                                 {
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                 }
-                                 else if (pr.Rating == 5)
-                                 {
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                 }
-                                 else
-                                 {
-                                    <i class="fas fa-exclamation-circle"></i>
-                                    <i class="fas fa-exclamation-circle"></i>
-                                    <i class="fas fa-exclamation-circle"></i>
-                                    <i class="fas fa-exclamation-circle"></i>
-                                    <i class="fas fa-exclamation-circle"></i>
-                                 }
-                                <span>@pr.Review_Count Review(s)</span>
-                            </div>
-                                        @if(pr.Discount != null)
-                            {
-                                <p class="oldprice">$@pr.Price</p>
-                            }
-                            else
-                            {
-                                <p class="productprice">$@pr.Price</p>
-                            }
-                                        <div class="buyproduct">
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </div>
-                                    </div>
+                <div class="product-5">
+                    <div class="productimg">
+                        @if (pr.Discount != null)
+        {
+                <span class="discount">-@pr.Discount%</span>
+}
+                        @if (pr.New == true)
+        {
+                <span class="new">NEW</span>
+}
+                        <img src="~/Public/images/@pr.Image" alt="">
+                    </div>
+                    <p class="productcategory">@pr.Category.Name</p>
+                    @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
+                    <div class="stars">
+                        @if (pr.Rating == 0)
+        {
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+}
+else if (pr.Rating == 1)
+{
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+}
+else if (pr.Rating == 2)
+{
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+}
+else if (pr.Rating == 3)
+{
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+}
+else if (pr.Rating == 4)
+{
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+}
+else if (pr.Rating == 5)
+{
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+}
+else
+{
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+}
+                        <span>@pr.Review_Count Review(s)</span>
+                    </div>
+                    @if (pr.Discount != null)
+    {
+                <p class="oldprice">$@pr.Price</p>
+}
+else
+{
+                <p class="productprice">$@pr.Price</p>
+}
+                    <div class="buyproduct">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
                 }
             </div>
             <!-- ONSALE -->
@@ -289,7 +289,8 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
+
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -379,7 +380,7 @@
                     <h3>@ViewBag.TopSelling.Header</h3>
                     <h5>@ViewBag.TopSelling.Content</h5>
                     <h5>@ViewBag.TopSelling.Span</h5>
-                    <a href="#" class="btn btn-primary btn-lg">@ViewBag.TopSelling.Button</a>
+                    <a href="@Url.Action("ProductSingle", new {id = 29})" class="btn btn-primary btn-lg">@ViewBag.TopSelling.Button</a>
                 </div>
                 <img src="~/Public/images/@ViewBag.TopSelling.Image" alt="">
             </div>
@@ -399,7 +400,8 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
+
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -544,7 +546,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -635,7 +637,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -725,7 +727,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -815,7 +817,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -905,7 +907,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -995,7 +997,7 @@
                                             <img src="~/Public/images/@pr.Image" alt="">
                                         </div>
                                         <p class="productcategory">@pr.Category.Name</p>
-                                        <p class="productname">@pr.Name</p>
+                                        @Html.ActionLink(pr.Name, "ProductSingle", new { id = pr.Id }, new { @class = "productname" })
                             <div class="stars">
                                 @if (pr.Rating == 0)
                                  {
@@ -1088,9 +1090,19 @@
                     </div>
                     <div class="comment">
                         <a href="#">
-                            <i class="far fa-bookmark"></i> @bg.Date</a>
+                            <i class="far fa-bookmark"></i> @Convert.ToDateTime(bg.Date).ToString("dd MMM, yyyy")
+                        </a>
                         <a href="#">
-                            <i class="far fa-comment"></i> 86 Comments
+                            <i class="far fa-comment"></i> 
+                            @{ int i = 0;}
+                            @foreach (BlogComment com in ViewBag.Comment)
+                            {
+                                if(com.Blog_Id == bg.Id)
+                                {
+                                    i++;
+                                }
+                            }
+                            <span>@i Comment(s)</span>
                         </a>
                     </div>
 

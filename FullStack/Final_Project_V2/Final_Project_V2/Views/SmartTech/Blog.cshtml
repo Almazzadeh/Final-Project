@@ -29,18 +29,30 @@
                     </div>
                     <div class="col-md-6">
                         <span>
-                            <i class="far fa-bookmark"></i> @bg.Date.ToString()
+                            <i class="far fa-bookmark"></i> @Convert.ToDateTime(bg.Date).ToString("dd MMM, yyyy")
                         </span>
                         <span>
-                            <i class="far fa-comment"></i> 86 Comments
+                            <i class="far fa-comment"></i> 
+                            @{ int i = 0;}
+                            @foreach (BlogComment com in ViewBag.Comment)
+                            {
+                                if(com.Blog_Id == bg.Id)
+                                {
+                                    i++;
+                                }
+                            }
+                            <span>@i Comment(s)</span>
                         </span>
-                        <h4>@bg.Header</h4>
+                        <h4>
+                            @Html.ActionLink(bg.Header, "BlogDetails", new { id = bg.Id })
+                        </h4>
 
                         @if (bg.Paragraph_1.Length > 190)
     {
-                    <p>
-                        @bg.Paragraph_1.Substring(0, 190) [....]
-                    </p>
+                        <p>
+                            @bg.Paragraph_1.Substring(0, 190)@Html.ActionLink("....", "BlogDetails", new { id = bg.Id })
+
+                        </p>
 }
 else
 {

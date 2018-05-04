@@ -158,6 +158,7 @@
     <Compile Include="Areas\Admin\Controllers\AnimationSideBottomController.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimationSideTopController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorizationFilterController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogCommentController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChangePasswordController.cs" />
     <Compile Include="Areas\Admin\Controllers\FourDivController.cs" />
@@ -189,6 +190,9 @@
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Blog.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BlogComment.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Brand.cs">
@@ -456,6 +460,10 @@
     <Content Include="Areas\Admin\Views\Support\Show.cshtml" />
     <Content Include="Areas\Admin\Views\Newsletter\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Newsletter\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogComment\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogComment\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogComment\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogComment\Show.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -499,6 +507,7 @@
     <Content Include="Views\SmartTech\BlogSingle.cshtml" />
     <Content Include="Views\SmartTech\BlogDetails.cshtml" />
     <Content Include="Views\SmartTech\ProductSingle.cshtml" />
+    <Content Include="Views\SmartTech\BlogFrame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

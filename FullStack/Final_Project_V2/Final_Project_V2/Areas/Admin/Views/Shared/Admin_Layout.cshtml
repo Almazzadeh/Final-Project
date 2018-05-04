@@ -84,10 +84,14 @@
                 </li>
                 <!-- ***BLOG SECTION*** -->
                 <li>
-                    <a href="@Url.Action("Index", "Blog")">
+                    <a href="#BlogSubmenu" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-comment"></i>
-                        Blog Stories
+                        Blog
                     </a>
+                    <ul class="collapse list-unstyled" id="BlogSubmenu">
+                        <li><a href="@Url.Action("Index", "Blog")">Blog Stories</a></li>
+                        <li><a href="@Url.Action("Index", "BlogComment")">Comments</a></li>
+                    </ul>
                 </li>
                 <!-- ***CONTACT SECTION*** -->
                 <li>

@@ -71,6 +71,18 @@
           <Property Name="Date" Type="datetime" />
           <Property Name="Status" Type="bit" />
         </EntityType>
+        <EntityType Name="BlogComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="30" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="30" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Blog_Id" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
         <EntityType Name="Brand">
           <Key>
             <PropertyRef Name="Id" />
@@ -236,6 +248,18 @@
           <Property Name="Button" Type="nvarchar" MaxLength="20" />
           <Property Name="Image" Type="nvarchar(max)" />
         </EntityType>
+        <Association Name="FK__BlogComme__Blog___0E6E26BF">
+          <End Role="Blog" Type="Self.Blog" Multiplicity="0..1" />
+          <End Role="BlogComment" Type="Self.BlogComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blog">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogComment">
+              <PropertyRef Name="Blog_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Product__Brand_I__5070F446">
           <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -291,6 +315,7 @@
           <EntitySet Name="AnimationSideBottom" EntityType="Self.AnimationSideBottom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnimationSideTop" EntityType="Self.AnimationSideTop" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlogComment" EntityType="Self.BlogComment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
@@ -307,6 +332,10 @@
           <EntitySet Name="Support" EntityType="Self.Support" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TopSelling" EntityType="Self.TopSelling" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BlogComme__Blog___0E6E26BF" Association="Self.FK__BlogComme__Blog___0E6E26BF">
+            <End Role="Blog" EntitySet="Blog" />
+            <End Role="BlogComment" EntitySet="BlogComment" />
+          </AssociationSet>
           <AssociationSet Name="FK__Product__Brand_I__5070F446" Association="Self.FK__Product__Brand_I__5070F446">
             <End Role="Brand" EntitySet="Brand" />
             <End Role="Product" EntitySet="Product" />
@@ -398,6 +427,11 @@
           <EntitySet Name="Support" EntityType="Final_ProjectModel.Support" />
           <EntitySet Name="Newsletter" EntityType="Final_ProjectModel.Newsletter" />
           <EntitySet Name="SocialNetwork" EntityType="Final_ProjectModel.SocialNetwork" />
+          <EntitySet Name="BlogComment" EntityType="Final_ProjectModel.BlogComment" />
+          <AssociationSet Name="FK__BlogComme__Blog___0E6E26BF" Association="Final_ProjectModel.FK__BlogComme__Blog___0E6E26BF">
+            <End Role="Blog" EntitySet="Blog" />
+            <End Role="BlogComment" EntitySet="BlogComment" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Brand">
           <Key>
@@ -567,6 +601,7 @@
           <Property Name="Author" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="BlogComment" Relationship="Final_ProjectModel.FK__BlogComme__Blog___0E6E26BF" FromRole="Blog" ToRole="BlogComment" />
         </EntityType>
         <EntityType Name="AnimationSideBottom">
           <Key>
@@ -655,6 +690,31 @@
           <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
+        <EntityType Name="BlogComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Blog_Id" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Blog" Relationship="Final_ProjectModel.FK__BlogComme__Blog___0E6E26BF" FromRole="BlogComment" ToRole="Blog" />
+        </EntityType>
+        <Association Name="FK__BlogComme__Blog___0E6E26BF">
+          <End Type="Final_ProjectModel.Blog" Role="Blog" Multiplicity="0..1" />
+          <End Type="Final_ProjectModel.BlogComment" Role="BlogComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blog">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogComment">
+              <PropertyRef Name="Blog_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -910,6 +970,19 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogComment">
+            <EntityTypeMapping TypeName="Final_ProjectModel.BlogComment">
+              <MappingFragment StoreEntitySet="BlogComment">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Blog_Id" ColumnName="Blog_Id" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

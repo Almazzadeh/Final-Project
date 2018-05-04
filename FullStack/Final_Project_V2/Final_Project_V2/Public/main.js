@@ -95,43 +95,6 @@ $(function () {
         return false;
     });
 
-    // PROGRESS BAR SECTION
-    //$('#photoshop').LineProgressbar({
-    //    percentage: 90,
-    //    duration: 1500,
-    //    fillBackgroundColor: '#08c',
-    //    backgroundColor: '#e6e6e6',
-    //    radius: '20px',
-    //    height: '15px',
-    //})
-
-    //$('#uidesign').LineProgressbar({
-    //    percentage: 70,
-    //    duration: 1500,
-    //    fillBackgroundColor: '#08c',
-    //    backgroundColor: '#e6e6e6',
-    //    radius: '20px',
-    //    height: '15px',
-    //})
-
-    //$('#layoutframe').LineProgressbar({
-    //    percentage: 80,
-    //    duration: 1500,
-    //    fillBackgroundColor: '#08c',
-    //    backgroundColor: '#e6e6e6',
-    //    radius: '20px',
-    //    height: '15px',
-    //})
-
-    //$('#typography').LineProgressbar({
-    //    percentage: 13,
-    //    duration: 1500,
-    //    fillBackgroundColor: '#08c',
-    //    backgroundColor: '#e6e6e6',
-    //    radius: '20px',
-    //    height: '15px',
-    //})
-
     $('.skillvalue').each(function () {
         var id = $(this).next().text();
         var per = parseInt($(this).text());
@@ -198,5 +161,10 @@ $(function () {
         prefix: "$"
     });
 
+
+    //ZOOM PRODUCT IMAGE
+    $(".zoom").blowup({
+        scale: 2
+    });
     
 })

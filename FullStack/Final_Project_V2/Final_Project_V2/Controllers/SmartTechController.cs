@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -21,6 +22,7 @@ namespace Final_Project_V2.Controllers
             ViewBag.FourDiv = db.FourDiv.Where(s => s.Status == true).ToList();
             ViewBag.Product = db.Product.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
             ViewBag.Blog = db.Blog.Where(s => s.Status == true).OrderByDescending(s => s.Date).ToList();
+            ViewBag.Comment = db.BlogComment.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
             ViewBag.TopSelling = db.TopSelling.First();
 
             //PRODUCT TYPES STARTS
@@ -145,6 +147,7 @@ namespace Final_Project_V2.Controllers
             Product product = db.Product.Find(id);
             ViewBag.MobileOperator = db.MobileOperator.ToList();
             ViewBag.Shipping = db.Shipping.ToList();
+            ViewBag.RelatedProduct = db.Product.Where(s => s.Status == true).OrderByDescending(s => s.Date).Take(8);
             if (product == null)
             {
                 return HttpNotFound();
@@ -263,6 +266,8 @@ namespace Final_Project_V2.Controllers
         public ActionResult Blog()
         {
             ViewBag.Blog = db.Blog.Where(s => s.Status == true).OrderByDescending(s => s.Date).ToList();
+            ViewBag.Comment = db.BlogComment.OrderByDescending(s => s.Date).Where(s => s.Status == true).ToList();
+
 
             // FOOTER STARTS
             ViewBag.Support = db.Support.Where(s => s.Status == true).ToList();
@@ -289,7 +294,7 @@ namespace Final_Project_V2.Controllers
             return View();
         }
 
-        //***** BLOG DETAILS *****
+        //***** BLOG DETAILS GET*****
         public ActionResult BlogDetails(int? id)
         {
             if (id == null)
@@ -301,7 +306,49 @@ namespace Final_Project_V2.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Comment = db.BlogComment.OrderByDescending(s => s.Date).Where(s => s.Blog_Id == blog.Id && s.Status == true).ToList();
+            // FOOTER STARTS
+            ViewBag.Support = db.Support.Where(s => s.Status == true).ToList();
+            ViewBag.Newsletter = db.Newsletter.First();
+            ViewBag.Address = db.Address.First();
+            ViewBag.SocialNetwork = db.SocialNetwork.Where(s => s.Status == true).ToList();
 
+            //FOOTER ENDS
+            return View(blog);
+        }
+
+
+        //***** BLOG DETAILS POST*****
+        [HttpPost]
+        public ActionResult BlogDetails(int? id, [Bind(Include = "Id,Firstname,Lastname,Content")] BlogComment blogcomment)
+        {
+            if (ModelState.IsValid)
+            {
+                blogcomment.Blog_Id = id;
+                blogcomment.Status = true;
+                blogcomment.Date = DateTime.Now;
+                db.BlogComment.Add(blogcomment);
+                db.SaveChanges();
+                return RedirectToAction("BlogDetails", new { id });
+            }
+
+            return View(blogcomment);
+        }
+
+
+        //***** BLOG DETAILS GET*****
+        public ActionResult BlogFrame(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Blog blog = db.Blog.Find(id);
+            if (blog == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Comment = db.BlogComment.OrderByDescending(s => s.Date).Where(s => s.Blog_Id == blog.Id && s.Status == true).ToList();
             // FOOTER STARTS
             ViewBag.Support = db.Support.Where(s => s.Status == true).ToList();
             ViewBag.Newsletter = db.Newsletter.First();

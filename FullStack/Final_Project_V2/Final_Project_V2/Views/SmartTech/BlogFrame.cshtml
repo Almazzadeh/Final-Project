@@ -1,0 +1,77 @@
+﻿@model Final_Project_V2.Models.Blog
+@using Final_Project_V2.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Public/style.css">
+</head>
+
+<body>
+    <div class="blogframe">
+        <div class="container">
+            <img src="~/Public/images/@Model.Image">
+            <div class="flex">
+                <span>
+                    By:
+                    <b>@Model.Author</b>
+                </span>
+                <span>
+                    <i class="far fa-bookmark"></i> @Convert.ToDateTime(Model.Date).ToString("dd MMM, yyyy")
+                </span>
+                <span>
+                    <i class="far fa-comment"></i> @Enumerable.Count(ViewBag.Comment) Comment(s)
+                </span>
+            </div>
+            <div class="center">
+                <h1><em>@Model.Header</em></h1>
+
+                <p>@Model.Paragraph_1.Substring(0, 250)</p>
+
+                <p class="quote">@Model.StrongText</p>
+
+                <p>@Model.Paragraph_1.Substring(250)</p>
+            </div>
+            <div class="commentwrapper">
+                <h3>Comments (@Enumerable.Count(ViewBag.Comment))</h3>
+                @foreach (BlogComment bc in ViewBag.Comment)
+                {
+                    <div class="flex framecomment" back-ID="@bc.Id">
+                        <div class="left">
+                            <div class="char">
+                                <span>@bc.Firstname.Substring(0, 1).ToUpper()</span>
+                                <span>@bc.Lastname.Substring(0, 1).ToUpper()</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="flex">
+                                <p>@bc.Firstname @bc.Lastname</p>
+                                <span>
+                                    <i class="far fa-bookmark"></i> @Convert.ToDateTime(bc.Date).ToString("dd MMM, yyyy")
+                                </span>
+                            </div>
+
+                            <p>
+                                @bc.Content
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

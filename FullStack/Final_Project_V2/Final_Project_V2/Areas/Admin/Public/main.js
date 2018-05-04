@@ -36,23 +36,11 @@ $(document).ready(function () {
         })
     })
 
-
-    //$('.checkbox').each(function () {
-    //    $(this).on('change', function () {
-    //        if ($(this).is(':checked')) {
-    //            $(this).attr('value', 'True');
-    //        } else {
-    //            $(this).attr('value', 'False');
-    //        }
-    //    }
+    //DOESN'T WORK
+    //$('.commentId').each(function () {
+    //    var commentId = parseInt($(this).text());
+    //    var frameComment = $(this).parent().nextAll().eq(3).children().contents().find(".framecomment");
+    //    console.log(frameComment)
     //})
-
-    //$(".checkbox").on('change', function () {
-    //    if ($(this).is(':checked')) {
-    //        $(this).attr('value', 'True');
-    //    } else {
-    //        $(this).attr('value', 'False');
-    //    }
-    //}
 
 });
